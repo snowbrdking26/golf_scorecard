@@ -46,7 +46,6 @@ body {
     padding: 7%;
 }
 
-
 .mainTopText {
     padding: 15% 20% 10% 20%;
     color: white;
@@ -68,13 +67,11 @@ body {
     /* width: 460px; */
 }
 
-
 /* top nav */
 /* https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
 .closebtn:hover {
   color:white;
 }
-
 
 /* Top Nav */
 .topnav {
@@ -88,7 +85,6 @@ body {
   /* background-color: #DFDFDF; */
   background-color: #2592D8;
   /* background-color: #9CC5A1; */
-
   /* background-color: #A9A9A9; */
   overflow-x: hidden;
   /* transition: 0.5s; */
@@ -103,7 +99,6 @@ a {
   text-align: left;
   width: auto;
   color: white;
-
 }
 
 .topnav a:hover {
@@ -117,7 +112,6 @@ a {
 padding: 3px 16px;
 font-size: 30px;
 }
-
 
 .homeBtn {
   font-size: 12px;
@@ -290,7 +284,6 @@ justify-content: center;
     flex-direction: row-reverse;
     /* flex-wrap: wrap; */
     padding-right: 10px;
-
 }
 
 .contain-in-scorecards{
@@ -335,7 +328,6 @@ justify-content: center;
   font-size:1em;
   color:white;
 }
-
 
 /* table styling on scorecard page */
 /* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */
