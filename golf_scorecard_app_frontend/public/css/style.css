@@ -1,0 +1,363 @@
+body {
+    background-color: white;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* index page */
+.mainPicture {
+    /* background-image: url(https://images.unsplash.com/photo-1513596846216-48ae70153834?auto=format&fit=crop&w=1500&q=80); */
+    /* background-image: url(https://images.unsplash.com/photo-1476242906366-d8eb64c2f661?auto=format&fit=crop&w=1608&q=80); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+
+}
+/* Image from unsplash */
+
+/* https://css-tricks.com/snippets/css/transparent-background-images/ */
+.mainPicture::after {
+  content: "";
+  /* background: url(https://images.unsplash.com/photo-1513596846216-48ae70153834?auto=format&fit=crop&w=1500&q=80); */
+  
+  background-image: url(peter-lewicki-409738.jpg);
+  opacity: 1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  /* color: white; */
+
+}
+
+.title1 {
+    text-align: center;
+    padding: 7%;
+    background-color: #fbfafa;
+}
+
+.title {
+    text-align: center;
+    padding: 7%;
+}
+
+
+.mainTopText {
+    padding: 15% 20% 10% 20%;
+    color: white;
+    opacity: 1;
+}
+
+.IndexScorecardsubmitAddBtn {
+   width: auto;
+    height: auto;
+    padding: 10px 20px;
+    margin:8px 5px 5px 5px;
+    background:#2592D8;
+  border:none;
+  font-size:1em;
+  color:white;
+}
+
+.in-scorecard {
+    /* width: 460px; */
+}
+
+
+/* top nav */
+/* https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
+.closebtn:hover {
+  color:white;
+}
+
+
+/* Top Nav */
+.topnav {
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  /* left: 0; */
+  /* background-color: #DFDFDF; */
+  background-color: #2592D8;
+  /* background-color: #9CC5A1; */
+
+  /* background-color: #A9A9A9; */
+  overflow-x: hidden;
+  /* transition: 0.5s; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.topnav a {
+  display: inline-block;
+  text-align: left;
+  width: auto;
+  color: white;
+
+}
+
+.topnav a:hover {
+  display: inline-block;
+  text-align: left;
+  height: auto;
+  background-color: gray;
+}
+
+.threeLines {
+padding: 3px 16px;
+font-size: 30px;
+}
+
+
+.homeBtn {
+  font-size: 12px;
+}
+
+/* side nav */
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color:#DFDFDF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+a:hover {
+  color: black;
+}
+
+a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.sideNavH2 {
+  padding-left: 0;
+}
+
+input[type=text], input[type=password] {
+  /* width: 30%; */
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.loginsignupInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+
+}
+
+.sideNavPadding {
+  padding: 0 15px;
+}
+
+ /*w3schools login buttons https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form */
+
+.scoresbutton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.scoresbutton:hover {
+  opacity: 0.8;
+}
+
+.closebtn:hover {
+  color:white;
+}
+
+.news {
+    width: 440px;
+    height: auto;
+    margin: 10px;
+}
+
+.tradingViewWidget {
+margin: 10px;
+}
+
+.widgetFlex {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+
+
+}
+
+
+
+/* scorecard page */
+
+.scorecardimage {
+    border: 1px solid black;
+    margin: 5px;
+}
+
+
+.tempOrg {
+    padding-left: 100px;
+
+}
+
+.ScorecardTitle {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.flexScorecardTitle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #2592D8;
+    color: white;
+    /* padding-left: 10px; */
+}
+
+.btnspacing {
+    padding: 0 10px;
+    margin-top: 22px;
+    font-size: 12px;
+}
+
+.leftScorecardBar {
+     display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+}
+
+.flexforminputs{
+    display: flex;
+    flex-direction: row-reverse;
+    /* flex-wrap: wrap; */
+    padding-right: 10px;
+
+}
+
+.contain-in-scorecards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.in-scorecard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.new-Score-container {
+    width: auto;
+}
+
+.new-scorecard-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.submitAddBtn{
+    width: 17%;
+    height: 40px;
+    padding: 1px 7px;
+    margin:8px 5px 0px 5px;
+    background:green;
+  border:none;
+  font-size:1em;
+  color:white;
+}
+
+.ScorecardsubmitAddBtn {
+   width: 120px;
+    height: 38px;
+    padding: 1px 7px;
+    margin:8px 5px 0px 5px;
+    background:#2592D8;
+  border:none;
+  font-size:1em;
+  color:white;
+}
+
+
+/* table styling on scorecard page */
+/* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.removeEditScore {
+    font-size: 10px;
+    padding-left: 10px;
+}

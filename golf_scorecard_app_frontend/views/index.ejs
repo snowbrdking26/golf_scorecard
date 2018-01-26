@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyGolfScoreCardApp">
+
+<head>
+
+    <% include partials/head.ejs %>
+
+</head>
+
+<body ng-controller="MainController as ctrl">
+
+    <% include partials/nav.ejs %>
+
+        <div class="mainPicture">
+            <div class="mainTopText">
+
+                <h1>
+                    <em>Golf Scorecard App </em>
+                </h1>
+                <h1>Track your score quickly and conveniently</h1>
+                <h3> Easiest way to track your scores at your finger tips </h3>
+                <a class="IndexScorecardsubmitAddBtn" href="/scorecards">Scorecards</a>
+                <a class="IndexScorecardsubmitAddBtn" onclick="openNav()">Sign Up</a>
+
+            </div>
+        </div>
+
+        <div class="title1">
+            <h1>How can the Golf Scorecard App help you?</h1>
+            <h3> The Golf Scorecard App allows you to conviently score your golf game in one place. You can store all your friends scores in one place. With easy one touch scoring. Accurately total your score. </h3>
+        </div>
+
+
+        <div class="title">
+            <h1>Markets Overview</h1>
+        </div>
+        <div class="widgetFlex">
+            <div class="news">
+                <h2>Financial News</h2>
+                <div class="feedgrabbr_widget" id="fgid_8321085693f715e6856a3ccae"></div>
+            </div>
+            <script>if (typeof (fg_widgets) === "undefined") fg_widgets = new Array(); fg_widgets.push("fgid_8321085693f715e6856a3ccae");</script>
+            <script async src="https://www.feedgrabbr.com/widget/fgwidget.js"></script>
+
+
+            <!-- market overview TradingView Widget -->
+            <div id="tv-miniwidget-new" style="">
+                <div style="width: 400px; height: 760px; position: relative;">
+                    <iframe scrolling="no" allowtransparency="true" frameborder="0" width="400" height="760" src="https://s.tradingview.com/marketoverviewwidgetembed/#%7B%22showChart%22%3Atrue%2C%22locale%22%3A%22en%22%2C%22width%22%3A%22400%22%2C%22height%22%3A%22760%22%2C%22plotLineColorGrowing%22%3A%22%233CBC98%22%2C%22plotLineColorFalling%22%3A%22%23FF4A68%22%2C%22gridLineColor%22%3A%22%23e9e9ea%22%2C%22scaleFontColor%22%3A%22%23DADDE0%22%2C%22belowLineFillColorGrowing%22%3A%22rgba(60%2C%20188%2C%20152%2C%200.05)%22%2C%22belowLineFillColorFalling%22%3A%22rgba(255%2C%2074%2C%20104%2C%200.05)%22%2C%22symbolActiveColor%22%3A%22%23F2FAFE%22%2C%22tabs%22%3A%5B%7B%22title%22%3A%22Indices%22%2C%22symbols%22%3A%5B%7B%22s%22%3A%22INDEX%3ASPX%22%2C%22d%22%3A%22S%26P%20500%22%7D%2C%7B%22s%22%3A%22INDEX%3AIUXX%22%2C%22d%22%3A%22Nasdaq%20100%22%7D%2C%7B%22s%22%3A%22INDEX%3ADOWI%22%2C%22d%22%3A%22Dow%2030%22%7D%2C%7B%22s%22%3A%22INDEX%3ANKY%22%2C%22d%22%3A%22Nikkei%20225%22%7D%2C%7B%22s%22%3A%22NASDAQ%3AAAPL%22%2C%22d%22%3A%22Apple%22%7D%2C%7B%22s%22%3A%22NASDAQ%3AGOOGL%22%2C%22d%22%3A%22Alphabet%22%7D%5D%7D%2C%7B%22title%22%3A%22Commodities%22%2C%22symbols%22%3A%5B%7B%22s%22%3A%22COMEX%3AGC1!%22%2C%22d%22%3A%22Gold%22%7D%2C%7B%22s%22%3A%22NYMEX%3ACL1!%22%2C%22d%22%3A%22Crude%20Oil%22%7D%2C%7B%22s%22%3A%22NYMEX%3ANG1!%22%2C%22d%22%3A%22Natural%20Gas%22%7D%2C%7B%22s%22%3A%22CBOT%3AZC1!%22%2C%22d%22%3A%22Corn%22%7D%2C%7B%22s%22%3A%22NYMEX%3ARBG2018%22%2C%22d%22%3A%22Gasoline%22%7D%5D%7D%2C%7B%22title%22%3A%22Bonds%22%2C%22symbols%22%3A%5B%7B%22s%22%3A%22CME%3AGE1!%22%2C%22d%22%3A%22Eurodollar%22%7D%2C%7B%22s%22%3A%22CBOT%3AZB1!%22%2C%22d%22%3A%22T-Bond%22%7D%2C%7B%22s%22%3A%22CBOT%3AUD1!%22%2C%22d%22%3A%22Ultra%20T-Bond%22%7D%2C%7B%22s%22%3A%22EUREX%3AGG1!%22%2C%22d%22%3A%22Euro%20Bund%22%7D%2C%7B%22s%22%3A%22EUREX%3AII1!%22%2C%22d%22%3A%22Euro%20BTP%22%7D%2C%7B%22s%22%3A%22EUREX%3AHR1!%22%2C%22d%22%3A%22Euro%20BOBL%22%7D%5D%7D%2C%7B%22title%22%3A%22Forex%22%2C%22symbols%22%3A%5B%7B%22s%22%3A%22FX%3AEURUSD%22%7D%2C%7B%22s%22%3A%22FX%3AGBPUSD%22%7D%2C%7B%22s%22%3A%22FX%3AUSDJPY%22%7D%2C%7B%22s%22%3A%22FX%3AUSDCHF%22%7D%2C%7B%22s%22%3A%22FX%3AAUDUSD%22%7D%2C%7B%22s%22%3A%22FX%3AUSDCAD%22%7D%5D%7D%5D%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22marketoverview%22%7D"
+                        style="box-sizing: border-box; padding-bottom: 32px;"></iframe>
+                    <span style="display: block; position: absolute; bottom: 0px; left: 0px; width: 100%; padding: 8px 0px; text-align: center; box-sizing: content-box; height: 16px; line-height: 16px;">
+                        <a ref="nofollow noopener" target="_blank" href="http://www.tradingview.com?utm_source=www.tradingview.com&amp;utm_medium=widget&amp;utm_campaign=marketoverview"
+                            style="color: rgb(173, 174, 176); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 13px;">Market Quotes by
+                            <span style="color: #3BB3E4">TradingView</span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+
+            <div class="title">
+                <h2>Economic Calendar</h2>
+
+                <iframe scrolling="no" allowtransparency="true" frameborder="0" width="510" height="600" src="https://s.tradingview.com/eventswidgetembed/#%7B%22width%22%3A%22510%22%2C%22height%22%3A%22600%22%2C%22locale%22%3A%22en%22%2C%22importanceFilter%22%3A%22-1%2C0%2C1%22%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22events%22%7D"
+                    style="box-sizing: border-box; padding-bottom: 32px;"></iframe>
+            </div>
+
+            <!-- TradingView Forex Widget BEGIN -->
+            <div class="title">
+                <h2>Forex Spot Prices</h2>
+                <iframe scrolling="no" allowtransparency="true" frameborder="0" width="770" height="400" src="https://s.tradingview.com/forexcrossrateswidgetembed/#%7B%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22width%22%3A%22770%22%2C%22height%22%3A%22400%22%2C%22locale%22%3A%22en%22%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forexcrossrates%22%7D"
+                    style="box-sizing: border-box; padding-bottom: 32px;"></iframe>
+            </div>
+            <div class="title">
+                <h2>Forex Relative Change</h2>
+                <iframe scrolling="no" allowtransparency="true" frameborder="0" width="770" height="400" src="https://s.tradingview.com/forexheatmapwidgetembed/#%7B%22currencies%22%3A%5B%22EUR%22%2C%22USD%22%2C%22JPY%22%2C%22GBP%22%2C%22CHF%22%2C%22AUD%22%2C%22CAD%22%2C%22NZD%22%2C%22CNY%22%5D%2C%22width%22%3A%22770%22%2C%22height%22%3A%22400%22%2C%22locale%22%3A%22en%22%2C%22utm_source%22%3A%22www.tradingview.com%22%2C%22utm_medium%22%3A%22widget%22%2C%22utm_campaign%22%3A%22forexheatmap%22%7D"
+                    style="box-sizing: border-box; padding-bottom: 32px;"></iframe>
+            </div>
+        </div>
+        <!-- flexWidget END -->
+
+        <!-- TradingView Widget BEGIN -->
+
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+            new TradingView.widget({
+                "width": 770,
+                "height": 480,
+                "symbol": "NASDAQ:AAPL",
+                "interval": "D",
+                "timezone": "Etc/UTC",
+                "theme": "Light",
+                "style": "1",
+                "locale": "en",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "hideideas": true
+            });
+        </script>
+
+        <!-- TradingView Widget END -->
+
+
+
+
+
+</body>
+
+</html>

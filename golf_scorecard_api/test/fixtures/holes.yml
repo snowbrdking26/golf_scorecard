@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  holenumber: 1
+  par: 1
+  score: 1
+
+two:
+  holenumber: 1
+  par: 1
+  score: 1

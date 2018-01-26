@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyGolfScoreCardApp">
+
+<head>
+
+    <% include partials/head.ejs %>
+
+</head>
+<br>
+<br>
+
+<body ng-controller="MainController as ctrl">
+
+    <% include partials/nav.ejs %>
+
+
+        <h2>Scorecard</h2>
+        <main>
+            <!-- Add New Golfer -->
+            <div class="new-scorecard-container">
+                <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
+                <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
+                <div>
+                    <form ng-submit="ctrl.processCreateForm()">
+                        <div class="flexforminputs">
+                            <input class="ScorecardsubmitAddBtn" type="submit">
+                            <input type="text" ng-model="ctrl.createForm.player" placeholder="Add New Golfer">
+                            <input type="text" ng-model="ctrl.createForm.course" placeholder="Add New Course">
+                            <br/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+
+            <!-- Parent ng-repeat -->
+            <div class="contain-in-scorecards">
+                <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers">
+
+                    <div class="scorecardimage">
+                        <div class="flexWatchlistTitle">
+                            <div class="leftWatchlistBar">
+                                <h3 class="WatchlistTitle"> Course: {{golfer.course}}</h3>
+                                <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
+                                <div ng-click="ctrl.deleteGolfer(golfer.id)" class="scorecard btnspacing">Remove</div>
+                                <div ng-click="ctrl.editModal = true; ctrl.toEdit = golfer" class="scorecard btnspacing">Edit</div>
+                            </div>
+                            <!-- Add New Score -->
+                            <div class="new-Score-container">
+                                <em class="h2addScore" ng-click="ctrl.addScore()" class="add"></em>
+                                <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
+                                <div>
+                                    <form ng-submit="ctrl.processCreateFormScorecards(golfer.id)">
+                                        <div class="flexforminputs">
+                                            <input class="submitAddBtn" type="submit">
+                                            <input type="text" ng-model="ctrl.createFormScorecards.holenumber" placeholder="Hole #">
+                                            <input type="text" ng-model="ctrl.createFormScorecards.par" placeholder="Par">
+                                            <input type="text" ng-model="ctrl.createFormScorecards.score" placeholder="Add Score">
+
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                    <!-- </div> -->
+                    <!-- /* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */ -->
+                    <!-- https://www.w3schools.com/angular/angular_tables.asp -->
+                    <table>
+                        <tr>
+                            <th>Hole #</th>
+                            <th>Par</th>
+                            <th>Score</th>
+
+                            <!-- nested ng-repeat -  get score prices-->
+                            <!-- <tr ng-repeat="score in scorecard.scorecards"> -->
+                            <tr ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
+
+                                <td>Hole # {{scorecard.holenumber}}</td>
+                                <td>{{scorecard.par}}
+                                    <td>{{scorecard.score}}
+                                        <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id)" class="add">Remove</div>
+                                        <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" class="add">Edit</div>
+                                    </td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+
+                <br>
+                <!-- edit scorecards -->
+                <div class="dim" ng-class="(ctrl.editModalScore? 'editModalScore' : '')">
+                    <div class="modal">
+                        <!-- <h6 class="close" ng-click="ctrl.editModalScore = false">Close</h6> -->
+                        <div>
+                            <em>Edit Scorecards</em>
+                            <form class="editModalScore" ng-submit="ctrl.processEditFormscorecards(ctrl.toEditScorecard)">
+                                <div class="row">
+                                    <input type="text" ng-model="ctrl.createFormScorecards.holenumber" placeholder="{{ctrl.toEditScorecard.holenumber}}">
+                                    <input type="text" ng-model="ctrl.createFormScorecards.par" placeholder="{{ctrl.toEditScorecard.par}}">
+                                    <input type="text" ng-model="ctrl.createFormScorecards.score" placeholder="{{ctrl.toEditScorecard.score}}">
+                                    <input ng-click="ctrl.go()" type="submit">
+                                
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+
+
+
+
+            <!-- edit watchlist -->
+            <div class="dim" ng-class="(ctrl.editModal? 'editModal' : '')">
+                <div class="modal">
+                    <!-- <h4 class="close" ng-click="ctrl.editModal = false">Close</h4> -->
+                    <div>
+                        <h2>Edit Watchlist</h2>
+                        <form class="editModal" ng-submit="ctrl.processEditForm(ctrl.toEdit)">
+                            <div class="row">
+                                <input type="text" ng-model="ctrl.createForm.course" placeholder="{{ctrl.toEdit.course}}">
+                                <input type="text" ng-model="ctrl.createForm.player" placeholder="{{ctrl.toEdit.player}}">
+                                <input type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+
+
+
+
+
+        </main>
+        <footer class="footerScorecard">
+            <br> -----------Footer -----------
+            <br>
+        </footer>
+</body>
+
+</html>
