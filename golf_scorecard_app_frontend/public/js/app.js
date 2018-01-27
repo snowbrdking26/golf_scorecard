@@ -213,6 +213,97 @@ app.controller('MainController', ['$http', function ($http) {
         }).catch(err => console.log(err))
     }
 
+
+    // ==============
+    // UPDATE Route - increment score
+    // ==============
+
+    // add increment score
+    this.incScore = (scorecard) => {
+        console.log('id is = ' + scorecard.id)
+        console.log('+++++')
+        scorecard.score++;
+
+        $http({
+            method: 'PUT',
+            url: this.url + '/scorecards/' + scorecard.id,
+            data: { score: scorecard.score }
+            // data: this.createFormScorecards
+        }).then(response => {
+            console.log(response.data);
+        }, error => {
+            console.error(error.message);
+        }).catch(err => console.error('Catch: ', err));
+    }
+
+    // ==============
+    // UPDATE Route - decrement score
+    // ==============
+
+    // decrement score
+    this.decScore = (scorecard) => {
+        console.log('id is = ' + scorecard.id)
+        console.log('+++++')
+        scorecard.score--;
+
+        $http({
+            method: 'PUT',
+            url: this.url + '/scorecards/' + scorecard.id,
+            data: { score: scorecard.score }
+            // data: this.createFormScorecards
+        }).then(response => {
+            console.log(response.data);
+        }, error => {
+            console.error(error.message);
+        }).catch(err => console.error('Catch: ', err));
+    }
+
+    // ==============
+    // UPDATE Route - increment par
+    // ==============
+
+    // increment par
+    this.incPar = (scorecard) => {
+        console.log('id is = ' + scorecard.id)
+        console.log('+++++')
+        scorecard.par++;
+
+        $http({
+            method: 'PUT',
+            url: this.url + '/scorecards/' + scorecard.id,
+            data: { par: scorecard.par }
+            // data: this.createFormScorecards
+        }).then(response => {
+            console.log(response.data);
+        }, error => {
+            console.error(error.message);
+        }).catch(err => console.error('Catch: ', err));
+    }
+
+    // ==============
+    // UPDATE Route - decrement par
+    // ==============
+
+    // decrement par
+    this.decPar = (scorecard) => {
+        console.log('id is = ' + scorecard.id)
+        console.log('+++++')
+        scorecard.par--;
+
+        $http({
+            method: 'PUT',
+            url: this.url + '/scorecards/' + scorecard.id,
+            data: { par: scorecard.par }
+            // data: this.createFormScorecards
+        }).then(response => {
+            console.log(response.data);
+        }, error => {
+            console.error(error.message);
+        }).catch(err => console.error('Catch: ', err));
+    }
+
+
+
     // ==============
     // DELETE Route - scorecards
     // ==============
