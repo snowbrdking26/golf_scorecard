@@ -59,25 +59,9 @@
                 <input type="checkbox" ng-model="showScoreCard">
             </div>
             <!-- show/hide div wrapper-->
-            <div class="contain-in-scorecards" ng-hide="showScoreCard">
-            
+            <!-- <div class="contain-in-scorecards" ng-show="showScoreCard"> -->
+            <div class="contain-in-scorecards">
 
-            <!-- Add New Score -->
-            <div class="new-Score-container">
-                <em class="h2addScore" ng-click="ctrl.addScore()" class="add"></em>
-                <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
-
-                    <form class="addScoreForm" ng-submit="ctrl.processCreateFormScorecards(golfer.id)">
-                    <div class="addAscoreDiv">
-                            <input class="addaScore" type="text" ng-model="ctrl.createFormScorecards.holenumber" placeholder="Hole #">
-                            <input class="addaScore" type="text" ng-model="ctrl.createFormScorecards.par" placeholder="Par">
-                            <input class="addaScore" type="text" ng-model="ctrl.createFormScorecards.score" placeholder="Add Score">
-                        </div>
-                        
-                        <input class="submitAddBtn" type="submit">
-                       
-                    </form>
-            </div>
      
 
     <!-- /* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */ -->
@@ -129,6 +113,39 @@
         </table>
  
 
+            <!-- Add New Score -->
+            <div class="new-Score-container">
+                <em class="h2addScore" ng-click="ctrl.addScore()" class="add"></em>
+                <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
+            <div class="invisibleStartGame">
+                <form class="addScoreForm" ng-submit="ctrl.processCreateFormScorecards(golfer.id, golfer.scorecards)">
+                    <div class="addAscoreDiv">
+                            <input class="addaScore" type="text" value="1" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
+                            <input class="addaScore" type="text" value="3" placeholder="add par" ng-model="ctrl.createFormScorecards.par" >
+                            <input class="addaScore" type="text" value="3" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
+                        </div>
+            
+                    <button class="submitAddBtn" type="submit">add data input</button>
+                </form>
+            </div>
+            <button class="submitAddBtn" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Next Hole: default par and score</button>
+
+            <!-- invisible -->
+
+        <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
+            <div class="invisibleStartGame">
+                <input class="addaScore" type="text" name="a" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
+                <input class="addaScore" type="text" name="b" placeholder="add par" ng-model="ctrl.createFormScorecards.par">
+                <input class="addaScore" type="text" name="c" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
+            </div>
+            <button class="submitAddBtn" type="submit">Start Game</button>
+        </form>
+
+         <!-- end of invisible -->
+
+
+            </div>
+            <!-- end of add new score -->
 
                 <br>
                 <!-- edit scorecards -->
@@ -156,7 +173,7 @@
             </div>
               
             </div> 
-            <!-- end of ng-repeat -->
+            <!-- end of golfer in golfers ng-repeat -->
             </div>
             <!-- end of scorecard div show -->
             </div>

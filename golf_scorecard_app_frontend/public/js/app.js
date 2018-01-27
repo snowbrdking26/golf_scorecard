@@ -12,6 +12,8 @@ app.controller('MainController', ['$http', function ($http) {
     //     this.addForm = !this.addForm;
     // }
 
+
+
     // todays date
     // https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
 
@@ -58,8 +60,7 @@ app.controller('MainController', ['$http', function ($http) {
 
 
     // Global Variables
-    this.allHoles = [];
-    this.golfers = [];
+    // this.golfers = [];
 
 
     /////// Golfers CRUD ///////
@@ -169,6 +170,113 @@ app.controller('MainController', ['$http', function ($http) {
 
 
 
+
+
+
+
+
+
+    // https://stackoverflow.com/questions/5223/length-of-a-javascript-object
+    // http://www.codeblocq.com/2016/05/Get-the-last-element-of-an-Array-in-JavaScript/
+
+    // =====================
+    // CREATE Route - scorecards
+    // =====================
+
+    this.createFormScorecards = {}
+
+    this.incrementingRow = (golferID, scorecards) => {
+        console.log(golferID)
+        console.log(scorecards)
+
+        var scorecardLength = Object.keys(scorecards).length
+        // console.log(scorecardLength)
+        var createFormScorecards = scorecards[scorecardLength - 1]
+        this.createFormScorecards = createFormScorecards
+        console.log(this.createFormScorecards)
+
+        createFormScorecards.holenumber++;
+        this.createFormScorecards.par = 3
+        this.createFormScorecards.score = 3
+
+
+   
+        
+
+        console.log(golferID)
+        $http({
+            url: this.url + '/golfers/' + golferID + '/scorecards',
+            method: 'POST',
+            data: this.createFormScorecards
+            // data: { holenumber: lastScorecard.holenumber}
+        }).then(response => {
+            console.log(response.data)
+            this.scorecards.push(response.data);
+            console.log(scorecards)
+
+            this.createFormScorecards = {};
+            this.getGolfers(); //refreshes golfers & scorecards
+        }).catch(err => console.log('Catch', err))
+    }
+
+
+
+
+
+
+    // =====================
+    // CREATE Route - scorecards - start game - prefill data on hole 1
+    // =====================
+
+    // https://stackoverflow.com/questions/9226371/fill-data-in-input-boxes-automatically
+    // https://stackoverflow.com/questions/27664654/html-how-to-fill-input-text-on-load
+
+    this.createFormScorecards = {}
+
+    this.startGame = (golferID) => {
+        console.log("=======")
+        this.createFormScorecards.holenumber = 1;
+        this.createFormScorecards.par = 3;
+        this.createFormScorecards.score = 3;
+
+        // const values = {
+        //     a: 1,
+        //     b: 5,
+        //     c: 5
+        // }
+
+        // const keys = Object.keys(values)
+        // const length = keys.length
+
+        // for (let i = 0; i < length; i++) {
+        //     const key = keys[i]
+        //     document.getElementsByName(key)[0].value = values[key]
+        // }
+
+        console.log(golferID)
+        $http({
+            url: this.url + '/golfers/' + golferID + '/scorecards',
+            method: 'POST',
+            data: this.createFormScorecards
+        }).then(response => {
+            console.log(response.data)
+            this.scorecards.push(response.data);
+
+            
+
+
+            this.createFormScorecards = {};
+            this.getGolfers(); //refreshes golfers & scorecards
+        }).catch(err => console.log('Catch', err))
+    }
+
+
+
+
+
+
+// ///////////////////////////////////
+
     // =====================
     // CREATE Route - scorecards
     // =====================
@@ -188,6 +296,7 @@ app.controller('MainController', ['$http', function ($http) {
             this.getGolfers(); //refreshes golfers & scorecards
         }).catch(err => console.log('Catch', err))
     }
+
 
     // ==============
     // UPDATE Route - scorecards
