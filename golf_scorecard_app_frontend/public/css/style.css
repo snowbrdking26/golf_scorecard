@@ -250,9 +250,9 @@ justify-content: center;
 
 .scorecardimage {
     border: 1px solid black;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 0px;
-    width: auto;
+    width: 90%;
 }
 
 
@@ -301,6 +301,8 @@ justify-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 99%;
 }
 
 .in-scorecard {
@@ -318,6 +320,19 @@ justify-content: center;
     flex-direction: row;
 }
 
+.submitAddBtn .submitAddBtn2{
+  width: 98%;
+  height: 40px;
+  padding: 0px 0px;
+  margin: 5px 5px 5px 5px;
+  background:green;
+  border: none;
+  font-size:1em;
+  color:white;
+  border-radius: 10px;
+}
+
+
 .submitAddBtn{
   width: 98%;
   height: 40px;
@@ -329,6 +344,7 @@ justify-content: center;
   color:white;
   border-radius: 10px;
 }
+
 
 .ScorecardsubmitAddBtn {
    width: 100%;
@@ -350,6 +366,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin: 3px;
 }
 
 td, th {
@@ -423,7 +440,8 @@ vertical-align: center;
 }
 
 .addAgolferForm {
-width: 100%
+width: 100%;
+display: inline-block;
 }
 
 .flexforminputsAddScore {
@@ -448,4 +466,30 @@ width: 100%;
 
 .invisibleStartGame {
   display: none;
+}
+
+.displayNone{
+  display: none;
+}
+
+.centerAtag {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+}
+
+.containList {
+  text-align: center;
+  display: block;
+}
+
+.topScorecardListTitle {
+  padding: 14px 16px;
+  text-align: center;
+  margin-left:39px;
+}
+
+.listTopH2 {
+  padding: 0 14px;
+  margin-left:39px;
 }

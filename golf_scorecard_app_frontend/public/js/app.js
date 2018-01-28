@@ -1,6 +1,6 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
-app.controller('MainController', ['$http', function ($http) {
+app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
     this.url = 'http://localhost:3000'
     // this.addForm = false;
     // this.editModal = false;
@@ -199,9 +199,7 @@ app.controller('MainController', ['$http', function ($http) {
         this.createFormScorecards.par = 3
         this.createFormScorecards.score = 3
 
-
-   
-        
+ 
 
         console.log(golferID)
         $http({
@@ -225,7 +223,7 @@ app.controller('MainController', ['$http', function ($http) {
 
 
     // =====================
-    // CREATE Route - scorecards - start game - prefill data on hole 1
+    // CREATE Route - scorecards - start game - prefill data
     // =====================
 
     // https://stackoverflow.com/questions/9226371/fill-data-in-input-boxes-automatically
@@ -272,7 +270,55 @@ app.controller('MainController', ['$http', function ($http) {
 
 
 
+// //////////////////////////////////
 
+
+// add class
+// remove display class
+// jquery add class and remove class
+// Display: None
+
+// for in loop 
+// pull out each score 
+// store in a variable
+// 
+    // https://stackoverflow.com/questions/17478014/injecting-http-and-scope-into-function-within-controller
+    // http://jsfiddle.net/geonunez/pWG2S/
+    // https://stackoverflow.com/questions/20460369/adding-and-removing-classes-in-angularjs-using-ng-click
+
+
+
+    // $scope.submitAddBtn = "submitAddBtn"
+    // $scope.submitAddBtn2 = "displayNone"
+    // // change 2nd back to $scope.displayNone = "displayNone"
+    // // then in .ejs have only ng-class on <button ng-class="...">
+
+    // $scope.changeClass = function(){
+
+    //     if ($scope.submitAddBtn === "submitAddBtn") {
+    //         $scope.submitAddBtn = "displayNone";
+
+    //         $scope.displayNone = "submitAddBtn" 
+    //         console.log($scope.displayNone)
+    //     } else
+    //         $scope.classToChange2 = "blue"
+    // };
+
+    var totals = [0, 0, 0];
+    $(document).ready(function () {
+
+        var $dataRows = $("#sum_table tr:not('.totalColumn, .titlerow')");
+
+        $dataRows.each(function () {
+            $(this).find('.rowDataSd').each(function (i) {
+                totals[i] += parseInt($(this).html());
+            });
+        });
+        $("#sum_table td.totalCol").each(function (i) {
+            $(this).html("total:" + totals[i]);
+        });
+
+    });
 
 
 // ///////////////////////////////////
