@@ -305,6 +305,37 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
     // };
 
 
+    // Summing up Object.keys for Score total and Par total
+    // https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object
+
+this.findScore = (scorecards) => {
+    console.log("===Starting Sum of Score=====")
+    // console.log(scorecards)
+
+    var scorecardLength = Object.keys(scorecards).length
+        // console.log(scorecardLength)
+
+    var sumScore = 0;
+    var sumPar = 0;
+
+    for (let i = 0; i < scorecardLength; i++) {
+        // console.log(scorecards[i].score)
+        sumScore += parseFloat(scorecards[i].score);
+        sumPar += parseFloat(scorecards[i].par);
+    }
+    // console.log(sumScore)
+    // console.log(sumPar)
+    this.sumScore = sumScore;
+    this.sumPar = sumPar;
+
+    };
+ 
+
+
+
+
+
+
 
 
 
