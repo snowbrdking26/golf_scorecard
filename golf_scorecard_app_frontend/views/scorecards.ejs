@@ -47,7 +47,7 @@
     
     <!-- Parent ng-repeat -->
   
-        <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers">
+        <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers | orderBy: 'id'">
     <a name="{{golfer.id}}"></a>
     <!-- anchor tag destination from toplinks -->
     <div class="scorecardimage">
@@ -91,7 +91,7 @@
                     <td>
                         <div class="tdleft">Hole # {{scorecard.holenumber}}</div>
                         <div class="tdright">
-                        <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id)" class="add">Remove</div>
+                        <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)" class="add">Remove</div>
                         <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard; ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="add">Edit</div>
                         </div>
                     </td>
@@ -101,8 +101,8 @@
                              {{scorecard.par}}
                             </div>
                             <div class="tdright">
-                        <button class="btnTdinc" ng-click="ctrl.incPar( scorecard ); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">+</button>
-                        <button class="btnTddec" ng-click="ctrl.decPar( scorecard ); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">-</button>
+                        <button class="btnTdinc" ng-click="ctrl.incPar( scorecard )">+</button>
+                        <button class="btnTddec" ng-click="ctrl.decPar( scorecard )">-</button>
                         </div>
                         </div>
                     </td>
@@ -121,24 +121,30 @@
                 </tr>
                 <!-- score totals -->
                 <tr>
-                    <td>Totals</td>
-                    <td>Total Par: {{golfer.totalpar}}</td>
-                    <td>Total Score: {{golfer.totalscore}}</td>
-                    
+                    <td>Hole #</td>
+                    <td> Par 
+                        <!-- {{ctrl.sumPar}} -->
+                        <!-- {{golfer.totalpar ? golfer.totalpar : 3}} -->
+                    </td>
+                    <td>Score 
+                        <!-- {{ctrl.sumScore}} -->
+                         <!-- {{golfer.totalscore ? golfer.totalscore : 3}} -->
+                        </td>
                 </tr>
         </table>
 
 
+
             <!-- Add New Score -->
             <div class="new-Score-container">
-                <em class="h2addScore" ng-click="ctrl.addScore()" class="add"></em>
+                <!-- <em class="h2addScore" ng-click="ctrl.addScore()" class="add"></em> -->
                 <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
             <div class="invisibleStartGame">
                 <form class="addScoreForm" ng-submit="ctrl.processCreateFormScorecards(golfer.id, golfer.scorecards)">
                     <div class="addAscoreDiv">
-                            <input class="addaScore" type="text" value="1" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
-                            <input class="addaScore" type="text" value="3" placeholder="add par" ng-model="ctrl.createFormScorecards.par" >
-                            <input class="addaScore" type="text" value="3" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
+                            <input class="addaScore" type="text" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
+                            <input class="addaScore" type="text" placeholder="add par" ng-model="ctrl.createFormScorecards.par" >
+                            <input class="addaScore" type="text"  placeholder="add score" ng-model="ctrl.createFormScorecards.score">
                         </div>
             
                     <button class="submitAddBtn" type="submit" ng-click="ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">add data input</button>
@@ -148,6 +154,8 @@
                <button ng-class="submitAddBtn2" class="submitAddBtn" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Next Hole: default par and score</button>
             <!-- </div> -->
 
+            <!-- removed from button because of time unefficient -->
+             <!-- ; ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer) -->
 
         <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
             <!-- invisible below -->
@@ -158,7 +166,7 @@
             </div>
             <!-- end of invisible -->
             <!-- <div ng-class="classToChange"> -->
-                  <button ng-class="submitAddBtn" class="submitAddBtn" ng-click="changeClass(golfer.scorecards); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" type="submit">Start Game</button>
+                  <button ng-class="submitAddBtn" class="submitAddBtn" type="submit">Start Game</button>
             <!-- </div> -->
         </form>
 </div>
@@ -186,10 +194,13 @@
                                 </div>
                             </form>
                             <!-- Sum of score -->
-                            <button ng-click="ctrl.findScore(golfer)" class="submitAddBtn" type="submit">Sum of Score</button>
-                            <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="submitAddBtn" type="submit">testing updateTotalScore and Par</button>
-
+                            <!-- <button ng-click="ctrl.findScore(golfer)" class="submitAddBtn" type="submit">Sum of Score</button> -->
+                            <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv(); showScoreDiv()" class="submitAddBtn" type="submit">testing updateTotalScore and Par</button>
+                            <!-- <a ng-click="showScoreDiv()"> showScoreDiv?</a> -->
+                            <div ng-hide="scoreToHide" >Par:{{golfer.totalpar}} and Score:{{golfer.totalscore}}</div>
                              
+
+                             <!--  -->
                         </div>
                     </div>
                 </div>
