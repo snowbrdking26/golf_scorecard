@@ -17,9 +17,12 @@
         <h2 class="listTopH2" >Scorecard</h2>
         <div class="topScorecardListTitle"> List (click to find scorecard)</div>
         <a class="centerAtag" ng-repeat="golfer in ctrl.golfers" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}}
-
+            
         </a>
+    
+            <button ng-click="ctrl.findAllGolfersScores()"> find score</button>
 
+        
 
        
             <!-- Add New Golfer -->
@@ -113,10 +116,17 @@
                             </div>
                             </div>
                         </td>
-                        <!-- <td>{{scorecard.score}}</td> matches line 73 -->
+                       
+                </tr>
+                <!-- score totals -->
+                <tr>
+                    <td>Totals</td>
+                    <td>Total Par: {{ctrl.sumPar}}</td>
+                    <td>Total Score: {{ctrl.sumScore}}</td>
+                    
                 </tr>
         </table>
- 
+
 
             <!-- Add New Score -->
             <div class="new-Score-container">
@@ -176,8 +186,7 @@
                             </form>
                             <!-- Sum of score -->
                             <button ng-click="ctrl.findScore(golfer.scorecards)" class="submitAddBtn" type="submit">Sum of Score</button>
-                            <div> Total Score: {{ctrl.sumScore}}</div>
-                            <div>Total Par: {{ctrl.sumPar}}</div>
+                            
                         </div>
                     </div>
                 </div>
@@ -185,9 +194,9 @@
         </div>
         <!-- end of show/hide div wrapper -->
             </div>
-              
-            </div> 
             <!-- end of golfer in golfers ng-repeat -->
+            </div> 
+           
             </div>
             <!-- end of scorecard div show -->
             </div>
