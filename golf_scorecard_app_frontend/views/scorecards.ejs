@@ -56,9 +56,9 @@
             <div class="leftWatchlistBar">
                 <h3 class="WatchlistTitle"> Course: {{golfer.course}}</h3>
                 <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
-                
-                <div ng-click="ctrl.deleteGolfer(golfer.id)" class="scorecard btnspacing">Remove</div>
-                <div ng-click="ctrl.editModal = true; ctrl.toEdit = golfer" class="scorecard btnspacing">Edit</div>
+    
+                <div ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="scorecard btnspacing">Remove</div>
+                <div class="scorecard btnspacing">Edit</div>
                 
             </div>
 
@@ -91,7 +91,7 @@
                         <div class="tdleft">Hole # {{scorecard.holenumber}}</div>
                         <div class="tdright">
                         <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id)" class="add">Remove</div>
-                        <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" class="add">Edit</div>
+                        <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard; ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="add">Edit</div>
                         </div>
                     </td>
                     <td>
@@ -100,8 +100,8 @@
                              {{scorecard.par}}
                             </div>
                             <div class="tdright">
-                        <button class="btnTdinc" ng-click="ctrl.incPar( scorecard )">+</button>
-                        <button class="btnTddec" ng-click="ctrl.decPar( scorecard )">-</button>
+                        <button class="btnTdinc" ng-click="ctrl.incPar( scorecard ); ctrl.updateTotalPar(golfer)">+</button>
+                        <button class="btnTddec" ng-click="ctrl.decPar( scorecard ); ctrl.updateTotalPar(golfer)">-</button>
                         </div>
                         </div>
                     </td>
@@ -111,8 +111,8 @@
                                 {{scorecard.score}}
                                 </div>
                             <div class="tdright">
-                            <button class="btnTdinc" ng-click="ctrl.incScore( scorecard )"> +</button>
-                            <button class="btnTddec" ng-click="ctrl.decScore( scorecard )"> -</button>
+                            <button class="btnTdinc" ng-click="ctrl.incScore( scorecard ); ctrl.updateTotalScore(golfer)"> +</button>
+                            <button class="btnTddec" ng-click="ctrl.decScore( scorecard ); ctrl.updateTotalScore(golfer)"> -</button>
                             </div>
                             </div>
                         </td>
@@ -144,7 +144,7 @@
                 </form>
             </div>
             <!-- <div ng-class="classToChange2"> -->
-               <button ng-class="submitAddBtn2" class="submitAddBtn" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Next Hole: default par and score</button>
+               <button ng-class="submitAddBtn2" class="submitAddBtn" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)">Next Hole: default par and score</button>
             <!-- </div> -->
 
 
@@ -157,7 +157,7 @@
             </div>
             <!-- end of invisible -->
             <!-- <div ng-class="classToChange"> -->
-                  <button ng-class="submitAddBtn" class="submitAddBtn" ng-click="changeClass(golfer.scorecards)" type="submit">Start Game</button>
+                  <button ng-class="submitAddBtn" class="submitAddBtn" ng-click="changeClass(golfer.scorecards); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" type="submit">Start Game</button>
             <!-- </div> -->
         </form>
 </div>
@@ -180,7 +180,7 @@
                                     <input type="text" ng-model="ctrl.createFormScorecards.par" placeholder=" Par {{ctrl.toEditScorecard.par}}">
                                     <input type="text" ng-model="ctrl.createFormScorecards.score" placeholder="Score {{ctrl.toEditScorecard.score}}">
                                 <!-- <button ng-class="submitAddBtn" class="submitAddBtn" type="submit">Submit Edit Scores</button> -->
-                                    <input type="submit">
+                                    <input ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" type="submit">
                                 
                                 </div>
                             </form>

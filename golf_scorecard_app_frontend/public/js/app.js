@@ -123,6 +123,9 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
         }).catch(err => console.log(err))
     }
 
+
+    // https://stackoverflow.com/questions/25355158/postman-put-json-returns-null
+
     // ==============
     // UPDATE Route - golfers - totalscore update
     // ==============
@@ -173,6 +176,7 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
     }
 
 
+    // https://stackoverflow.com/questions/16813945/how-to-add-many-functions-in-one-ng-click
 
     // ==============
     // UPDATE Route - golfers - totalscore update
@@ -797,6 +801,21 @@ function closeNavLogin() {
 
 
 // Links to resources
+// https://www.w3schools.com/tags/tag_th.asp
+// https://stackoverflow.com/questions/17457024/angular-ng-click-with-call-to-a-controller-function-not-working
+// https://www.w3schools.com/angular/tryit.asp?filename=try_ng_ng-click
+// https://stackoverflow.com/questions/4774378/using-nested-lists-instead-of-tables-for-displaying-data-in-html
+// http://jsfiddle.net/vojtajina/YdAsa/
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat
+// https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object
+// https://stackoverflow.com/questions/23849365/adding-scores-to-a-variable
+// https://stackoverflow.com/questions/14810506/map-function-for-objects-instead-of-arrays
+// http://jsfiddle.net/4r9ycjf5/1/
+// http://clockworkchilli.com/blog/7_set_up_a_node.js_server_to_add_a_leaderboard_to_your_game
+// https://stackoverflow.com/questions/25355158/postman-put-json-returns-null
+// https://stackoverflow.com/questions/36413159/understanding-nested-for-loops-in-javascript
+ // https://stackoverflow.com/questions/16813945/how-to-add-many-functions-in-one-ng-click
 // https://github.com/a8m/angular-filter#map
 // https://justinklemm.com/angularjs-filter-ordering-objects-ngrepeat/
 // https://stackoverflow.com/questions/38313260/how-to-display-map-object-content-in-angularjs-ng-repeat?rq=1
