@@ -320,6 +320,8 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
             
             this.createFormScorecards = {};
             this.getGolfers(); //refreshes golfers & scorecards
+            // this.updateTotalScore(this.golfers); //update total score
+            // this.updateTotalPar(this.golfers); //update total par
         }).catch(err => console.log('Catch', err))
     }
 
@@ -356,6 +358,8 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 
             this.createFormScorecards = {};
             this.getGolfers(); //refreshes golfers & scorecards
+            // this.updateTotalScore(this.golfers); //update total score
+            // this.updateTotalPar(this.golfers); //update total par
         }).catch(err => console.log('Catch', err))
     }
 
