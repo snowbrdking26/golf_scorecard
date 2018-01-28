@@ -86,6 +86,7 @@
                 <!-- nested ng-repeat -  get score prices-->
                 <!-- <tr ng-repeat="score in scorecard.scorecards"> -->
                 <tr ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
+               
 
                     <td>
                         <div class="tdleft">Hole # {{scorecard.holenumber}}</div>
