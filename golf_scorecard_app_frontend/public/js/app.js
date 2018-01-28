@@ -306,7 +306,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
             this.scorecards = response.data
             // console.log(this.scorecards)
             console.log('array length = ' + this.scorecards.length)
-            this.findScore(this.golfers.scorecards); //find score
+            // this.findScore(this.golfers.scorecards); //find score
             this.updateTotalScore(this.golfers); //update total score
             this.updateTotalPar(this.golfers); //update total par
         }, error => {
@@ -551,10 +551,6 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
 
 
-
-
-
- 
 
 
 

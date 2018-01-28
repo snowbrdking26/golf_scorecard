@@ -14,13 +14,13 @@
     <% include partials/nav.ejs %>
 <main>
 
-        <h2 class="listTopH2" >Scorecard</h2>
+        <h2 class="listTopH2" >Scorecards and Leaderboard</h2>
         <div class="topScorecardListTitle"> List (click to find scorecard)</div>
-        <a class="centerAtag" ng-repeat="golfer in ctrl.golfers" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}}
+        <a class="centerAtag" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}
             
         </a>
     
-            <button ng-click="ctrl.findAllGolfersScores()"> find score</button>
+            <button ng-click="ctrl.getScorecards()"> find score</button>
 
         
 
