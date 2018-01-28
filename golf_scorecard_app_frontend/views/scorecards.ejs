@@ -71,8 +71,8 @@
 
     <!-- /* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */ -->
     <!-- https://www.w3schools.com/angular/angular_tables.asp -->
-        <table id="sum_table">
-            <!-- <tr> -->
+        <table>
+            <tr>
             <th>Hole #</th>
             <th>Par</th>
             <th>{{golfer.player}} Score</th>
@@ -82,16 +82,16 @@
 
                 <!-- nested ng-repeat -  get score prices-->
                 <!-- <tr ng-repeat="score in scorecard.scorecards"> -->
-                <tr class="titlerow" ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
+                <tr ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
 
-                    <td class="rowDataSd">
+                    <td>
                         <div class="tdleft">Hole # {{scorecard.holenumber}}</div>
                         <div class="tdright">
                         <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id)" class="add">Remove</div>
                         <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" class="add">Edit</div>
                         </div>
                     </td>
-                    <td class="rowDataSd">
+                    <td>
                         <div class="insideTd">
                         <div class="tdleft">
                              {{scorecard.par}}
@@ -102,22 +102,18 @@
                         </div>
                         </div>
                     </td>
-                    <td class="rowDataSd">
-                        <div class="insideTd">
-                        <div class="tdleft">
-                            {{scorecard.score}}
+                        <td>
+                            <div class="insideTd">
+                            <div class="tdleft">
+                                {{scorecard.score}}
+                                </div>
+                            <div class="tdright">
+                            <button class="btnTdinc" ng-click="ctrl.incScore( scorecard )"> +</button>
+                            <button class="btnTddec" ng-click="ctrl.decScore( scorecard )"> -</button>
                             </div>
-                        <div class="tdright">
-                        <button class="btnTdinc" ng-click="ctrl.incScore( scorecard )"> +</button>
-                        <button class="btnTddec" ng-click="ctrl.decScore( scorecard )"> -</button>
-                        </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr class="totalColumn">
-                    <td class="totalCol">Totals</td>
-                    <td class="totalCol">Course Par:</td>
-                    <td class="totalCol">Total Score:</td>
+                            </div>
+                        </td>
+                        <!-- <td>{{scorecard.score}}</td> matches line 73 -->
                 </tr>
         </table>
  
