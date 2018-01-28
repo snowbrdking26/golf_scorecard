@@ -124,6 +124,109 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
     }
 
     // ==============
+    // UPDATE Route - golfers - totalscore update
+    // ==============
+
+    this.createForm = {}
+
+    this.updateTotalPar = (golfer) => {
+
+        console.log("=== Starting Sum of Indiv Score =====")
+        // console.log(scorecards)
+
+        var scorecardLength = Object.keys(golfer.scorecards).length
+        // console.log(scorecardLength)
+
+        var sumScore = 0;
+        var sumPar = 0;
+
+        for (let i = 0; i < scorecardLength; i++) {
+            // console.log(scorecards[i].score)
+            sumScore += parseFloat(golfer.scorecards[i].score);
+            sumPar += parseFloat(golfer.scorecards[i].par);
+        }
+        console.log('Score = ' + sumScore)
+        console.log('Par = ' + sumPar)
+        console.log('GolferID = ' + golfer.id)
+        this.sumScore = sumScore;
+        this.sumPar = sumPar;
+
+        golfer.totalscore = sumScore; //passing in total score
+        golfer.totalpar = sumPar; //passing in total par
+        console.log(golfer.totalscore)
+        console.log(golfer.totalpar)
+
+        console.log(golfer); //has correct score and par
+
+        $http({
+            url: this.url + '/golfers/' + golfer.id,
+            method: 'PUT',
+            data: { totalpar: golfer.totalpar }
+        }).then(response => {
+            this.getGolfers();
+            this.createForm = {};
+            this.toEdit = {}; //clears input field
+            this.editModal = false;
+        }, error => {
+            console.log(error.message);
+        }).catch(err => console.log(err))
+    }
+
+
+
+    // ==============
+    // UPDATE Route - golfers - totalscore update
+    // ==============
+
+    this.createForm = {}
+
+    this.updateTotalScore = (golfer) => {
+
+        console.log("=== Starting Sum of Indiv Score =====")
+        // console.log(scorecards)
+
+        var scorecardLength = Object.keys(golfer.scorecards).length
+        // console.log(scorecardLength)
+
+        var sumScore = 0;
+        var sumPar = 0;
+
+        for (let i = 0; i < scorecardLength; i++) {
+            // console.log(scorecards[i].score)
+            sumScore += parseFloat(golfer.scorecards[i].score);
+            sumPar += parseFloat(golfer.scorecards[i].par);
+        }
+        console.log('Score = ' + sumScore)
+        console.log('Par = ' + sumPar)
+        console.log('GolferID = ' + golfer.id)
+        this.sumScore = sumScore;
+        this.sumPar = sumPar;
+
+        golfer.totalscore = sumScore; //passing in total score
+        golfer.totalpar = sumPar; //passing in total par
+        console.log(golfer.totalscore)
+        console.log(golfer.totalpar)
+
+        console.log(golfer); //has correct score and par
+
+        $http({
+            url: this.url + '/golfers/' + golfer.id,
+            method: 'PUT',
+            data: { totalscore: golfer.totalscore }
+        }).then(response => {
+            this.getGolfers();
+            this.createForm = {};
+            this.toEdit = {}; //clears input field
+            this.editModal = false;
+        }, error => {
+            console.log(error.message);
+        }).catch(err => console.log(err))
+    }
+
+
+
+
+    // ==============
     // DELETE Route - golfers
     // ==============
 
@@ -160,7 +263,9 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
             this.scorecards = response.data
             // console.log(this.scorecards)
             console.log('array length = ' + this.scorecards.length)
-            this.findScore(this.scorecards); //find score
+            this.findScore(this.golfers.scorecards); //find score
+            this.updateTotalScore(this.golfers); //update total score
+            this.updateTotalPar(this.golfers); //update total par
         }, error => {
             // console.log(error.message);
         }).catch(err => console.log(err))
@@ -172,15 +277,11 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
 
 
 
-
-
-
-
     // https://stackoverflow.com/questions/5223/length-of-a-javascript-object
     // http://www.codeblocq.com/2016/05/Get-the-last-element-of-an-Array-in-JavaScript/
 
     // =====================
-    // CREATE Route - scorecards - increment row #
+    // CREATE Route - scorecards - increment row# & prefill default score & par
     // =====================
 
     this.createFormScorecards = {}
@@ -249,9 +350,6 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
             console.log(response.data)
             this.scorecards.push(response.data);
 
-            
-
-
             this.createFormScorecards = {};
             this.getGolfers(); //refreshes golfers & scorecards
         }).catch(err => console.log('Catch', err))
@@ -297,11 +395,26 @@ app.controller('MainController', ['$scope', '$http', function ($scope, $http) {
     // Summing up Object.keys for Score total and Par total
     // https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object
 
-this.findScore = (scorecards) => {
-    console.log("===Starting Sum of Score=====")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+this.findScore = (golfer) => {
+    console.log("=== Starting Sum of Indiv Score =====")
     // console.log(scorecards)
 
-    var scorecardLength = Object.keys(scorecards).length
+    var scorecardLength = Object.keys(golfer.scorecards).length
         // console.log(scorecardLength)
 
     var sumScore = 0;
@@ -309,15 +422,34 @@ this.findScore = (scorecards) => {
 
     for (let i = 0; i < scorecardLength; i++) {
         // console.log(scorecards[i].score)
-        sumScore += parseFloat(scorecards[i].score);
-        sumPar += parseFloat(scorecards[i].par);
+        sumScore += parseFloat(golfer.scorecards[i].score);
+        sumPar += parseFloat(golfer.scorecards[i].par);
     }
-    // console.log(sumScore)
-    // console.log(sumPar)
+    console.log('Score = ' + sumScore)
+    console.log('Par = ' + sumPar)
+    console.log('GolferID = ' + golfer.id)
     this.sumScore = sumScore;
     this.sumPar = sumPar;
 
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 this.findAllGolfersScores = () => {
 
@@ -340,32 +472,21 @@ this.findAllGolfersScores = () => {
 
 for (let i = 0; i < numberOfGolfers; i++) {
     for (let j = 0; j < this.golfers[i].scorecards.length; j++) {
-      
         // console.log('score = ' + this.golfers[i].scorecards[j].score)
         // console.log('golfer_id = ' + this.golfers[i].scorecards[j].golfer_id)
-
-
         console.log(
             'score = ' + this.golfers[i].scorecards[j].score + ', ' + 'golfer_id = ' + this.golfers[i].scorecards[j].golfer_id
         )
-
         totalScore += this.golfers[i].scorecards[j].score;
-
-
             allsum++
-
     }
 }
-
     console.log('number of holes scored = ' + allsum)
     console.log('total scores of all players = ' + totalScore)
-
-
     // console.log(sumScore)
     // console.log(sumPar)
     this.sumScore = sumScore;
     this.sumPar = sumPar;
-
 };
 
 

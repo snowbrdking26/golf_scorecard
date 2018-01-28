@@ -121,8 +121,8 @@
                 <!-- score totals -->
                 <tr>
                     <td>Totals</td>
-                    <td>Total Par: {{ctrl.sumPar}}</td>
-                    <td>Total Score: {{ctrl.sumScore}}</td>
+                    <td>Total Par: {{golfer.totalpar}}</td>
+                    <td>Total Score: {{golfer.totalscore}}</td>
                     
                 </tr>
         </table>
@@ -161,7 +161,7 @@
             <!-- </div> -->
         </form>
 </div>
-        
+
 
 
             </div>
@@ -185,8 +185,10 @@
                                 </div>
                             </form>
                             <!-- Sum of score -->
-                            <button ng-click="ctrl.findScore(golfer.scorecards)" class="submitAddBtn" type="submit">Sum of Score</button>
-                            
+                            <button ng-click="ctrl.findScore(golfer)" class="submitAddBtn" type="submit">Sum of Score</button>
+                            <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="submitAddBtn" type="submit">testing updateTotalScore and Par</button>
+
+                             
                         </div>
                     </div>
                 </div>

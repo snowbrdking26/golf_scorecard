@@ -46,6 +46,6 @@ class GolfersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def golfer_params
-      params.require(:golfer).permit(:course, :player)
+      params.require(:golfer).permit(:course, :player, :totalscore, :totalpar)
     end
 end
