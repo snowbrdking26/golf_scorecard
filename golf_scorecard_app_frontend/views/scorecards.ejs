@@ -20,7 +20,7 @@
             
         </a>
     
-            <button ng-click="ctrl.getScorecards()"> find score</button>
+            <!-- <button ng-click="ctrl.getScorecards()"> find score</button> -->
 
         
 
@@ -58,7 +58,7 @@
                 <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
     
                 <div ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="scorecard btnspacing">Remove</div>
-                <div class="scorecard btnspacing">Edit</div>
+                <div ng-click="ctrl.toEdit = golfer" class="scorecard btnspacing">Edit</div>
                 
             </div>
 
@@ -195,7 +195,7 @@
                             </form>
                             <!-- Sum of score -->
                             <!-- <button ng-click="ctrl.findScore(golfer)" class="submitAddBtn" type="submit">Sum of Score</button> -->
-                            <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv(); showScoreDiv()" class="submitAddBtn" type="submit">testing updateTotalScore and Par</button>
+                            <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv(); showScoreDiv()" class="submitAddBtn" type="submit">View Total Score and Par</button>
                             <!-- <a ng-click="showScoreDiv()"> showScoreDiv?</a> -->
                             <div ng-hide="scoreToHide" >Par:{{golfer.totalpar}} and Score:{{golfer.totalscore}}</div>
                              

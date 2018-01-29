@@ -109,13 +109,13 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
     this.createForm = {}
 
     this.processEditForm = (golfer) => {
-        console.log(golfer);
         $http({
             url: this.url + '/golfers/' + golfer.id,
             method: 'PUT',
             data: this.createForm
         }).then(response => {
             this.getGolfers();
+            console.log(this.createForm); //correctly enters update
             this.createForm = {};
             this.toEdit = {}; //clears input field
             this.editModal = false;
