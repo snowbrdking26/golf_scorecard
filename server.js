@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const session = require('express-session');
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, console.log('My Golf Scorecards App on PORT:', PORT));
+
 
 // ==============
 // MIDDLEWARE
@@ -15,6 +15,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+
 
 app.use(express.static('public'));
 
@@ -37,12 +38,10 @@ app.use('/session', sessionsController);
 // ROUTES
 // ==============
 
+
 app.get('/', (req, res) => {
     res.render("index.ejs");
+    // res.send('test')
 });
 
-
-
-// app.get('/', (req, res) => {
-//     res.send(stockKey);
-// });
+app.listen(PORT, console.log('My Golf Scorecards App on PORT:', PORT));

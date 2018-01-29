@@ -853,6 +853,8 @@ function closeNavLogin() {
 
 
 // Links to resources
+// https://stackoverflow.com/questions/5450930/heroku-postgres-error-pgerror-error-relation-organizations-does-not-exist
+
 // https://www.w3schools.com/tags/tag_th.asp
 // https://stackoverflow.com/questions/17457024/angular-ng-click-with-call-to-a-controller-function-not-working
 // https://www.w3schools.com/angular/tryit.asp?filename=try_ng_ng-click

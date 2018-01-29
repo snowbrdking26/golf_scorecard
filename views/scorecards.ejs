@@ -12,19 +12,23 @@
 <body ng-controller="MainController as ctrl">
 
     <% include partials/nav.ejs %>
-<main>
 
-        <h2 class="listTopH2" >Scorecards and Leaderboard</h2>
-        <div class="topScorecardListTitle"> List (click to find scorecard)</div>
-        <a class="centerAtag" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}
+    <div class="mainPicturePage2">
+        <div class="ScorecardPageTopText">
+
+        </div>
+    </div>
+
+<main>
+    
+
+        <h2 class="listTopH2" >Scorecard Leaderboard</h2>
+        <a class="centerAtag" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}} >> View
             
         </a>
     
             <!-- <button ng-click="ctrl.getScorecards()"> find score</button> -->
 
-        
-
-       
             <!-- Add New Golfer -->
             <div class="new-scorecard-container">
                 <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
