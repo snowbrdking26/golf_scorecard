@@ -10,15 +10,10 @@ body {
     background-image: url(peter-lewicki-409738.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 600px;
+    /* height: 600px; */
 }
 
-.mainPicturePage2 {
-    background-image: url(edewaa-foster-21158.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 600px;
-}
+
 
 /* Image from unsplash */
 
@@ -80,7 +75,7 @@ main {
 }
 
 .in-scorecard {
-    /* width: 460px; */
+    width: 100%;
     display:flex;
 }
 
@@ -150,13 +145,15 @@ font-size: 30px;
 }
 
 .sidenav a {
-  padding: 8px 8px 8px 32px;
+  padding: 8px 90px 8px 32px;
   text-decoration: none;
   font-size: 25px;
   color: black;
   display: block;
   transition: 0.3s;
 }
+
+
 
 .sidenav a:hover {
   color: black;
@@ -168,13 +165,14 @@ font-size: 30px;
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+  padding: 10px 20px 10px 10px;
 }
 
 a {
   float: left;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   text-decoration: none;
   font-size: 16px;
 }
@@ -245,18 +243,16 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
 
-
 }
-
 
 
 /* scorecard page */
 
 .scorecardimage {
     border: 1px solid black;
-    margin: 20px auto;
+    margin: 20px 0;
     padding: 0px;
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -292,15 +288,6 @@ justify-content: center;
     /* flex-wrap: wrap; */
 }
 
-.flexforminputs{
-    display: flex;
-    flex-direction: row;
-    margin: 0px;
-
-    justify-content: space-between;
-
-}
-
 .contain-in-scorecards{
     display: flex;
     flex-direction: row;
@@ -322,6 +309,9 @@ justify-content: center;
 .new-scorecard-container {
     /* display: flex; */
     flex-direction: row;
+    padding: 4%;
+    margin: 4%;
+    width: 70%;
 }
 
 .submitAddBtn .submitAddBtn2{
@@ -480,6 +470,7 @@ width: 100%;
   text-align: center;
   width: 100%;
   display: inline-block;
+  padding: 10px 0;
 }
 
 .containList {
@@ -495,9 +486,218 @@ width: 100%;
 
 .listTopH2 {
   padding: 0 14px;
-  margin-left:39px;
+  margin: 10px 39px 10px 39px;
 }
 
 /* #scoreToHide {
   display: none;
 } */
+
+.mainPicturePage2 {
+    background-image: url(edewaa-foster-21158.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 600px; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.circleButton:hover {
+  color: white;
+}
+
+
+.buttonForCheckbox {
+/* text-align: right; */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+
+}
+
+
+/* tutorial on how to style checkboxes */
+/* https://paulund.co.uk/style-checkboxes-with-css */
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+
+
+label:before {
+  content: "+";
+  /* position: absolute; */
+}
+
+/* when closed this appears */
+.circleButton {
+	font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  vertical-align: text-top;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+   /* content: "+"; */
+  padding: 0.5em;
+  margin-right: 3px;
+  background: radial-gradient(ellipse at center, #ccc 45%, transparent 50%);
+
+}
+
+/* when open this appears */
+.circleButton label {
+	font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  vertical-align: text-top;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+	top: 0px;
+  left: 0px;
+  content: "-";
+  padding: 0.5em;
+  margin-right: 3px;
+  background: radial-gradient(ellipse at center, #ccc 45%, transparent 50%);
+ 
+}
+
+.circleButton input[type=checkbox]:checked + label {
+  left: 0px;
+  color: white;
+  font-size: 15px;
+  background: radial-gradient(ellipse at center, #2592D8 45%, transparent 50%);
+  /* content: "-"; */
+}
+
+/* example */
+
+
+
+
+
+.updateGolferToHide2 {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background-color: #e7e7e7;
+}
+
+.flexforminputsGolfers {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    justify-content: space-between;
+
+}
+
+.aTagNoPadding {
+padding: 0 0;
+}
+
+
+.buttonRemoveEdit {
+    width: 50%;
+    height: 38px;
+    padding: 0px 0px;
+    margin: 10px 0px 10px 0px;
+    background: #2592D8;
+    border: none;
+    font-size: 1em;
+    color: white;
+    border-radius: 10px;
+}
+
+.centerAtag1 {
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  padding: 0 0;
+}
+
+.aTagTopNav {
+  padding: 15px;
+}
+
+#mySidenavMenu {
+  z-index: 2;
+}
+
+#mySidenavLogin {
+  z-index: 3;
+
+}
+
+#mySidenavSignup {
+  z-index: 3;
+
+}
+
+footer {
+  display: block;
+  height:220px;
+  width:100%;
+  background-color: rgba(217, 207, 193, .4);
+  box-shadow: 5px 65px rgba(217, 207, 193, .4);
+  text-align: left;
+}
+
+.footerDiv {
+padding: 20px;
+}
+
+.footerdivparent {
+padding: 50px 20px;
+margin: 0 10%;
+}
+
+.centerweather {
+  padding: 2%;
+  margin: 5%;
+  width: 70%;
+z-index: 0;
+}
+
+.addAgolfer {
+  color: white;
+  width: 100%;
+
+}
+
+.containLeaderBoard {
+  display: block;
+  width: 100%;
+}
+
+.flexforminputs {
+   width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 0px;
+    justify-content: space-between;
+}
+
+.ScorecardsubmitAddBtn2 {
+     width: 100%;
+    height: 20px;
+    padding: 10px 0 8px 0;
+    margin: 8px 0px 0px 0px;
+    background:#2592D8;
+  border:none;
+  font-size:1em;
+  color:white;
+  border-radius: 10px;
+}

@@ -3,7 +3,7 @@
 
     <div class="left">
 
-        <a href="/">Golf Scorecard App
+        <a class="aTagTopNav" href="/">Golf Scorecard App
             <!-- <em>- score tracker</em> -->
         </a>
     </div>
@@ -11,42 +11,26 @@
     <div class="right">
 
         <!-- <a href="/">Home</a> -->
-        <a href="/scorecards">Scorecards</a>
-        <a ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
-        <!-- if not logged in -->
-        <!-- <a ng-if='!ctrl.user'> -->
-        <a href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
-            <span class="glyphicon glyphicon-log-in"></span> Login</a>
-        <!-- </a> -->
-        <!-- <a ng-if='!ctrl.user'> -->
-        <a href="#" onclick="openNav()" ng-if="!ctrl.user">
-            <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-        <!-- </a> -->
-        <!-- if logged in -->
-        <a ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
-            <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
-        </a>
-        <a ng-if='ctrl.user' href="#scorecard">
-            <span class="glyphicon glyphicon-log-out"></span> Top Ranked scores</a>
-        </a>
+        <a class="aTagTopNav" href="/scorecards">Scorecards</a>
+  
         <!-- three lines icon -->
-        <a class="threeLines" href="/">&#9776;</a>
+        <a class="threeLines" onclick="openMenuNav()">&#9776;</a>
     </div>
 </div>
 <!-- expanding sidenav SIGNUP -->
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+<div id="mySidenavSignup" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavSignup()">&times;</a>
     <div class="sideNavPadding">
-        <h2 class="sideNavH2">Sign Up</h2>
+        <h2 class="sideNavH2">Sign up</h2>
         <form class="formWidth" ng-submit='ctrl.registerUser()'>
             <div ng-if="ctrl.shortUser == true" id="incorrectPassword">Username too short</div>
             <div ng-if="ctrl.shortPass == true" id="incorrectPassword">Password too short</div>
             <div ng-if="ctrl.taken == true" id="incorrectPassword">Username taken</div>
-            <label for="username">Username: </label>
+            <!-- <label for="username">Username: </label> -->
             <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username"
             />
             <div class="form-group">
-                <label for="pwd">Password: </label>
+                <!-- <label for="pwd">Password: </label> -->
                 <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password"
                 />
             </div>
@@ -62,12 +46,12 @@
         <form class="formWidth" ng-submit='ctrl.loginUser()'>
             <div ng-if="ctrl.badLogin == true" id="incorrectPassword">Incorrect Username/Password</div>
             <div class="form-group">
-                <label for="pwd">Username: </label>
+                <!-- <label for="pwd">Username: </label> -->
                 <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username"
                 />
             </div>
             <div class="form-group">
-                <label for="pwd">Password: </label>
+                <!-- <label for="pwd">Password: </label> -->
                 <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password"
                 />
             </div>
@@ -79,4 +63,33 @@
           </form> -->
     </div>
 </div>
+<!-- expanding sidenav Menu -->
+<div id="mySidenavMenu" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
+    <div class="sideNavPadding">
+        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
+
+ <!-- if not logged in -->
+        <a ng-if='!ctrl.user'>
+            <a class="aTagTopNav" href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
+                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </a>
+        <a ng-if='!ctrl.user'>
+            <a class="aTagTopNav" href="#" onclick="openNavSignup()" ng-if="!ctrl.user">
+                <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+        </a>
+
+<!-- if logged in -->
+        <a ng-if='ctrl.user'>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
+                <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+        </a>
+        <a ng-if='ctrl.user'>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">
+                <span class="glyphicon glyphicon-log-out"></span> Scorecards</a>
+        </a>
+      
+    </div>
+</div>
+
 </div>

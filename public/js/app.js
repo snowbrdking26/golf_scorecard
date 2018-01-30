@@ -136,6 +136,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
     //     setTimeout(5000, doHide);
     // }
 
+// display and close score
     $scope.scoreToHide = true;
 
     $scope.showScoreDiv = function () {
@@ -144,6 +145,20 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
             $scope.scoreToHide = true;
         }, 3000);
     };
+
+// display and close update golfer
+    // $scope.updateGolferToHide = true;
+
+    // $scope.showUpdateGolfersDiv = function () {
+    //     $scope.updateGolferToHide = false;
+    // };
+
+    // $scope.hideUpdateGolfersDiv = function () {
+    //     $scope.updateGolferToHide = true;
+    // }
+
+ 
+
 
     
     // this.showScoreDiv = () => {
@@ -830,18 +845,32 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 // sidenav functions
 // ======================
 
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+function openNavSignup() {
+    document.getElementById("mySidenavSignup").style.width = "250px";
 }
+function closeNavSignup() {
+    document.getElementById("mySidenavSignup").style.width = "0";
+}
+
+
 function openNavLogin() {
     document.getElementById("mySidenavLogin").style.width = "250px";
-}
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
 }
 function closeNavLogin() {
     document.getElementById("mySidenavLogin").style.width = "0";
 }
+
+
+function openMenuNav() {
+    document.getElementById("mySidenavMenu").style.width = "250px";
+}
+function closeMenuNav() {
+    document.getElementById("mySidenavMenu").style.width = "0";
+}
+
+
+
+
 
 
 
