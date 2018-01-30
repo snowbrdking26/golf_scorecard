@@ -47,7 +47,7 @@ image
 }
 
 .mainTopText {
-    padding: 15% 20% 20% 20%;
+    padding: 15% 20% 35% 20%;
     color: white;
     opacity: 1;
 
@@ -652,7 +652,7 @@ footer {
   height:220px;
   width:100%;
   background-color: rgba(217, 207, 193, .4);
-  box-shadow: 5px 65px rgba(217, 207, 193, .4);
+  box-shadow: 0px 75px rgba(217, 207, 193, .4);
   text-align: left;
 }
 
