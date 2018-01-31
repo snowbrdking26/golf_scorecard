@@ -12,6 +12,7 @@
 
         <!-- <a href="/">Home</a> -->
         <a class="aTagTopNav" href="/scorecards">Scorecards</a>
+        <a class="aTagTopNav" onclick="openWeatherNav()">Weather</a>
   
         <!-- three lines icon -->
         <a class="threeLines" onclick="openMenuNav()">&#9776;</a>
@@ -63,6 +64,26 @@
           </form> -->
     </div>
 </div>
+
+
+    <!-- weather widget -->
+    <div id="mySidenavWeather" class="sidenav"> 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeWeatherNav()">&times;</a>
+    <div class="centerweather">
+    <a href="https://www.accuweather.com/en/us/new-york-ny/10007/weather-forecast/349727" class="aw-widget-legal">
+        <!--
+    By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+    -->
+    </a>
+    <div id="awcc1517352630222" class="aw-widget-current" data-locationkey="" data-unit="f" data-language="en-us" data-useip="true"
+        data-uid="awcc1517352630222"></div>
+    <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+    </div>
+</div>
+
+
+
+
 <!-- expanding sidenav Menu -->
 <div id="mySidenavMenu" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
@@ -70,14 +91,17 @@
         <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
 
  <!-- if not logged in -->
+        <a class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
+             <span class="glyphicon glyphicon-user"></span> Leaderboard</a>
         <a ng-if='!ctrl.user'>
             <a class="aTagTopNav" href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
                 <span class="glyphicon glyphicon-log-in"></span> Login</a>
         </a>
         <a ng-if='!ctrl.user'>
             <a class="aTagTopNav" href="#" onclick="openNavSignup()" ng-if="!ctrl.user">
-                <span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                <span class="glyphicon glyphicon-user"></span> Register</a>
         </a>
+        
 
 <!-- if logged in -->
         <a ng-if='ctrl.user'>

@@ -1,39 +1,8 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
 app.controller('MainController', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-    this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
-    // this.url = 'http://localhost:3000'
-    // this.addForm = false;
-    // this.editModal = false;
-    // this.taken = false;
-    // this.shortPass = false;
-    // this.shortUser = false;
-    // this.badLogin = false;
-    // this.addMovie = () => {
-    //     this.addForm = !this.addForm;
-    // }
-
-
-
-    // todays date
-    // https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
-
-    // var today = new Date();
-    // var dd = today.getDate();
-    // var mm = today.getMonth() + 1; //January is 0!
-    // var yyyy = today.getFullYear();
-
-    // if (dd < 10) {
-    //     dd = '0' + dd
-    // }
-
-    // if (mm < 10) {
-    //     mm = '0' + mm
-    // }
-
-    // today = yyyy + '-' + mm + '-' + dd;
-    // console.log(today)
-
+    // this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
+    this.url = 'http://localhost:3000'
 
 
 
@@ -49,19 +18,6 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
     }).catch(err => console.log(err))
 
 
-
-
-
-//  this.go = () => {
-//      console.log('=+=+=+=+=+=+=+=')
-//  }
-
-
-
-
-
-    // Global Variables
-    // this.golfers = [];
 
 
     /////// Golfers CRUD ///////
@@ -128,13 +84,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
 
 // Hide score after displaying temporarily
-    // https://www.experts-exchange.com/questions/25045539/Javascript-display-image-for-5-seconds-and-then-hide.html
-
-
-    // function showScoreDiv() {
-    //     //  5000 = 5 seconds
-    //     setTimeout(5000, doHide);
-    // }
+// https://www.experts-exchange.com/questions/25045539/Javascript-display-image-for-5-seconds-and-then-hide.html
 
 // display and close score
     $scope.scoreToHide = true;
@@ -145,36 +95,6 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
             $scope.scoreToHide = true;
         }, 3000);
     };
-
-// display and close update golfer
-    // $scope.updateGolferToHide = true;
-
-    // $scope.showUpdateGolfersDiv = function () {
-    //     $scope.updateGolferToHide = false;
-    // };
-
-    // $scope.hideUpdateGolfersDiv = function () {
-    //     $scope.updateGolferToHide = true;
-    // }
-
- 
-
-
-    
-    // this.showScoreDiv = () => {
-    //     console.log("show or hide?")
-    //     angular.element(document.querySelector('#scoreToHide')).style.display = "none";
-    //     // document.getElementById("scoreToHide").style.display = "none";
-    // }
-
-    // function showScoreDiv() {
-    //     document.getElementById("scoreToHide").style.display = "block";
-    //     setTimeout(1000, doHide);
-    // }
-
-    // function doHide() {
-    //     document.getElementById("scoreToHide").style.display = "none";
-    // }
 
 
 
@@ -211,10 +131,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
         golfer.totalscore = sumScore; //passing in total score
         golfer.totalpar = sumPar; //passing in total par
-        // console.log(golfer.totalscore)
-        // console.log(golfer.totalpar)
-
-        // console.log(golfer); //has correct score and par
+   
 
         $http({
             url: this.url + '/golfers/' + golfer.id,
@@ -263,10 +180,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
         golfer.totalscore = sumScore; //passing in total score
         golfer.totalpar = sumPar; //passing in total par
-        // console.log(golfer.totalscore)
-        // console.log(golfer.totalpar)
 
-        // console.log(golfer); //has correct score and par
 
         $http({
             url: this.url + '/golfers/' + golfer.id,
@@ -322,7 +236,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
             this.scorecards = response.data
             // console.log(this.scorecards)
             console.log('array length = ' + this.scorecards.length)
-            // this.findScore(this.golfers.scorecards); //find score
+
             this.updateTotalScore(this.golfers); //update total score
             this.updateTotalPar(this.golfers); //update total par
         }, error => {
@@ -356,12 +270,12 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         console.log(this.createFormScorecards)
 
         createFormScorecards.holenumber = scorecardLength + 1
-        // createFormScorecards.holenumber++;
+
         this.createFormScorecards.par = 3
         this.createFormScorecards.score = 3
         this.sumScore += 3; // add to score on each new row
         this.sumPar += 3; // add to score on each new row
-        // this.findScore(scorecards); //find score
+ 
         
         console.log(this.createFormScorecards.holenumber)
         console.log(golferID)
@@ -380,8 +294,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
             console.log(this.sumPar)
             this.createFormScorecards = {};
             this.getGolfers(); //refreshes golfers & scorecards
-            // this.updateTotalScore(this.golfers); //update total score
-            // this.updateTotalPar(this.golfers); //update total par
+
         }).catch(err => console.log('Catch', err))
     }
 
@@ -406,8 +319,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         this.createFormScorecards.score = 3;
         this.sumScore = 3; //set initial score
         this.sumPar = 3; //set initial par
-        // this.totalscore = 3;
-        // this.totalpar = 3;
+
 
         // console.log('this = ' + JSON.stringify(this))
 
@@ -422,152 +334,9 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
             this.createFormScorecards = {};
             this.getGolfers(); //refreshes golfers & scorecards
-            // this.updateTotalScore(this.golfers); //update total score
-            // this.updateTotalPar(this.golfers); //update total par
+
         }).catch(err => console.log('Catch', err))
     }
-
-
-
-// //////////////////////////////////
-
-
-// add class
-// remove display class
-// jquery add class and remove class
-// Display: None
-
-// for in loop 
-// pull out each score 
-// store in a variable
-// 
-    // https://stackoverflow.com/questions/17478014/injecting-http-and-scope-into-function-within-controller
-    // http://jsfiddle.net/geonunez/pWG2S/
-    // https://stackoverflow.com/questions/20460369/adding-and-removing-classes-in-angularjs-using-ng-click
-
-
-
-    // $scope.submitAddBtn = "submitAddBtn"
-    // $scope.submitAddBtn2 = "displayNone"
-    // // change 2nd back to $scope.displayNone = "displayNone"
-    // // then in .ejs have only ng-class on <button ng-class="...">
-
-    // $scope.changeClass = function(){
-
-    //     if ($scope.submitAddBtn === "submitAddBtn") {
-    //         $scope.submitAddBtn = "displayNone";
-
-    //         $scope.displayNone = "submitAddBtn" 
-    //         console.log($scope.displayNone)
-    //     } else
-    //         $scope.classToChange2 = "blue"
-    // };
-
-
-    // Summing up Object.keys for Score total and Par total
-    // https://stackoverflow.com/questions/16449295/how-to-sum-the-values-of-a-javascript-object
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// this.findScore = (golfer) => {
-//     console.log("=== Starting Sum of Indiv Score =====")
-//     // console.log(scorecards)
-
-//     var scorecardLength = Object.keys(golfer.scorecards).length
-//         // console.log(scorecardLength)
-
-//     var sumScore = 0;
-//     var sumPar = 0;
-
-//     for (let i = 0; i < scorecardLength; i++) {
-//         // console.log(scorecards[i].score)
-//         sumScore += parseFloat(golfer.scorecards[i].score);
-//         sumPar += parseFloat(golfer.scorecards[i].par);
-//     }
-//     console.log('Score = ' + sumScore)
-//     console.log('Par = ' + sumPar)
-//     console.log('GolferID = ' + golfer.id)
-//     this.sumScore = sumScore;
-//     this.sumPar = sumPar;
-
-//     };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// this.findAllGolfersScores = () => {
-
-// //    console.log(this.golfers[0].scorecards[0])
-//     console.log("===All Golfers Scores=====")
-//     // console.log(this.golfers.scorecards)
-
-//     var numberOfGolfers = Object.keys(this.golfers).length
-//     // console.log(numberOfGolfers)
-
-//     var numberOfScorecards = Object.keys(this.scorecards).length
-//     // console.log(numberOfScorecards)
-
-//     var sumScore = 0;
-//     var sumPar = 0;
-
-//     var allsum = 0
-//     var totalScore = 0
-
-
-// for (let i = 0; i < numberOfGolfers; i++) {
-//     for (let j = 0; j < this.golfers[i].scorecards.length; j++) {
-//         // console.log('score = ' + this.golfers[i].scorecards[j].score)
-//         // console.log('golfer_id = ' + this.golfers[i].scorecards[j].golfer_id)
-//         console.log(
-//             'score = ' + this.golfers[i].scorecards[j].score + ', ' + 'golfer_id = ' + this.golfers[i].scorecards[j].golfer_id
-//         )
-//         totalScore += this.golfers[i].scorecards[j].score;
-//             allsum++
-//     }
-// }
-//     console.log('number of holes scored = ' + allsum)
-//     console.log('total scores of all players = ' + totalScore)
-//     // console.log(sumScore)
-//     // console.log(sumPar)
-//     this.sumScore = sumScore;
-//     this.sumPar = sumPar;
-// };
-
-
-
-
-
-
-
-
 
 
 
@@ -739,7 +508,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
     // ==============
     // Register Route
-    // ==============this.getGolfers();
+    // ==============
 
     this.registerUser = (id) => {
 
@@ -868,20 +637,39 @@ function closeMenuNav() {
     document.getElementById("mySidenavMenu").style.width = "0";
 }
 
+function openWeatherNav() {
+    document.getElementById("mySidenavWeather").style.width = "250px";
+}
+function closeWeatherNav() {
+    document.getElementById("mySidenavWeather").style.width = "0";
+}
 
+function openLeaderBoardNav() {
+    document.getElementById("mySidenavLeaderBoard").style.width = "100%";
+}
+function closeLeaderBoardNav() {
+    document.getElementById("mySidenavLeaderBoard").style.width = "0";
+}
 
+// bottomNav
+function openEditScorecardsNav() {
+    document.getElementById("mySidenavEditScorecards").style.width = "250px";
+}
+function closeEditScorecardsNav() {
+    document.getElementById("mySidenavEditScorecards").style.width = "0";
+}
 
-
-
-
-// fetch('http://localhost:3000/scorecards')
-//     .then(response => response.json())
-//     .then(json => console.log(json))
-//     .catch(err => console.log(err));
+function openEditGolferCourseNav() {
+    document.getElementById("mySidenavEditGolferCourse").style.width = "30%";
+}
+function closeEditGolferCourseNav() {
+    document.getElementById("mySidenavEditGolferCourse").style.width = "0";
+}
 
 
 
 // Links to resources
+
 // https://stackoverflow.com/questions/5450930/heroku-postgres-error-pgerror-error-relation-organizations-does-not-exist
 
 // https://www.w3schools.com/tags/tag_th.asp
@@ -927,5 +715,7 @@ function closeMenuNav() {
 
 
 
-// css links
-// https://www.w3schools.com/html/html_tables.asp
+
+// css
+// https://www.w3schools.com/
+
