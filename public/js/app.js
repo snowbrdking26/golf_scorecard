@@ -686,7 +686,7 @@ function closeEditGolferCourseNav() {
 // http://clockworkchilli.com/blog/7_set_up_a_node.js_server_to_add_a_leaderboard_to_your_game
 // https://stackoverflow.com/questions/25355158/postman-put-json-returns-null
 // https://stackoverflow.com/questions/36413159/understanding-nested-for-loops-in-javascript
- // https://stackoverflow.com/questions/16813945/how-to-add-many-functions-in-one-ng-click
+//  https://stackoverflow.com/questions/16813945/how-to-add-many-functions-in-one-ng-click
 // https://github.com/a8m/angular-filter#map
 // https://justinklemm.com/angularjs-filter-ordering-objects-ngrepeat/
 // https://stackoverflow.com/questions/38313260/how-to-display-map-object-content-in-angularjs-ng-repeat?rq=1
