@@ -7,7 +7,7 @@ Golf Scorecard App
 The Golf Scorecard App is the easiest way to track your golf score. It allows you to conviently keep score while playing golf. You can add all your friends scores in one place. With easy one touch scoring.
 
 
-## Unsolved problems/features
+## Addtional Features to be add later
 * Adding authentication
 * Adding a functionality for users to select from golf courses with prefilled golf course information like par and yardage.
 
@@ -22,7 +22,7 @@ The Golf Scorecard App is the easiest way to track your golf score. It allows yo
 
 * **Peter King** - [GitHub](https://github.com/snowbrdking26)
 
-## Acknowledgments
+## Resources
 
 * Images from [Unsplash](https://unsplash.com/)
 * Weather Widget [AccuWeather Widgets](https://www.accuweather.com/en/free-weather-widgets/current)
