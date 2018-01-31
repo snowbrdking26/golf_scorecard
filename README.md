@@ -16,7 +16,7 @@ The Golf Scorecard App is the easiest way to track your golf score. It allows yo
 * [Angular.js](https://angularjs.org/) - Web app framework
 * [Node.js](https://nodejs.org/en/) - Dependency Management
 * [Express](https://expressjs.com/) - Web app framework
-* [Ruby on Rails](http://rubyonrails.org/)(https://www.ruby-lang.org/en/) - Backend server/API
+* [Ruby on Rails](http://rubyonrails.org/) - Backend server/API
 
 ## Author
 
