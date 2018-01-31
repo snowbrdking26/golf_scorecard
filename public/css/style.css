@@ -207,11 +207,14 @@ font-size: 30px;
 .sidenav2 a {
   /* padding: 8px 90px 8px 32px; */
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px;
   color: black;
   display: block;
   transition: 0.3s;
 }
+
+
+
 
 .navLeaderBoardClosingTag {
    padding: 8px 90px 8px 32px;
@@ -760,6 +763,8 @@ padding: 0 0;
   padding: 0 0;
 }
 
+
+
 .aTagTopNav {
   padding: 16px 5px;
 
@@ -767,9 +772,9 @@ padding: 0 0;
 }
 
 .aTagTopNavDivLogo {
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script';
   color: white;
-    padding: 15.5px 5px;
+  padding: 15.5px 5px;
 }
 
 #mySidenavMenu {
@@ -788,7 +793,7 @@ padding: 0 0;
 
 footer {
   display: block;
-  height:220px;
+  /* height:220px; */
   width:100%;
   background-color: rgba(217, 207, 193, .4);
   box-shadow: 0px 75px rgba(217, 207, 193, .4);
@@ -796,7 +801,7 @@ footer {
 }
 
 .footerDiv {
-padding: 20px;
+padding: 7%;
 }
 
 .footerdivparent {

@@ -9,7 +9,127 @@
 
 <body ng-controller="MainController as ctrl">
 
-    <% include partials/nav.ejs %>
+<!-- sidenav -->
+<div class="topnav">
+
+    <div class="left">
+
+        <a class="aTagTopNavDivLogo" href="/">
+            Golf Scorecards App
+        </a>
+    </div>
+
+    <div class="right">
+
+        <!-- <a href="/">Home</a> -->
+        <a class="aTagTopNav" href="/scorecards">Scorecards</a>
+        <a class="aTagTopNav" onclick="openWeatherNav()">Weather</a>
+
+        <!-- three lines icon -->
+        <a class="threeLines" onclick="openMenuNav()">&#9776;</a>
+    </div>
+</div>
+<!-- expanding sidenav SIGNUP -->
+<div id="mySidenavSignup" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavSignup()">&times;</a>
+    <div class="sideNavPadding">
+        <h2 class="sideNavH2">Sign up</h2>
+        <form class="formWidth" ng-submit='ctrl.registerUser()'>
+            <div ng-if="ctrl.shortUser == true" id="incorrectPassword">Username too short</div>
+            <div ng-if="ctrl.shortPass == true" id="incorrectPassword">Password too short</div>
+            <div ng-if="ctrl.taken == true" id="incorrectPassword">Username taken</div>
+            <!-- <label for="username">Username: </label> -->
+            <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username"
+            />
+            <div class="form-group">
+                <!-- <label for="pwd">Password: </label> -->
+                <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password"
+                />
+            </div>
+            <button class="scoresbutton" onclick="closeNavLogin()" type="submit">Sign Up</button>
+        </form>
+    </div>
+</div>
+<!-- expanding sidenav LOGIN -->
+<div id="mySidenavLogin" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNavLogin()">&times;</a>
+    <div class="sideNavPadding">
+        <h2 class="sideNavH2">Login</h2>
+        <form class="formWidth" ng-submit='ctrl.loginUser()'>
+            <div ng-if="ctrl.badLogin == true" id="incorrectPassword">Incorrect Username/Password</div>
+            <div class="form-group">
+                <!-- <label for="pwd">Username: </label> -->
+                <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username"
+                />
+            </div>
+            <div class="form-group">
+                <!-- <label for="pwd">Password: </label> -->
+                <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password"
+                />
+            </div>
+            <div class="checkbox"></div>
+            <button class="scoresbutton" onclick="closeNavLogin()" type="submit">Login</button>
+        </form>
+        <!-- <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
+            <input type='submit' value='logout' />
+          </form> -->
+    </div>
+</div>
+
+
+<!-- weather widget -->
+<div id="mySidenavWeather" class="sidenav">
+
+    <a href="javascript:void(0)" class="closebtn" onclick="closeWeatherNav()">&times;</a>
+    <div class="centerweather">
+        <a href="https://www.accuweather.com/en/us/new-york-ny/10007/weather-forecast/349727" class="aw-widget-legal">
+            <!--
+    By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at https://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at https://www.accuweather.com/en/privacy.
+    -->
+        </a>
+        <div id="awcc1517352630222" class="aw-widget-current" data-locationkey="" data-unit="f" data-language="en-us" data-useip="true"
+            data-uid="awcc1517352630222"></div>
+        <script type="text/javascript" src="https://oap.accuweather.com/launch.js"></script>
+        <div>AccuWeather</div>
+    </div>
+</div>
+
+
+
+
+<!-- expanding sidenav Menu -->
+<div id="mySidenavMenu" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
+    <div class="sideNavPadding">
+        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
+
+        <!-- if not logged in -->
+        <!-- <a class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
+            <span class="glyphicon glyphicon-user"></span> Leaderboard</a> -->
+        <a ng-if='!ctrl.user'>
+            <a class="aTagTopNav" href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
+                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+        </a>
+        <a ng-if='!ctrl.user'>
+            <a class="aTagTopNav" href="#" onclick="openNavSignup()" ng-if="!ctrl.user">
+                <span class="glyphicon glyphicon-user"></span> Register</a>
+        </a>
+
+
+        <!-- if logged in -->
+        <a ng-if='ctrl.user'>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
+                <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+        </a>
+        <a ng-if='ctrl.user'>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">
+                <span class="glyphicon glyphicon-log-out"></span> Scorecards</a>
+        </a>
+
+    </div>
+</div>
+
+</div>
 
         <div class="mainPicture">
             <div class="mainTopText">
