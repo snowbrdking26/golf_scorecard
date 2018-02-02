@@ -1,307 +1,204 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="MyGolfScoreCardApp">
-
 <head>
-
     <% include partials/head.ejs %>
-
 </head>
 <br>
 <br>
-
 <body ng-controller="MainController as ctrl">
-
     <% include partials/nav.ejs %>
-
-    <div class="mainPicturePage2">
-        <!-- Add New Golfer -->
-        <div class="new-scorecard-container">
-            <h2 class="addAgolfer">Starting a Round of Golf?</h2>
-            <h3 class="addAgolfer">Enter a Golfer and Course</h3>
-            <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
-            <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
-            <div>
-                <form class="addAgolferForm" ng-submit="ctrl.processCreateForm()">
-                    <div class="addGolferinputs">
-        
-                        <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.player" placeholder="Add Golfer Name">
+        <div class="mainPicturePage2">
+            <!-- Add New Golfer -->
+            <div class="new-scorecard-container">
+                <h2 class="addAgolfer">Starting a Round of Golf?</h2>
+                <h3 class="addAgolfer">Enter a Golfer and Course</h3>
+                <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
+                <div>
+                    <form class="addAgolferForm" ng-submit="ctrl.processCreateForm()">
+                        <div class="addGolferinputs">
+                            <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.player" placeholder="Add Golfer Name">
+                            <br>
+                            <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.course" placeholder="Add Golf Course Name">
+                        </div>
+                        <input onclick="openLeaderBoardNav()" class="ScorecardsubmitAddBtn" type="submit">
                         <br>
-                        <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.course" placeholder="Add Golf Course Name">
-        
-        
-                    </div>
-                    
-                    <input onclick="openLeaderBoardNav()" class="ScorecardsubmitAddBtn" type="submit"> <br>
-        <!-- <a class="ScorecardsubmitAddBtn2" href="#leaderboard">View Your Scorecard</a> -->
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    
-
-</div>
-<main>
-    <div id="mySidenavLeaderBoard" class="sidenav2">
-        <div class="navLeaderBoardClosingTag"><a href="javascript:void(0)" class="closebtn" onclick="closeLeaderBoardNav()">&times;</a></div>
-        
-        <div class="containLeaderBoard">
-            <a name='leaderboard'></a>
-        <h2 class="listTopH2" >Scorecards & Leaderboard</h2>
-
-        <h5 class="listTopH2">click to view</h5>
-    
-        <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}</a>
-    
-            <!-- <button ng-click="ctrl.getScorecards()"> find score</button> -->
-
-        </div>
-</div>
-<div>
-    <div class="containLeaderBoard">
-        <a name='leaderboard'></a>
-        <h2 class="listTopH2">Scorecards & Leaderboard</h2>
-        <h6>click to view</h6>
-    
-        <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}</a>
-    
-        <!-- <button ng-click="ctrl.getScorecards()"> find score</button> -->
-    
-    </div>
-</div>
-       
-    
-    <!-- Parent ng-repeat -->
-  
-        <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers | orderBy: 'id'">
-    <a name="{{golfer.id}}">
-    <!-- anchor tag destination from toplinks -->
-    <div class="scorecardimage">
-        <!-- new -->
-        <div class="buttonForCheckbox">
-            <a class="aTagNoPadding" href="#top">
-                <div class="circleButton">&#8593;</div>
-            </a>
-        </div>
-        <!-- new -->
-        <div class="flexWatchlistTitle">
-            <div class="leftWatchlistBar">
-                <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
-                <h3 class="WatchlistTitle"> Course: {{golfer.course}}</h3>
-                
-
-                <button class="buttonRemoveEdit2" ng-click="ctrl.toEdit = golfer" onclick="openEditGolferCourseNav()" >Rename</button></a>
+        <main>
+            <div id="mySidenavLeaderBoard" class="sidenav2">
+                <div class="navLeaderBoardClosingTag">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeLeaderBoardNav()">&times;</a>
+                </div>
+                <div class="containLeaderBoard">
+                    <a name='leaderboard'></a>
+                    <h2 class="listTopH2">Scorecards & Leaderboard</h2>
+                    <h5 class="listTopH2">click to view</h5>
+                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}</a>
+                </div>
+            </div>
+            <div>
+                <div class="containLeaderBoard">
+                    <a name='leaderboard'></a>
+                    <h2 class="listTopH2">Scorecards & Leaderboard</h2>
+                    <h6>click to view</h6>
+                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}</a>
+                </div>
+            </div>
+            <!-- Parent ng-repeat -->
+            <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers | orderBy: 'id'">
+                <a name="{{golfer.id}}">
+                    <!-- anchor tag destination from toplinks -->
+                    <div class="scorecardimage">
+                        <!-- new -->
+                        <div class="buttonForCheckbox">
+                            <a class="aTagNoPadding" href="#top">
+                                <div class="circleButton">&#8593;</div>
+                            </a>
+                        </div>
+                        <!-- new -->
+                        <div class="flexWatchlistTitle">
+                            <div class="leftWatchlistBar">
+                                <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
+                                <h3 class="WatchlistTitle"> Course: {{golfer.course}}</h3>
+                                <button class="buttonRemoveEdit2" ng-click="ctrl.toEdit = golfer" onclick="openEditGolferCourseNav()">Rename</button>
+                </a>
                 <a class="centerAtag1" href="">
-                <button class="buttonRemoveEdit" ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" >Remove</button></a>
-                
-               
-            </div>
+                    <button class="buttonRemoveEdit" ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)">Remove</button>
+                </a>
+                </div>
 
-
-
-
-
-
-
-            <!-- <div class="contain-in-scorecards" ng-show="showScoreCard"> -->
-            <div class="contain-in-scorecards">
-
-     
-
-    <!-- /* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */ -->
-    <!-- https://www.w3schools.com/angular/angular_tables.asp -->
-        <table>
-            <tr>
-            <th>Hole #</th>
-            <th>Par</th>
-            <th>{{golfer.player}} Score</th>
-          
-            <!-- <th ng-repeat="golfer in ctrl.golfers"> {{golfer.player}} Score</th> -->
-        
-
-                <!-- nested ng-repeat -  get score prices-->
-                <!-- <tr ng-repeat="score in scorecard.scorecards"> -->
-                <tr ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
-               
-
-                    <td>
-                        <div class="tdleftHole"># {{scorecard.holenumber}}</div>
-                        <div class="tdleftRemoveEdit">
-                            <div class="containerRemoveEditScore">
-                                <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)"
-                                    class="add">Remove</div>
-                                <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" onclick="openEditScorecardsNav()" class="add">Edit</div>
-                            </div>
-                        </div>
-
-                    </td>
-                    <td>
-                        <div class="insideTd">
-                        <div class="tdleft">
-                             {{scorecard.par}}
-                            </div>
-                            <div class="tdright">
-                        <button class="btnTdinc" ng-click="ctrl.incPar( scorecard )">+</button>
-                        <button class="btnTddec" ng-click="ctrl.decPar( scorecard )">-</button>
-                        </div>
-                        </div>
-                    </td>
-                        <td>
-                            <div class="insideTd">
-                            <div class="tdleft">
-                                {{scorecard.score}}
+                <div class="contain-in-scorecards">
+                    <!-- https://www.w3schools.com/angular/angular_tables.asp -->
+                    <table>
+                        <tr>
+                            <th>Hole #</th>
+                            <th>Par</th>
+                            <th>{{golfer.player}} Score</th>
+                            <tr ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
+                                <td>
+                                    <div class="tdleftHole"># {{scorecard.holenumber}}</div>
+                                    <div class="tdleftRemoveEdit">
+                                        <div class="containerRemoveEditScore">
+                                            <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)"
+                                                class="add">Remove</div>
+                                            <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" onclick="openEditScorecardsNav()" class="add">Edit</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="insideTd">
+                                        <div class="tdleft">
+                                            {{scorecard.par}}
+                                        </div>
+                                        <div class="tdright">
+                                            <button class="btnTdinc" ng-click="ctrl.incPar( scorecard )">+</button>
+                                            <button class="btnTddec" ng-click="ctrl.decPar( scorecard )">-</button>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="insideTd">
+                                        <div class="tdleft">
+                                            {{scorecard.score}}
+                                        </div>
+                                        <div class="tdright">
+                                            <button class="btnTdinc" ng-click="ctrl.incScore( scorecard ); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">
+                                            +</button>
+                                            <button class="btnTddec" ng-click="ctrl.decScore( scorecard );ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">
+                                            -</button>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- score totals -->
+                            <tr>
+                                <td class="centerTd">
+                                    <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv()"
+                                        class="submitAddBtn" type="submit">Check Score</button>
+                                </td>
+                                <td class="centerTd"> - Par -
+                                    <div ng-hide="scoreToHide">{{golfer.totalpar}}</div>
+                                </td>
+                                <td class="centerTd">- Score -
+                                    <div ng-hide="scoreToHide"> {{golfer.totalscore}}</div>
+                                </td>
+                            </tr>
+                    </table>
+                    <!-- Add New Score -->
+                    <div class="new-Score-container">
+                        <div class="invisibleStartGame">
+                            <form class="addScoreForm" ng-submit="ctrl.processCreateFormScorecards(golfer.id, golfer.scorecards)">
+                                <div class="addAscoreDiv">
+                                    <input class="addaScore" type="text" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
+                                    <input class="addaScore" type="text" placeholder="add par" ng-model="ctrl.createFormScorecards.par">
+                                    <input class="addaScore" type="text" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
                                 </div>
-                            <div class="tdright">
-                            <button class="btnTdinc" ng-click="ctrl.incScore( scorecard ); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)"> +</button>
-                            <button class="btnTddec" ng-click="ctrl.decScore( scorecard );ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)"> -</button>
-                            </div>
-                            </div>
-                        </td>
-                       
-                </tr>
-                <!-- score totals -->
-                <tr>
-                    <td class="centerTd"><button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv()" class="submitAddBtn" type="submit">Check Score</button></td>
-                    <td class="centerTd"> - Par - 
-                        <div ng-hide="scoreToHide">{{golfer.totalpar}}</div>
-                    </td>
-                    <td class="centerTd">- Score - 
-
-                        <div ng-hide="scoreToHide"> {{golfer.totalscore}}</div>
-                    </td>
-                </tr>
-        </table>
-
-
-
-            <!-- Add New Score -->
-            <div class="new-Score-container">
-                <!-- <em class="h2addScore" ng-click="ctrl.addScore()" class="add"></em> -->
-                <!-- <div ng-show="ctrl.addForm" class="ng-show"> -->
-            <div class="invisibleStartGame">
-                <form class="addScoreForm" ng-submit="ctrl.processCreateFormScorecards(golfer.id, golfer.scorecards)">
-                    <div class="addAscoreDiv">
-                            <input class="addaScore" type="text" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
-                            <input class="addaScore" type="text" placeholder="add par" ng-model="ctrl.createFormScorecards.par" >
-                            <input class="addaScore" type="text"  placeholder="add score" ng-model="ctrl.createFormScorecards.score">
+                                <button class="submitAddBtn" type="submit" ng-click="ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">add data input</button>
+                            </form>
                         </div>
-            
-                    <button class="submitAddBtn" type="submit" ng-click="ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)">add data input</button>
-                </form>
-            </div>
-            <!-- <div ng-class="classToChange2"> -->
-               <button ng-class="submitAddBtn2" class="submitAddBtnStart" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Add Next Hole</button>
-
-                    <!-- Sum of score -->
-                    <!-- <div ng-hide="scoreToHide">Par:{{golfer.totalpar}} and Score:{{golfer.totalscore}}</div>
-                    <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv()" class="submitAddBtn"
-                        type="submit">View Total Score and Par</button> -->
-                    <!-- <a ng-click="showScoreDiv()"> showScoreDiv?</a> -->
-                   
-            <!-- </div> -->
-
-            <!-- removed from button because of time unefficient -->
-             <!-- ; ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer) -->
-
-        <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
-            <!-- invisible below -->
-            <div class="invisibleStartGame">
-                <input class="addaScore" type="text" name="a" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
-                <input class="addaScore" type="text" name="b" placeholder="add par" ng-model="ctrl.createFormScorecards.par">
-                <input class="addaScore" type="text" name="c" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
-            </div>
-            <!-- end of invisible -->
-            <!-- <div ng-class="classToChange"> -->
-                  <button ng-class="submitAddBtn" class="submitAddBtnStart" type="submit">Start Game</button>
-            <!-- </div> -->
-        </form>
-</div>
-
-
-
-            </div>
-            <!-- end of add new score -->
-
+                        <!-- <div ng-class="classToChange2"> -->
+                        <button ng-class="submitAddBtn2" class="submitAddBtnStart" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Add Next Hole</button>
+                        <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
+                            <!-- invisible below -->
+                            <div class="invisibleStartGame">
+                                <input class="addaScore" type="text" name="a" placeholder="add Hole #" ng-model="ctrl.createFormScorecards.holenumber">
+                                <input class="addaScore" type="text" name="b" placeholder="add par" ng-model="ctrl.createFormScorecards.par">
+                                <input class="addaScore" type="text" name="c" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
+                            </div>
+                            <!-- end of invisible -->
+                            <!-- <div ng-class="classToChange"> -->
+                            <button ng-class="submitAddBtn" class="submitAddBtnStart" type="submit">Start Game</button>
+                            <!-- </div> -->
+                        </form>
+                    </div>
+                </div>
+                <!-- end of add new score -->
                 <br>
                 <!-- edit scorecards -->
                 <div id="mySidenavEditScorecards" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeEditScorecardsNav()">&times;</a>
-        
-                        <div>
-                            <em>Edit Scorecards</em>
-                            <form ng-submit="ctrl.processEditFormscorecards(ctrl.toEditScorecard)">
-                                <div class="row">
-                                    <input type="text" ng-model="ctrl.createFormScorecards.holenumber" placeholder="Hole # {{ctrl.toEditScorecard.holenumber}}">
-                                    <input type="text" ng-model="ctrl.createFormScorecards.par" placeholder=" Par {{ctrl.toEditScorecard.par}}">
-                                    <input type="text" ng-model="ctrl.createFormScorecards.score" placeholder="Score {{ctrl.toEditScorecard.score}}">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeEditScorecardsNav()">&times;</a>
+                    <div>
+                        <em>Edit Scorecards</em>
+                        <form ng-submit="ctrl.processEditFormscorecards(ctrl.toEditScorecard)">
+                            <div class="row">
+                                <input type="text" ng-model="ctrl.createFormScorecards.holenumber" placeholder="Hole # {{ctrl.toEditScorecard.holenumber}}">
+                                <input type="text" ng-model="ctrl.createFormScorecards.par" placeholder=" Par {{ctrl.toEditScorecard.par}}">
+                                <input type="text" ng-model="ctrl.createFormScorecards.score" placeholder="Score {{ctrl.toEditScorecard.score}}">
                                 <!-- <button ng-class="submitAddBtn" class="submitAddBtn" type="submit">Submit Edit Scores</button> -->
                                 <br>
-                                    <input class="submitEditBtn" ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" type="submit">
-                                
-                                </div>
-                        
-
-                            </form>
-                        </div>
-                        </div>
-                    
-        
-
-                        
-                     
-        </div>
-        </div>
-        <!-- end of show/hide div wrapper -->
+                                <input class="submitEditBtn" ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" type="submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                </div>
+                <!-- end of show/hide div wrapper -->
             </div>
             <!-- end of golfer in golfers ng-repeat -->
-            </div> 
-           
+            </div>
             </div>
             <!-- end of scorecard div show -->
             </div>
-
-
-    <!-- <a name="bottomRename"></a> -->
-    <div class="sidenav" id="mySidenavEditGolferCourse">
-<a href="javascript:void(0)" class="closebtn" onclick="closeEditGolferCourseNav()">&times;</a>
-        <div class="updateGolferToHide2">
-            <h3>Rename Golfer & Course</h3>
-            <form class="editModal" ng-submit="ctrl.processEditForm(ctrl.toEdit)">
-                <div class="row">
-                    <input class="flexforminputsGolfers" type="text" ng-model="ctrl.createForm.player" placeholder="{{ctrl.toEdit.player}}">
-                    <input class="flexforminputsGolfers" type="text" ng-model="ctrl.createForm.course" placeholder="{{ctrl.toEdit.course}}">
-                    <input onclick="closeEditGolferCourseNav()" class="submitEditBtn2" type="submit">
+            <!-- <a name="bottomRename"></a> -->
+            <div class="sidenav" id="mySidenavEditGolferCourse">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeEditGolferCourseNav()">&times;</a>
+                <div class="updateGolferToHide2">
+                    <h3>Rename Golfer & Course</h3>
+                    <form class="editModal" ng-submit="ctrl.processEditForm(ctrl.toEdit)">
+                        <div class="row">
+                            <input class="flexforminputsGolfers" type="text" ng-model="ctrl.createForm.player" placeholder="{{ctrl.toEdit.player}}">
+                            <input class="flexforminputsGolfers" type="text" ng-model="ctrl.createForm.course" placeholder="{{ctrl.toEdit.course}}">
+                            <input onclick="closeEditGolferCourseNav()" class="submitEditBtn2" type="submit">
+                        </div>
+                    </form>
                 </div>
-            </form>
-            <!-- <div ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)" class="scorecard btnspacing">Remove</div> -->
-        </div>
-        </div>
-
-            <!-- edit watchlist -->
-    
-                        <!-- <h2>Edit Watchlist</h2>
-                        <form class="editModal" ng-submit="ctrl.processEditForm(ctrl.toEdit)">
-                            <div class="row">
-                                <input type="text" ng-model="ctrl.createForm.course" placeholder="{{ctrl.toEdit.course}}">
-                                <input type="text" ng-model="ctrl.createForm.player" placeholder="{{ctrl.toEdit.player}}">
-                                <input type="submit">
-                            </div>
-                        </form> -->
-   
+            </div>
             <br>
-
-            <!-- <div ng-show="updateGolferToHide"> -->
-            
-            <!-- </div> -->
-
             <br>
-
-
         </main>
-
-
-
-<% include partials/footer.ejs %>
-
-
+        <% include partials/footer.ejs %>
 </body>
-
 </html>
