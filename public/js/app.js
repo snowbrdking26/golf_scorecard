@@ -672,6 +672,61 @@ function closeEditGolferCourseNav() {
 
 
 
+// function openNavSignup() {
+//     document.getElementById("mySidenavSignup").style.width = "250px";
+// }
+// function closeNavSignup() {
+//     document.getElementById("mySidenavSignup").style.width = "0";
+// }
+
+
+// function openNavLogin() {
+//     document.getElementById("mySidenavLogin").style.width = "250px";
+// }
+// function closeNavLogin() {
+//     document.getElementById("mySidenavLogin").style.width = "0";
+// }
+
+
+// function openMenuNav() {
+//     document.getElementById("mySidenavMenu").style.width = "250px";
+// }
+// function closeMenuNav() {
+//     document.getElementById("mySidenavMenu").style.width = "0";
+// }
+
+// function openWeatherNav() {
+//     document.getElementById("mySidenavWeather").style.width = "250px";
+// }
+// function closeWeatherNav() {
+//     document.getElementById("mySidenavWeather").style.width = "0";
+// }
+
+// function openLeaderBoardNav() {
+//     document.getElementById("mySidenavLeaderBoard").style.width = "100%";
+// }
+// function closeLeaderBoardNav() {
+//     document.getElementById("mySidenavLeaderBoard").style.width = "0";
+// }
+
+// // bottomNav
+// function openEditScorecardsNav() {
+//     document.getElementById("mySidenavEditScorecards").style.width = "250px";
+// }
+// function closeEditScorecardsNav() {
+//     document.getElementById("mySidenavEditScorecards").style.width = "0";
+// }
+
+// function openEditGolferCourseNav() {
+//     document.getElementById("mySidenavEditGolferCourse").style.width = "30%";
+// }
+// function closeEditGolferCourseNav() {
+//     document.getElementById("mySidenavEditGolferCourse").style.width = "0";
+// }
+
+
+
+
 
 
 
