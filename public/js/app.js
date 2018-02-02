@@ -1,8 +1,8 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
 app.controller('MainController', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-    this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
-    // this.url = 'http://localhost:3000'
+    // this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
+    this.url = 'http://localhost:3000'
 
 
 
@@ -523,12 +523,12 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         }
 
 
-        if (this.newUserForm.username.length < 6) {
+        if (this.newUserForm.username.length < 5) {
             pass = false;
             this.shortUser = true;
         }
 
-        if (this.newUserForm.password.length < 8) {
+        if (this.newUserForm.password.length < 5) {
             pass = false;
             this.shortPass = true;
         }
@@ -545,7 +545,7 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
                 this.shortPass = false;
                 this.shortUser = false;
                 this.taken = false;
-                closeNav();
+                closeNavSignup();
             }, error => {
                 this.newUserForm = {};
                 this.taken = true;
