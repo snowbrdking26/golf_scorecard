@@ -51,7 +51,7 @@
                 <a name="{{golfer.id}}">
                     <!-- anchor tag destination from toplinks -->
                     <div class="scorecardimage">
-                        <!-- new -->
+                        <!-- back to top button -->
                         <div class="buttonForCheckbox">
                             <a class="aTagNoPadding" href="#top">
                                 <div class="circleButton">&#8593;</div>
@@ -139,7 +139,7 @@
                             </form>
                         </div>
                         <!-- <div ng-class="classToChange2"> -->
-                        <button ng-class="submitAddBtn2" class="submitAddBtnStart" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Add Next Hole</button>
+                        <button ng-class="submitAddBtn2" class="submitAddBtnAddHole" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Add Next Hole</button>
                         <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
                             <!-- invisible below -->
                             <div class="invisibleStartGame">
@@ -173,6 +173,13 @@
                         </form>
                     </div>
                 </div>
+               
+                </div>
+                <!-- Back to top button -->
+                <div class="buttonForCheckbox1">
+                    <a class="aTagNoPadding" href="#top">
+                        <div class="circleButton">&#8593;</div>
+                    </a>
                 </div>
                 </div>
                 <!-- end of show/hide div wrapper -->
@@ -182,6 +189,7 @@
             </div>
             <!-- end of scorecard div show -->
             </div>
+          
             <!-- <a name="bottomRename"></a> -->
             <div class="sidenav" id="mySidenavEditGolferCourse">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeEditGolferCourseNav()">&times;</a>

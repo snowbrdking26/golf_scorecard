@@ -87,6 +87,17 @@ main {
   color:white;
 }
 
+.submitAddBtnAddHole {
+  width: 30%;
+  height: auto;
+  padding: 10px 20px;
+  margin:8px 5px 5px 5px;
+  background: #a3c2a7;
+  border:none;
+  font-size:1em;
+  color:white;
+}
+
 .in-scorecard {
     width: 100%;
     display:flex;
@@ -639,6 +650,13 @@ justify-content: space-between;
 
 }
 
+.buttonForCheckbox1 {
+/* text-align: right; */
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-between;
+
+}
 
 /* tutorial on how to style checkboxes */
 /* https://paulund.co.uk/style-checkboxes-with-css */

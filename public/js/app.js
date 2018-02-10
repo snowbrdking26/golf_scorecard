@@ -273,12 +273,12 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
         this.createFormScorecards.par = 3
         this.createFormScorecards.score = 3
-        this.sumScore += 3; // add to score on each new row
-        this.sumPar += 3; // add to score on each new row
+        // this.sumScore += 3; // add to score on each new row
+        // this.sumPar += 3; // add to score on each new row
  
         
-        console.log(this.createFormScorecards.holenumber)
-        console.log(golferID)
+        // console.log(this.createFormScorecards.holenumber)
+        // console.log(golferID)
         $http({
             url: this.url + '/golfers/' + golferID + '/scorecards',
             method: 'POST',
@@ -290,8 +290,8 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
             console.log(scorecards)
             this.sumScore += 3
             this.sumPar += 3
-            console.log(this.sumScore)
-            console.log(this.sumPar)
+            // console.log(this.sumScore)
+            // console.log(this.sumPar)
             this.createFormScorecards = {};
             this.getGolfers(); //refreshes golfers & scorecards
 
@@ -660,7 +660,7 @@ function closeEditScorecardsNav() {
 }
 
 function openEditGolferCourseNav() {
-    document.getElementById("mySidenavEditGolferCourse").style.width = "30%";
+    document.getElementById("mySidenavEditGolferCourse").style.width = "250px";
 }
 function closeEditGolferCourseNav() {
     document.getElementById("mySidenavEditGolferCourse").style.width = "0";
