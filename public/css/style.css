@@ -76,6 +76,10 @@ main {
   box-shadow: 2px 2px 6px #000000;
 }
 
+.IndexScorecardsubmitAddBtn:hover {
+  background-color: gray;
+}
+
 .submitAddBtnStart {
      width: 30%;
     height: auto;
