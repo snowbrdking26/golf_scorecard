@@ -34,16 +34,16 @@
                 <div class="containLeaderBoard">
                     <a name='leaderboard'></a>
                     <h2 class="listTopH2">Scorecards & Leaderboard</h2>
-                    <h5 class="listTopH2">click to view</h5>
-                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}</a>
+                    <!-- <h5 class="listTopH2">click to view</h5> -->
+                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} - score: {{golfer.totalscore}}</a>
                 </div>
             </div>
             <div>
                 <div class="containLeaderBoard">
                     <a name='leaderboard'></a>
                     <h2 class="listTopH2">Scorecards & Leaderboard</h2>
-                    <h6>click to view</h6>
-                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} with score: {{golfer.totalscore}}</a>
+                    <!-- <h6>click to view</h6> -->
+                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} - score: {{golfer.totalscore}}</a>
                 </div>
             </div>
             <!-- Parent ng-repeat -->

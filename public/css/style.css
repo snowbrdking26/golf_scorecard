@@ -598,9 +598,16 @@ width: 100%;
 
 .centerAtag {
   text-align: center;
-  width: 100%;
+  width: 80%;
+  margin: 5px 10%;
   display: inline-block;
   padding: 10px 0;
+  border: 1px solid grey;
+  box-shadow: 1px 1px 3px #848484;
+}
+
+.centerAtag:hover {
+  background-color: #d4d4d4
 }
 
 .containList {
