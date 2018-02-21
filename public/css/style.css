@@ -888,3 +888,7 @@ text-align: center;
 .hitcounter {
   display: none;
 }
+
+.hide {
+  display: none;
+}

@@ -19,19 +19,20 @@
     </div>
 </div>
 <!-- expanding sidenav SIGNUP -->
+
 <div id="mySidenavSignup" class="sidenav">
+
     <a href="javascript:void(0)" class="closebtn" onclick="closeNavSignup()">&times;</a>
     <div class="sideNavPadding">
         <h2 class="sideNavH2">Sign up</h2>
+
         <form class="formWidth" ng-submit='ctrl.registerUser()'>
             <div ng-if="ctrl.shortUser == true" id="incorrectPassword">Username too short</div>
             <div ng-if="ctrl.shortPass == true" id="incorrectPassword">Password too short</div>
             <div ng-if="ctrl.taken == true" id="incorrectPassword">Username taken</div>
-            <!-- <label for="username">Username: </label> -->
             <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.newUserForm.username"
             />
             <div class="form-group">
-                <!-- <label for="pwd">Password: </label> -->
                 <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password"
                 />
             </div>
@@ -92,6 +93,8 @@
     <div class="sideNavPadding">
         <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
 
+      
+
  <!-- if not logged in -->
         <a class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
              <span class="glyphicon glyphicon-user"></span> Leaderboard</a>
@@ -114,7 +117,21 @@
             <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">
                 <span class="glyphicon glyphicon-log-out"></span> Scorecards</a>
         </a>
-      
+        <!-- firebase auth below-->
+        <!-- <div class="containerfirebase">
+            <input class="loginsignupInput" id="txtEmail" type="email" placeholder="Email">
+            <input class="loginsignupInput" id="txtPassword" type="password" placeholder="Password">
+            <button id="btnLogin" class="btn btn-action">
+                log in
+            </button>
+            <button id="btnSignUp" class="btn btn-secondary">
+                Sign up
+            </button>
+            <button id="btnLogout" class="scoresbutton btn btn-action hide">
+                Log out
+            </button>
+        </div> -->
+        <!-- firebase auth above -->
     </div>
 </div>
 
