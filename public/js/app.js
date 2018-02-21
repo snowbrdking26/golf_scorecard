@@ -1,7 +1,7 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
 app.controller('MainController', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-    this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
+    this.url = 'https://golf-scorecard-api-backend.herokuapp.com/'
     // this.url = 'http://localhost:3000'
 
 
