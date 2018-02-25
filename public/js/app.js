@@ -523,12 +523,12 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         }
 
 
-        if (this.newUserForm.username.length < 2) {
+        if (this.newUserForm.username.length < 1) {
             pass = false;
             this.shortUser = true;
         }
 
-        if (this.newUserForm.password.length < 2) {
+        if (this.newUserForm.password.length < 1) {
             pass = false;
             this.shortPass = true;
         }
