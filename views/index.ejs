@@ -103,7 +103,7 @@
     <div class="sideNavPadding">
         <a class="aTagTopNav" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }}!</a>
 
-            <a class="aTagTopNav" ng-if='!ctrl.user' href="#" ng-if="!ctrl.user">
+            <a class="aTagTopNav" ng-if='!ctrl.user' href="#" ng-if="!ctrl.user" onclick="openNavLogin()">
                 Login</a>
      
             <a class="aTagTopNav" ng-if='!ctrl.user' href="#" onclick="openNavSignup()" ng-if="!ctrl.user">
@@ -113,7 +113,7 @@
             <a class="aTagTopNav" ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
                 <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
 
-            <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">
+            <a class="aTagTopNav" ng-if='ctrl.user' href="/scorecard">
                 <span class="glyphicon glyphicon-log-out"></span> Scorecards</a>
 
     </div>
@@ -130,7 +130,7 @@
                 <h1 class="textshadow">Track your score quickly and conveniently</h1>
                 <h3 class="textshadow"> Easiest way to track your scores at your finger tips </h3>
                 <a class="IndexScorecardsubmitAddBtn" href="/scorecards">Scorecards</a>
-                
+
                 <!-- if not logged in -->
                 <a ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Sign Up</a>
 
