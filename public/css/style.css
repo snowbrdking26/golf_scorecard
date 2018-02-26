@@ -75,33 +75,51 @@ main {
   color:white;
   box-shadow: 2px 2px 6px #000000;
 }
+.IndexScorecardsubmitAddBtn1 {
+   width: auto;
+    height: auto;
+    padding: 10px 20px;
+    margin:8px 5px 5px 5px;
+    background:#33acf3;
+  border:none;
+  font-size:1em;
+  color:white;
+  box-shadow: 2px 2px 6px #000000;
+}
 
-.IndexScorecardsubmitAddBtn:hover {
+
+.IndexScorecardsubmitAddBtn:hover, .IndexScorecardsubmitAddBtn1:hover  {
   background-color: gray;
   color:white;
 }
 
 .submitAddBtnStart {
-     width: 30%;
-    height: auto;
-    padding: 10px 20px;
-    margin:8px 5px 5px 5px;
-    background:#7CA982;
-  border:none;
+  display: inline-block;
+  width: 40%;
+  height: auto;
+  padding: 10px 20px;
+  margin:8px 0px 5px 0px;
+  background:#7CA982;
+  border: none;
   font-size:1em;
   color:white;
+   box-shadow: 2px 2px 6px gray;
 }
 
 .submitAddBtnAddHole {
-  width: 30%;
+  display: inline-block;
+  width: 80%;
   height: auto;
   padding: 10px 20px;
-  margin:8px 5px 5px 5px;
+  margin:8px 0px 5px 0px;
   background: #a3c2a7;
-  border:none;
+  border: none;
   font-size:1em;
   color:white;
+   box-shadow: 2px 2px 6px gray;
 }
+
+
 
 .in-scorecard {
     width: 100%;
@@ -122,7 +140,7 @@ main {
   position: fixed;
   z-index: 1;
   top: 0;
-   box-shadow: 2px 2px 6px #000000;
+   box-shadow: 1px 1px 3px black;
   /* left: 0; */
   /* background-color: #DFDFDF; */
   background-color: #2274A5;
@@ -411,6 +429,7 @@ justify-content: center;
 
 .new-Score-container {
     width: 100%;
+    justify-content: left;
 }
 
 .new-scorecard-container {
@@ -419,6 +438,7 @@ justify-content: center;
     padding: 4%;
     margin: 4%;
     width: 70%;
+    text-align: center;
 }
 
 .submitAddBtn .submitAddBtn2{
@@ -624,16 +644,17 @@ width: 100%;
 .centerAtag {
   text-align: center;
   width: 80%;
-  margin: 5px 10%;
+  margin: 8px 10%;
   display: inline-block;
   padding: 10px 0;
-  border: 1px solid grey;
-  box-shadow: 1px 1px 3px #848484;
+  /* border: 1px solid grey; */
+  box-shadow: 2px 2px 6px #848484;
 }
 
 .centerAtag:hover {
   background-color: #d4d4d4
 }
+
 
 .containList {
   text-align: center;

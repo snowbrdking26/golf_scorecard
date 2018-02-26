@@ -148,16 +148,18 @@
                                 <input class="addaScore" type="text" name="b" placeholder="add par" ng-model="ctrl.createFormScorecards.par">
                                 <input class="addaScore" type="text" name="c" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
                             </div>
-                            <!-- end of invisible -->
-                            <!-- <div ng-class="classToChange"> -->
-                            <button ng-class="submitAddBtn" class="submitAddBtnStart" type="submit">Start Game</button>
-                            <!-- </div> -->
-                        <a href=""><div class="centerAtag">
+                        
+                        <div class="centerAtag" onclick="openLeaderBoardNav()">
                             View Leaderboard
-                        </div></a>
+                        </div>
+                        <br>
+                            <button ng-class="centerAtag" class="submitAddBtnStart" type="submit">Start Game</button>
+                </form>
+                        
+                        
                             
 
-                        </form>
+                        
                     </div>
                 </div>
                 <!-- end of add new score -->
