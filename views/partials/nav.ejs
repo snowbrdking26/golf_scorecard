@@ -91,7 +91,7 @@
 <div id="mySidenavMenu" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
     <div class="sideNavPadding">
-        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!</a>
+        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!
 
       
 
@@ -109,29 +109,11 @@
         
 
 <!-- if logged in -->
-        <a ng-if='ctrl.user'>
-            <a class="aTagTopNav" ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
-                <span class="glyphicon glyphicon-log-out"></span> Log Out</a>
-        </a>
-        <a ng-if='ctrl.user'>
-            <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">
-                <span class="glyphicon glyphicon-log-out"></span> Scorecards</a>
-        </a>
-        <!-- firebase auth below-->
-        <!-- <div class="containerfirebase">
-            <input class="loginsignupInput" id="txtEmail" type="email" placeholder="Email">
-            <input class="loginsignupInput" id="txtPassword" type="password" placeholder="Password">
-            <button id="btnLogin" class="btn btn-action">
-                log in
-            </button>
-            <button id="btnSignUp" class="btn btn-secondary">
-                Sign up
-            </button>
-            <button id="btnLogout" class="scoresbutton btn btn-action hide">
-                Log out
-            </button>
-        </div> -->
-        <!-- firebase auth above -->
+            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>Log Out</a>
+        
+        <a class="aTagTopNav" ng-if='ctrl.user' href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="ctrl.user">Leaderboard</a>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">Scorecards</a>
+
     </div>
 </div>
 

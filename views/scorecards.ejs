@@ -75,7 +75,7 @@
                         <tr>
                             <th>Hole #</th>
                             <th>Par</th>
-                            <th>{{golfer.player}} Score</th>
+                            <th>{{golfer.player}}'s Score</th>
                             <tr ng-repeat="scorecard in golfer.scorecards | orderBy: 'id'">
                                 <td>
                                     <div class="tdleftHole"># {{scorecard.holenumber}}</div>
@@ -121,7 +121,8 @@
                                 <td class="centerTd"> - Par -
                                     <div ng-hide="scoreToHide">{{golfer.totalpar}}</div>
                                 </td>
-                                <td class="centerTd">- Score -
+                                <td class="centerTd"> 
+                                    <div>- {{golfer.player}}'s Score -</div>
                                     <div ng-hide="scoreToHide"> {{golfer.totalscore}}</div>
                                 </td>
                             </tr>
@@ -151,6 +152,11 @@
                             <!-- <div ng-class="classToChange"> -->
                             <button ng-class="submitAddBtn" class="submitAddBtnStart" type="submit">Start Game</button>
                             <!-- </div> -->
+                        <a href=""><div class="centerAtag">
+                            View Leaderboard
+                        </div></a>
+                            
+
                         </form>
                     </div>
                 </div>
