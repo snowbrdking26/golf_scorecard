@@ -954,3 +954,12 @@ text-align: center;
 .hide {
   display: none;
 }
+
+.smallpic {
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(pexels-photo-54123.jpeg);
+}
