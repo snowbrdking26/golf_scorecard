@@ -868,7 +868,7 @@ footer {
   width:100%;
   background-color: rgba(217, 207, 193, .4);
   box-shadow: 0px 75px rgba(217, 207, 193, .4);
-  text-align: left;
+  text-align: center;
 }
 
 .footerDiv {
@@ -930,7 +930,7 @@ text-align: center;
 .hitcounter {
   display: none;
 }
-/* traffic hitcounter 397 on Mar-2-2018 */
+/* traffic hitcounter 401 on Mar-2-2018 */
 
 .hide {
   display: none;
