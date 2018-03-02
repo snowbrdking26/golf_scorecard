@@ -53,6 +53,8 @@ image
 
 }
 
+
+
 main {
   padding: 16px;
   text-align: center;
@@ -63,9 +65,14 @@ main {
 .WatchlistTitle {
   padding: 0 15px;
 }
-
+.divsignuplogin {
+  display:flex;
+  flex-direction: row;
+  width: 260px;
+  justify-content: left;
+}
 .IndexScorecardsubmitAddBtn {
-   width: auto;
+   width: 50%;
     height: auto;
     padding: 10px 20px;
     margin:8px 5px 5px 5px;
@@ -76,11 +83,23 @@ main {
   box-shadow: 2px 2px 6px #000000;
 }
 .IndexScorecardsubmitAddBtn1 {
-   width: auto;
+   width: 210px;
     height: auto;
     padding: 10px 20px;
     margin:8px 5px 5px 5px;
     background:#33acf3;
+  border:none;
+  font-size:1em;
+  color:white;
+  box-shadow: 2px 2px 6px #000000;
+}
+
+.IndexScorecardsubmitAddBtnWelcome {
+     width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    margin:8px 5px 5px 5px;
+    background:#2274A5;
   border:none;
   font-size:1em;
   color:white;
@@ -930,7 +949,7 @@ text-align: center;
 .hitcounter {
   display: none;
 }
-/* traffic hitcounter 401 on Mar-2-2018 */
+/* traffic hitcounter 412 on Mar-2-2018 */
 
 .hide {
   display: none;

@@ -127,17 +127,22 @@
                 <h1 class="textshadow">
                     <em class="textshadow">Golf Scorecard App </em>
                 </h1>
-                <h1 class="textshadow">Track your score quickly and conveniently</h1>
+                <h2 class="textshadow">Track your score quickly and conveniently</h2>
                 <h3 class="textshadow"> Easiest way to track your scores at your finger tips </h3>
+     
                 <a class="IndexScorecardsubmitAddBtn1" href="/scorecards">Scorecards</a>
 
+
                 <!-- if not logged in -->
+                <div class="divsignuplogin">
+     
                 <a ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Sign Up</a>
 
                 <a ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Login</a>
 
                 <!-- if logged in -->
-                <a class="IndexScorecardsubmitAddBtn" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }}!</a>
+                <a class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }}!</a>
+                </div>
             </div>
         </div>
 
