@@ -7,7 +7,6 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
 
 
-
     $http({
         url: '/session',
         method: 'GET'
