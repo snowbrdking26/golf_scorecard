@@ -14,7 +14,7 @@
                 <h3 class="addAgolfer">Enter a Golfer and Course</h3>
                 <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
                 <div>
-                    <form class="addAgolferForm" ng-submit="ctrl.processCreateForm()">
+                    <form class="addAgolferForm" ng-submit="ctrl.processCreateForm(ctrl.user)">
                         <div class="addGolferinputs">
                             <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.player" placeholder="Add Golfer Name">
                             <br>
@@ -152,6 +152,13 @@
                         <div class="centerAtag" onclick="openLeaderBoardNav()">
                             View Leaderboard
                         </div>
+                        <br>
+                        <div >
+                        <a class="centerAtag" href="#top">
+                        <div >
+                            Add a Golfer
+                        </div></a></div>
+                        <br>
                         <br>
                             <button ng-class="centerAtag" class="submitAddBtnStart" type="submit">Start Game</button>
                 </form>

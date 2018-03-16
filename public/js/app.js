@@ -1,8 +1,8 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
 app.controller('MainController', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-    this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
-    // this.url = 'http://localhost:3000'
+    // this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
+    this.url = 'http://localhost:3000'
 
 
 
@@ -47,13 +47,15 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
     this.createForm = {}
 
-    this.processCreateForm = () => {
+    this.processCreateForm = (user) => {
         $http({
             url: this.url + '/golfers' ,
             method: 'POST',
             data: this.createForm
         }).then(response => {
             this.golfers.push(response.data);
+            console.log("====")
+            console.log("this is user name: " + user.name)
             this.createForm = {};
         }).catch(err => console.log('Catch', err))
     }
