@@ -1,8 +1,8 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
 app.controller('MainController', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-    this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
-    // this.url = 'http://localhost:3000'
+    // this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
+    this.url = 'http://localhost:3000'
 
 
 
@@ -610,66 +610,6 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
     }
 
 
-
-/////////////////////////////////
-// firebase authentication below
-/////////////////////////////////
-
-    // // Initialize Firebase
-    // var config = {
-    //     apiKey: "AIzaSyDghp2Up2QbdEvLYvlCsqxFGy6CGsf0RnA",
-    //     authDomain: "golf-scorecards.firebaseapp.com",
-    //     databaseURL: "https://golf-scorecards.firebaseio.com",
-    //     projectId: "golf-scorecards",
-    //     storageBucket: "golf-scorecards.appspot.com",
-    //     messagingSenderId: "487171116044"
-    // };
-    // firebase.initializeApp(config);
-
-    // const txtEmail = document.getElementById('txtEmail');
-    // const txtPassword = document.getElementById('txtPassword');
-    // const btnLogin = document.getElementById('btnLogin');
-    // const btnSignUp = document.getElementById('btnSignUp');
-    // const btnLogout = document.getElementById('btnLogout');
-
-    // btnLogin.addEventListener('click', e => {
-    //     //get email and pass
-    //     const email = txtEmail.value;
-    //     const pass = txtPassword.value;
-    //     const auth = firebase.auth();
-    //     //sign in
-    //     const promise = auth.signInWithEmailAndPassword(email, pass);
-    //     promise.catch(e => console.log(e.message));
-    // });
-
-    // btnSignUp.addEventListener('click', e => {
-    //     //get email and pass
-    //     //TODO check for real email
-    //     const email = txtEmail.value;
-    //     const pass = txtPassword.value;
-    //     const auth = firebase.auth();
-    //     //sign in
-    //     const promise = auth.createUserWithEmailAndPassword(email, pass);
-    //     promise
-    //     .catch(e => console.log(e.message));
-    // });
-
-    // btnLogout.addEventListener('click', e => {
-    //     firebase.auth().signOut();
-    // });
-    
-    // //Add a realtime listener
-    // firebase.auth().onAuthStateChanged(firebaseUser => {
-    //     if(firebaseUser) {
-    //         console.log(firebaseUser);
-    //         btnLogout.classList.remove('hide');
-    //     } else {
-    //         console.log('not logged in');
-    //         btnLogout.classList.add('hide');
-    //     }
-    // });
-
-    // firebase authentication above
 
 }]);
 
