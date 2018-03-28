@@ -108,7 +108,7 @@ main {
 }
 
 
-.IndexScorecardsubmitAddBtn:hover, .IndexScorecardsubmitAddBtn1:hover  {
+.IndexScorecardsubmitAddBtn:hover, .IndexScorecardsubmitAddBtn1:hover, .IndexScorecardsubmitAddBtnWelcome:hover  {
   background-color: gray;
   color:white;
 }
