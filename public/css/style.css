@@ -696,11 +696,17 @@ width: 100%;
   display: none;
 } */
 
+.smallLogOut {
+  margin: .3em 0;
+  color:black;
+
+}
+
 .mainPicturePage2 {
     background-image: url(edewaa-foster-21158.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    /* height: 600px; */
+    min-height: 650px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -910,6 +916,13 @@ z-index: 0;
   color: white;
   width: 100%;
   text-shadow: 2px 2px 4px #000000;
+}
+
+.addAgolferWelcome {
+  color: white;
+  width: 100%;
+  text-shadow: 2px 2px 4px #000000;
+  margin-bottom: 0;
 }
 
 .textshadow {

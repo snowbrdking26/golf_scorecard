@@ -1,9 +1,10 @@
 const app = angular.module('MyGolfScoreCardApp', []);
 
 app.controller('MainController', ['$scope', '$timeout', '$http', function ($scope, $timeout, $http) {
-    this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
-    // this.url = 'http://localhost:3000'
+    // this.url = 'https://golf-scorecard-api-backend.herokuapp.com'
+    this.url = 'http://localhost:3000'
 
+    // ng-if= "golfer.user_id == ctrl.user.data.id"
 
 
 
@@ -84,10 +85,10 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
 
 
-// Hide score after displaying temporarily
-// https://www.experts-exchange.com/questions/25045539/Javascript-display-image-for-5-seconds-and-then-hide.html
+    // Hide score after displaying temporarily
+    // https://www.experts-exchange.com/questions/25045539/Javascript-display-image-for-5-seconds-and-then-hide.html
 
-// display and close score
+    // display and close score
     $scope.scoreToHide = true;
 
     $scope.showScoreDiv = function () {
@@ -586,6 +587,8 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         }).then(response => {
             this.user = response.data;
             this.user.name = this.loginForm.username;
+            console.log(this.user.data.id)
+    
             this.loginForm = {};
             this.badLogin = false;
             this.shortUser = false;

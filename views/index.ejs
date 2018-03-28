@@ -103,7 +103,7 @@
     <div class="sideNavPadding">
         <a class="aTagTopNav" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }}!</a>
 
-            <a class="aTagTopNav" ng-if='!ctrl.user' href="#" ng-if="!ctrl.user" onclick="openNavLogin()">
+            <a class="aTagTopNav" ng-if='!ctrl.user' href="#" ng-if="!ctrl.user" onclick="openNavLogin();closeMenuNav();">
                 Login</a>
      
             <a class="aTagTopNav" ng-if='!ctrl.user' href="#" onclick="openNavSignup()" ng-if="!ctrl.user">

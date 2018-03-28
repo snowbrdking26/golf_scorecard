@@ -10,23 +10,34 @@
         <div class="mainPicturePage2">
             <!-- Add New Golfer -->
             <div class="new-scorecard-container">
+                <br><br><br>
+                <h3 ng-if="ctrl.user" class="addAgolferWelcome"> Welcome {{ ctrl.user.name }}!</h3>
+                <button ng-if="ctrl.user" href="" ng-click='ctrl.logout()'><h6 ng-if='ctrl.user' class="smallLogOut"> Logout </h6></button>
                 <h2 class="addAgolfer">Starting a Round of Golf?</h2>
-                <h3 class="addAgolfer">Enter a Golfer and Course</h3>
+                <h3 ng-if="ctrl.user" class="addAgolfer">Enter a Golfer and Course</h3>
                 <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
                 <div>
                     <form class="addAgolferForm" ng-submit="ctrl.processCreateForm(ctrl.user)">
                         <div class="addGolferinputs">
-                            <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.player" placeholder="Add Golfer Name">
+                            <input ng-if="ctrl.user" class="addAGolferInput" type="text" ng-model="ctrl.createForm.player" placeholder="Add Golfer Name">
                             <br>
-                            <input class="addAGolferInput" type="text" ng-model="ctrl.createForm.course" placeholder="Add Golf Course Name">
+                            <input ng-if="ctrl.user" class="addAGolferInput" type="text" ng-model="ctrl.createForm.course" placeholder="Add Golf Course Name">
+                            <!-- this below makes (user_id = ctrl.user.data.id) to associate the item to user with foreign key through the Form submission in processCreateForm -->
+                            <input class="addAGolferInput" type="hidden" ng-model="ctrl.createForm.user_id = ctrl.user.data.id" placeholder={{ctrl.user.data.id}} value={{ctrl.user.data.id}} ">
                         </div>
-                        <input onclick="openLeaderBoardNav()" class="ScorecardsubmitAddBtn" type="submit">
+                      
+                        <!-- if logged in -->
+                        <button ng-if="ctrl.user" onclick="openLeaderBoardNav()" class="ScorecardsubmitAddBtn" type="submit">Submit</button>
+                        
                         <br>
                     </form>
                 </div>
+                <!-- if not logged in -->
+                <button ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Sign Up</button>
+                <button ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Login</button>
             </div>
         </div>
-        <main>
+        <main ng-if="ctrl.user">
             <div id="mySidenavLeaderBoard" class="sidenav2">
                 <div class="navLeaderBoardClosingTag">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeLeaderBoardNav()">&times;</a>
@@ -35,19 +46,20 @@
                     <a name='leaderboard'></a>
                     <h2 class="listTopH2">Scorecards & Leaderboard</h2>
                     <!-- <h5 class="listTopH2">click to view</h5> -->
-                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} - score: {{golfer.totalscore}}</a>
+                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" ng-if="golfer.user_id == ctrl.user.data.id" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} - score: {{golfer.totalscore}}</a>
                 </div>
             </div>
             <div>
+                 
                 <div class="containLeaderBoard">
                     <a name='leaderboard'></a>
                     <h2 class="listTopH2">Scorecards & Leaderboard</h2>
                     <!-- <h6>click to view</h6> -->
-                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} - score: {{golfer.totalscore}}</a>
+                    <a class="centerAtag" onclick="closeLeaderBoardNav()" ng-repeat="golfer in ctrl.golfers | orderBy: 'totalscore'" ng-if="golfer.user_id == ctrl.user.data.id" href="#{{golfer.id}}">{{golfer.player}} at {{golfer.course}} - score: {{golfer.totalscore}}</a>
                 </div>
             </div>
             <!-- Parent ng-repeat -->
-            <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers | orderBy: 'id'">
+            <div class="in-scorecard" ng-repeat="golfer in ctrl.golfers | orderBy: 'id'" ng-if="golfer.user_id == ctrl.user.data.id">
                 <a name="{{golfer.id}}">
                     <!-- anchor tag destination from toplinks -->
                     <div class="scorecardimage">
@@ -62,6 +74,7 @@
                             <div class="leftWatchlistBar">
                                 <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
                                 <h3 class="WatchlistTitle"> Course: {{golfer.course}}</h3>
+                                <!-- <h3 class="WatchlistTitle"> user_id: {{golfer.user_id}}</h3> -->
                                 <button class="buttonRemoveEdit2" ng-click="ctrl.toEdit = golfer" onclick="openEditGolferCourseNav()">Rename</button>
                 </a>
                 <a class="centerAtag1" href="">
@@ -117,6 +130,7 @@
                                 <td class="centerTd">
                                     <button ng-click="ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer); showScoreDiv()"
                                         class="submitAddBtn" type="submit">Check Score</button>
+                                        
                                 </td>
                                 <td class="centerTd"> - Par -
                                     <div ng-hide="scoreToHide">{{golfer.totalpar}}</div>
@@ -140,7 +154,7 @@
                             </form>
                         </div>
                         <!-- <div ng-class="classToChange2"> -->
-                        <button ng-class="submitAddBtn2" class="submitAddBtnAddHole" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)">Add Next Hole</button>
+                        <button ng-class="submitAddBtn2" class="submitAddBtnAddHole" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)" type="submit">Add Next Hole</button>
                         <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
                             <!-- invisible below -->
                             <div class="invisibleStartGame">

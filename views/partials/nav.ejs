@@ -36,7 +36,7 @@
                 <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.newUserForm.password"
                 />
             </div>
-            <button class="scoresbutton" onclick="closeNavLogin()" type="submit">Sign Up</button>
+            <button class="scoresbutton" onclick="closeNavSignup(); closeMenuNav();" type="submit">Sign Up</button>
         </form>
     </div>
 </div>
@@ -92,6 +92,7 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
     <div class="sideNavPadding">
         <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!
+            
 
       
 
@@ -99,17 +100,17 @@
         <a class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
              <span class="glyphicon glyphicon-user"></span> Leaderboard</a>
         <a ng-if='!ctrl.user'>
-            <a class="aTagTopNav" href="#" onclick="openNavLogin()" ng-if="!ctrl.user">
+            <a class="aTagTopNav" href="#" onclick="openNavLogin(); closeMenuNav();" ng-if="!ctrl.user">
                 <span class="glyphicon glyphicon-log-in"></span> Login</a>
         </a>
         <a ng-if='!ctrl.user'>
-            <a class="aTagTopNav" href="#" onclick="openNavSignup()" ng-if="!ctrl.user">
+            <a class="aTagTopNav" href="#" onclick="openNavSignup(); closeMenuNav();" ng-if="!ctrl.user">
                 <span class="glyphicon glyphicon-user"></span> Register</a>
         </a>
         
 
 <!-- if logged in -->
-            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>Log Out</a>
+            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click='ctrl.logout(); closeMenuNav();'>Log Out</a>
         
         <a class="aTagTopNav" ng-if='ctrl.user' href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="ctrl.user">Leaderboard</a>
             <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">Scorecards</a>
