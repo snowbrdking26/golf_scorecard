@@ -555,7 +555,7 @@ tr:nth-child(even) {
 .removeEditScore {
   text-align: left;
     font-size: 10px;
-    padding: 0 0 10px 10px;
+    padding: 0 0 10px 20px;
 }
 
 input.addaScore {
@@ -826,11 +826,11 @@ padding: 0 0;
 
 
 .buttonRemoveEdit {
-    width: 30%;
+    width: 10%;
     height: 38px;
     padding: 0px 0px;
-    margin: 10px 0px 10px 0px;
-    background: #2274A5;
+    margin: 0px 0px 10px 0px;
+    /* background: #2274A5; */
     border: none;
     font-size: 1em;
     color: white;
@@ -839,11 +839,11 @@ padding: 0 0;
 
 
 .buttonRemoveEdit2 {
-    width: 30%;
+    width: 10%;
     height: 38px;
     padding: 0px 0px;
-    margin: 10px 0px 10px 0px;
-    background: #84BCDA;
+    margin: 0px 0px 10px 0px;
+    /* background: #84BCDA; */
     border: none;
     font-size: 1em;
     color: white;

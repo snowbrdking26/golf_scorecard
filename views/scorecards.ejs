@@ -75,11 +75,10 @@
                                 <h3 class="WatchlistTitle"> Player: {{golfer.player}}</h3>
                                 <h3 class="WatchlistTitle"> Course: {{golfer.course}}</h3>
                                 <!-- <h3 class="WatchlistTitle"> user_id: {{golfer.user_id}}</h3> -->
-                                <button class="buttonRemoveEdit2" ng-click="ctrl.toEdit = golfer" onclick="openEditGolferCourseNav()">Rename</button>
-                </a>
-                <a class="centerAtag1" href="">
-                    <button class="buttonRemoveEdit" ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)">Remove</button>
-                </a>
+                    <button class="buttonRemoveEdit" ng-click="ctrl.deleteGolfer(golfer.id); ctrl.updateTotalScore(golfer); ctrl.updateTotalPar(golfer)"><img style="width: 15px; height: auto;" src="css/iconsDeleteTrash.png"/></button>
+
+                    <button class="buttonRemoveEdit2" ng-click="ctrl.toEdit = golfer" onclick="openEditGolferCourseNav()"><img style="width: 15px; height: auto;" src="css/iconEditPencil.png"/> </button>
+           
                 </div>
 
                 <div class="contain-in-scorecards">
@@ -94,9 +93,9 @@
                                     <div class="tdleftHole"># {{scorecard.holenumber}}</div>
                                     <div class="tdleftRemoveEdit">
                                         <div class="containerRemoveEditScore">
-                                            <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)"
-                                                class="add">Remove</div>
-                                            <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" onclick="openEditScorecardsNav()" class="add">Edit</div>
+                                            <div class="removeEditScore" ng-click="ctrl.deleteScorecard(scorecard.id); ctrl.updateTotalPar(golfer); ctrl.updateTotalScore(golfer)" class="add"><img style="width: 10px; height: auto;" src="css/iconsDeleteTrash.png" /></div>
+                                            <div class="removeEditScore" ng-click="ctrl.toEditScorecard = scorecard" onclick="openEditScorecardsNav()" class="add">
+                                                <img style="width: 10px; height: auto;" src="css/iconEditPencil.png" /></div>
                                         </div>
                                     </div>
                                 </td>
@@ -176,14 +175,14 @@
                         <br>
                             <button ng-class="centerAtag" class="submitAddBtnStart" type="submit">Start Game</button>
                 </form>
-                        
-                        
-                            
+       
 
-                        
-                    </div>
+
+
+                
                 </div>
-                <!-- end of add new score -->
+            </div>
+    <!-- end of add new score -->
                 <br>
                 <!-- edit scorecards -->
                 <div id="mySidenavEditScorecards" class="sidenav">
