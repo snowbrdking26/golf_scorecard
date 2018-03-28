@@ -7,7 +7,8 @@ body {
 
 /* index page */
 .mainPicture {
-    background-image: url(peter-lewicki-409738.jpg);
+    /* background-image: url(peter-lewicki-409738.jpg); */
+    background-image: url(pexels-photo-54123.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     /* height: 600px; */
@@ -703,7 +704,7 @@ width: 100%;
 }
 
 .mainPicturePage2 {
-    background-image: url(edewaa-foster-21158.jpg);
+    background-image: url(edewaa-foster-21158.png);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 650px;
@@ -971,3 +972,77 @@ text-align: center;
   background-repeat: no-repeat;
   background-image: url(pexels-photo-54123.jpeg);
 } */
+
+
+.rowMainIndex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.box1 { 
+  background-color: green;
+  background-image: url(pexels-photo-114972.jpeg);
+   background-size: cover;
+    background-repeat: no-repeat;
+  width: 50%;
+  height: 300px;
+}
+.box2 {
+ background-color: white;
+ width: 50%;
+ height: 300px;
+}
+.box3 {
+  background-color: white;
+  width: 50%;
+  height: 300px;
+}
+.box4 {
+  background-color: green;
+  background-image: url(sandbunker.png);
+   background-size: cover;
+    background-repeat: no-repeat;
+  width: 50%;
+  height: 300px;
+}
+.box5 {
+  background-color: green;
+  background-image: url(pexels-photo-274133.jpeg);
+   background-size: cover;
+    background-repeat: no-repeat;
+  width: 50%;
+  height: 300px;
+}
+.box6 {
+  background-color: white;
+  width: 50%;
+  height: 300px;
+}
+.box7 {
+  background-color: white;
+  width: 50%;
+  height: 300px;
+}
+.box8 {
+  background-color: green;
+  background-image: url(magnolia-golf-course-mobile-alabama-golfing-163886.jpeg);
+   background-size: cover;
+    background-repeat: no-repeat;
+  width: 50%;
+  height: 300px;
+}
+.box9 {
+  background-color: green;
+  background-image: url(tyson-dudley-122441.png);
+   background-size: cover;
+    background-repeat: no-repeat;
+  width: 50%;
+  height: 300px;
+}
+.box10 {
+  background-color: white;
+  width: 50%;
+  height: 300px;
+}
