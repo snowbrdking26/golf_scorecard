@@ -97,7 +97,7 @@
       
 
  <!-- if not logged in -->
-        <a class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
+        <a ng-if='ctrl.user'class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
              <span class="glyphicon glyphicon-user"></span> Leaderboard</a>
         <a ng-if='!ctrl.user'>
             <a class="aTagTopNav" href="#" onclick="openNavLogin(); closeMenuNav();" ng-if="!ctrl.user">
