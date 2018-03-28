@@ -11,7 +11,7 @@
     <div class="right">
 
         <!-- <a href="/">Home</a> -->
-        <a class="aTagTopNav" href="/scorecards">Scorecards</a>
+        <a ng-if='ctrl.user' class="aTagTopNav" href="/scorecards">Scorecards</a>
         <a class="aTagTopNav" onclick="openWeatherNav()">Weather</a>
   
         <!-- three lines icon -->
