@@ -11,9 +11,9 @@
             <!-- Add New Golfer -->
             <div class="new-scorecard-container">
                 <br><br><br>
-                <h3 ng-if="ctrl.user" class="addAgolferWelcome"> Welcome {{ ctrl.user.name }}!</h3>
-                <button ng-if="ctrl.user" href="" ng-click='ctrl.logout()'><h6 ng-if='ctrl.user' class="smallLogOut"> Logout </h6></button>
-                <h2 class="addAgolfer">Starting a Round of Golf?</h2>
+                <h3 ng-if="ctrl.user" class="addAgolferWelcome"> Welcome {{ ctrl.user.name }} !</h3>
+                <button ng-if="ctrl.user" href="" ng-click='ctrl.logout()'><h6 class="smallLogOut"> Logout </h6></button>
+                <h2 class="addAgolfer">Starting a Round of Golf ?</h2>
                 <h3 ng-if="ctrl.user" class="addAgolfer">Enter a Golfer and Course</h3>
                 <h2 class="h2addWatchlist" ng-click="ctrl.addWatchlist()" class="add"></h2>
                 <div>
@@ -23,7 +23,7 @@
                             <br>
                             <input ng-if="ctrl.user" class="addAGolferInput" type="text" ng-model="ctrl.createForm.course" placeholder="Add Golf Course Name">
                             <!-- this below makes (user_id = ctrl.user.data.id) to associate the item to user with foreign key through the Form submission in processCreateForm -->
-                            <input class="addAGolferInput" type="hidden" ng-model="ctrl.createForm.user_id = ctrl.user.data.id" placeholder={{ctrl.user.data.id}} value={{ctrl.user.data.id}} ">
+                            <input class="addAGolferInput" type="hidden" ng-model="ctrl.createForm.user_id = ctrl.user.data.id" placeholder={{ctrl.user.data.id}} value={{ctrl.user.data.id}}"/>
                         </div>
                       
                         <!-- if logged in -->
@@ -237,4 +237,9 @@
         </main>
         <% include partials/footer.ejs %>
 </body>
+<script>
+    AOS.init({
+        // duration: 3000
+    });
+</script>
 </html>

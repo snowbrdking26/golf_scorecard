@@ -612,8 +612,6 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         }).catch(err => console.log(err))
     }
 
-
-
 }]);
 
 // ======================

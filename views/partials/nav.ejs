@@ -1,19 +1,21 @@
-<!-- sidenav -->
-<div class="topnav">
 
-    <div class="left">
 
-        <a class="aTagTopNavDivLogo" href="/"> 
+<!-- topnav -->
+<div  class="topnav">
+
+    <div data-aos="fade-right" data-aos-duration="2000" class="left">
+
+        <a class="aTagTopNavDivLogo" href="/">
             Golf Scorecards App
         </a>
     </div>
 
-    <div class="right">
+    <div data-aos="fade-left" data-aos-duration="2000" class="right">
 
         <!-- <a href="/">Home</a> -->
-        <a ng-if='ctrl.user' class="aTagTopNav" href="/scorecards">Scorecards</a>
+        <a ng-if='ctrl.user' class="aTagTopNav" href="/scorecards">My Scorecards</a>
         <a class="aTagTopNav" onclick="openWeatherNav()">Weather</a>
-  
+
         <!-- three lines icon -->
         <a class="threeLines" onclick="openMenuNav()">&#9776;</a>
     </div>
@@ -91,14 +93,14 @@
 <div id="mySidenavMenu" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
     <div class="sideNavPadding">
-        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }}!
+        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }} !
             
 
       
 
  <!-- if not logged in -->
-        <a ng-if='ctrl.user'class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
-             <span class="glyphicon glyphicon-user"></span> Leaderboard</a>
+        <!-- <a ng-if='ctrl.user'class="aTagTopNav" href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="!ctrl.user">
+             <span class="glyphicon glyphicon-user"></span> Leaderboard</a> -->
         <a ng-if='!ctrl.user'>
             <a class="aTagTopNav" href="#" onclick="openNavLogin(); closeMenuNav();" ng-if="!ctrl.user">
                 <span class="glyphicon glyphicon-log-in"></span> Login</a>
@@ -110,10 +112,11 @@
         
 
 <!-- if logged in -->
-            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click='ctrl.logout(); closeMenuNav();'>Log Out</a>
+            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click="ctrl.logout();" onclick="closeMenuNav();">Log Out</a>
         
-        <a class="aTagTopNav" ng-if='ctrl.user' href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="ctrl.user">Leaderboard</a>
-            <a class="aTagTopNav" ng-if='ctrl.user' href="#scorecard">Scorecards</a>
+        <!-- <a class="aTagTopNav" ng-if='ctrl.user' href="#" onclick="openLeaderBoardNav(); closeMenuNav();" ng-if="ctrl.user">Leaderboard</a> -->
+            <a class="aTagTopNav" ng-if='ctrl.user' href="/scorecards">Scorecards</a>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#" onclick="openWeatherNav();closeMenuNav(); ">Weather</a>
 
     </div>
 </div>

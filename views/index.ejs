@@ -2,33 +2,13 @@
 <html lang="en" ng-app="MyGolfScoreCardApp">
 
 <head>
-
     <% include partials/head.ejs %>
-
 </head>
 
 <body ng-controller="MainController as ctrl">
 
-<!-- sidenav -->
-<div class="topnav">
+<% include partials/nav.ejs %>
 
-    <div class="left">
-
-        <a class="aTagTopNavDivLogo" href="/">
-            Golf Scorecards App
-        </a>
-    </div>
-
-    <div class="right">
-
-        <!-- <a href="/">Home</a> -->
-        <a ng-if='ctrl.user' class="aTagTopNav" href="/scorecards">My Scorecards</a>
-        <a class="aTagTopNav" onclick="openWeatherNav()">Weather</a>
-
-        <!-- three lines icon -->
-        <a class="threeLines" onclick="openMenuNav()">&#9776;</a>
-    </div>
-</div>
 <!-- expanding sidenav SIGNUP -->
 <div id="mySidenavSignup" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNavSignup()">&times;</a>
@@ -59,15 +39,13 @@
             <div ng-if="ctrl.badLogin == true" id="incorrectPassword">Incorrect Username/Password</div>
             <div class="form-group">
                 <!-- <label for="pwd">Username: </label> -->
-                <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username"
-                />
+                <input class="loginsignupInput" type="text" class="form-control" placeholder="username" ng-model="ctrl.loginForm.username"/>
             </div>
             <div class="form-group">
                 <!-- <label for="pwd">Password: </label> -->
-                <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password"
-                />
+                <input class="loginsignupInput" type="password" class="form-control" placeholder="password" ng-model="ctrl.loginForm.password"/>
             </div>
-            <div class="checkbox"></div>
+            <!-- <div class="checkbox"></div> -->
             <button class="scoresbutton" onclick="closeNavLogin()" type="submit">Login</button>
         </form>
         <!-- <form ng-if='ctrl.user' ng-submit='ctrl.logout()'>
@@ -98,50 +76,51 @@
 
 
 <!-- expanding sidenav Menu -->
-<div id="mySidenavMenu" class="sidenav">
+<!-- <div id="mySidenavMenu" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
     <div class="sideNavPadding">
-        <a class="aTagTopNav" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }} !</a>
+        <a class="aTagTopNav" ng-if='ctrl.user' 
+        onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }} !</a>
 
-            <a class="aTagTopNav" ng-if='!ctrl.user' href="#" ng-if="!ctrl.user" onclick="openNavLogin();closeMenuNav();">
+            <a class="aTagTopNav" href="#" ng-if='!ctrl.user' onclick="openNavLogin(); closeMenuNav();">
                 Login</a>
      
-            <a class="aTagTopNav" ng-if='!ctrl.user' href="#" onclick="openNavSignup()" ng-if="!ctrl.user">
+            <a class="aTagTopNav" href="#" onclick="openNavSignup()" ng-if='!ctrl.user'>
                 Sign Up</a>
 
-        <!-- if logged in -->
-            <a class="aTagTopNav" ng-if='ctrl.user' href="#" ng-click='ctrl.logout()'>
+    
+            <a class="aTagTopNav" ng-if='ctrl.user' href="#" ng-click="ctrl.logout();" onclick="closeMenuNav()">
                 Log Out</a>
 
             <a class="aTagTopNav" ng-if='ctrl.user' href="/scorecards">
                  Scorecards</a>
 
     </div>
-</div>
+</div> -->
 
 </div>
 
         <div class="mainPicture">
             <div class="mainTopText">
 
-                <h1 class="textshadow">
+                <h1 data-aos="zoom-in-up" data-aos-duration="2000" class="textshadow">
                     <em class="textshadow">Golf Scorecards App </em>
                 </h1>
-                <h3 class="textshadow">Track your score quickly and conveniently</h3>
+                <h3 data-aos="zoom-in-up" data-aos-duration="2000" class="textshadow">Track your golf score quickly and conveniently</h3>
                
      
-                <a ng-if='ctrl.user' class="IndexScorecardsubmitAddBtn1" href="/scorecards">My Scorecards</a>
+                <a data-aos="zoom-in-up" data-aos-duration="2000" ng-if='ctrl.user' class="IndexScorecardsubmitAddBtn1" href="/scorecards">My Scorecards</a>
 
 
                 <!-- if not logged in -->
                 <div class="divsignuplogin">
      
-                <a ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Sign Up</a>
+                <a data-aos="zoom-in-up" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Sign Up</a>
 
-                <a ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Login</a>
+                <a data-aos="zoom-in-up" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Login</a>
 
                 <!-- if logged in -->
-                <a class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name }}!</a>
+                <a data-aos="zoom-in-up" data-aos-duration="3000" class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name}} !</a>
                 </div>
             </div>
         </div>
@@ -153,14 +132,14 @@
         </div>
 
         <div class="rowMainIndex">
-            <div class="box1"></div>
+            <div data-aos="zoom-in-right" data-aos-duration="3000" class="box1"></div>
             <div class="box2">
                 <h5 class="boxText" > Track your scores easily at your finger tips. No paper or pencil. </h5>
             </div>
         </div>
         <div class="rowMainIndex">
             <div class="box3"><h5 class="boxText"> Update your friends scores at the touch of a button. </h5></div>
-            <div class="box4"></div>
+            <div data-aos="zoom-in-left" data-aos-duration="3000" class="box4"></div>
         </div>
         <!-- <div class="rowMainIndex">
             <div class="box5"></div>
@@ -171,9 +150,11 @@
             <div class="box8"></div>
         </div> -->
         <div class="rowMainIndex">
-            <div class="box9"></div>
-            <div class="box10"><h5 class="boxText"> Know who is in the lead with the convenient leaderboard feature. </h5></div>
+            <div data-aos="zoom-in-right" data-aos-duration="3000" class="box9"></div>
+            <div class="box10"><h5 class="boxText"> Know which of your friends is in the lead with the leaderboard feature in your profile's scorecards. </h5></div>
         </div>
+
+
         <div class="worldRankBox">
         <script src="https://www.tourbrassie.com/widget/index?type=index&showlogo=1&showfacebook=0&bgcolor=&width=350&height=&widthsetting=optimized&unit=px&layout=table&country=&displayplayersby=country&playerlist=&showcountry=1&showaveragepoints=0&showtotalpoints=1&showsponsor=1&tour=pga-tour&limit=10"></script>
         </div>
@@ -186,5 +167,11 @@
 
 
 </body>
+
+<script>
+    AOS.init({
+        // duration: 3000
+    });
+</script>
 
 </html>
