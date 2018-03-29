@@ -93,21 +93,23 @@
         <a class="aTagTopNav" ng-if='ctrl.user'> Welcome {{ ctrl.user.name }} !
             
 
-        <a ng-if='!ctrl.user'>
-            <a class="aTagTopNav" href="#" onclick="openNavLogin(); closeMenuNav();" ng-if="!ctrl.user">
-                <span class="glyphicon glyphicon-log-in"></span> Login</a>
-        </a>
-        <a ng-if='!ctrl.user'>
-            <a class="aTagTopNav" href="#" onclick="openNavSignup(); closeMenuNav();" ng-if="!ctrl.user">
-                <span class="glyphicon glyphicon-user"></span> Sign Up</a>
-        </a>
+       
+            <a class="aTagTopNav" href="#" onclick="openNavLogin(); closeMenuNav();" ng-if="!ctrl.user" style="display:inline-flex">
+                <img src="css/icons8-import-50.png" style="width: 25px;height:25px; padding-right:5px;" alt=""> Login</a>
+       
+            <a class="aTagTopNav" href="#" onclick="openNavSignup(); closeMenuNav();" ng-if="!ctrl.user" style="display:inline-flex"><img src="css/icons8-add-user-male-50.png" style="width: 25px;height:25px; padding-right:5px;" alt=""> SignUp</a>
+     
+        
         
 
 <!-- if logged in -->
-            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click="ctrl.logout();" onclick="closeMenuNav();">Log Out</a>
+            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click="ctrl.logout();" onclick="closeMenuNav();" style="display:inline-flex"><img src="css/icons8-exit-50.png" style="width: 20px; height:25px; padding-right:5px;" alt="">LogOut</a>
+       
+            <a class="aTagTopNav">_______</a>
 
-            <a class="aTagTopNav" ng-if='ctrl.user' href="/scorecards">Scorecards</a>
-            <a class="aTagTopNav" ng-if='ctrl.user' href="#" onclick="openWeatherNav();closeMenuNav(); ">Weather</a>
+            <a class="aTagTopNav" ng-if='ctrl.user' href="/scorecards" style="display:inline-flex" ><img style="width: 25px; height:25px; padding-right:5px;" src="css/icons8-scorecard-50.png" alt="">Scorecards</a>
+
+            <a class="aTagTopNav" href="#" onclick="openWeatherNav();closeMenuNav();" style="display:inline-flex"> <img style="width: 30px; height:30px; padding-right:5px;" src="css/icons8-stormy-weather-80.png" alt="">Weather</a>
 
     </div>
 </div>
