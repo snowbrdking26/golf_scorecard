@@ -1066,6 +1066,12 @@ background-color: rgb(249, 249, 249);
 /* padding-top: 20px; */
 }
 
+.aTagButtonLogOut {
+  text-align: center;
+  margin: 0 auto;
+  float: none;
+}
+
 @media only screen and (device-width: 768px),
        only screen and (min-width: 768px) {
 
@@ -1106,4 +1112,5 @@ background-color: rgb(249, 249, 249);
   width: 50%;
   height: 300px;
 }
-       }
+/* end of @media mobile width */
+}
