@@ -1074,7 +1074,7 @@ background-color: rgb(249, 249, 249);
 
 .footerLink {
   color: blue;
-  /* display: inline; */
+  text-decoration: underline;
   float: none;
 }
 
