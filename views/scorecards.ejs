@@ -154,7 +154,8 @@
                             </form>
                         </div>
                         <!-- <div ng-class="classToChange2"> -->
-                        <button ng-class="submitAddBtn2" class="submitAddBtnAddHole" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)" type="submit">Add Next Hole</button>
+                
+                        <button ng-show="golfer.scorecards.length >= 1" ng-class="submitAddBtn2" class="submitAddBtnAddHole" ng-click="ctrl.incrementingRow(golfer.id, golfer.scorecards)" type="submit">Add Next Hole</button>
                         <form class="addScoreForm" ng-submit="ctrl.startGame(golfer.id)">
                             <!-- invisible below -->
                             <div class="invisibleStartGame">
@@ -163,6 +164,8 @@
                                 <input class="addaScore" type="text" name="c" placeholder="add score" ng-model="ctrl.createFormScorecards.score">
                             </div>
                         
+                        <button ng-hide="golfer.scorecards.length >= 1" ng-class="centerAtag" class="submitAddBtnStart" type="submit">Start Game</button>
+
                         <div class="centerAtag" onclick="openLeaderBoardNav()">
                             View Leaderboard
                         </div>
@@ -174,7 +177,8 @@
                         </div></a></div>
                         <br>
                         <br>
-                            <button ng-class="centerAtag" class="submitAddBtnStart" type="submit">Start Game</button>
+                            
+                           
                 </form>
        
 
