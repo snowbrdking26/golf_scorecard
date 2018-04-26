@@ -1072,6 +1072,12 @@ background-color: rgb(249, 249, 249);
   float: none;
 }
 
+.footerLink {
+  color: blue;
+  /* display: inline; */
+  float: none;
+}
+
 @media only screen and (device-width: 768px),
        only screen and (min-width: 768px) {
 
