@@ -569,6 +569,7 @@ input.addaScore {
 td {
   width: 25%;
   padding: 8px;
+  height: 60px;
 }
 
 .insideTd {
