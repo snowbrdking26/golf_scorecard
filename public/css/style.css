@@ -5,6 +5,10 @@ body {
     /* min-width: 1050px; */
 }
 
+html {
+      scroll-behavior: smooth;
+    }
+
 /* index page */
 .mainPicture {
     /* background-image: url(peter-lewicki-409738.jpg); */
