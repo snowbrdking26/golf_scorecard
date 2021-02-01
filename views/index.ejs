@@ -17,41 +17,57 @@
                 <h1 data-aos="fade-zoom-in" data-aos-duration="3000" class="textshadow">
                     <em class="textshadow">Golf Scorecards App </em>
                 </h1>
-                <h3 data-aos="fade-zoom-in" data-aos-duration="3000" class="textshadow">Track your golf score quickly and conveniently</h3>
+                <h3 data-aos="fade-zoom-in" data-aos-duration="3000" class="textshadow"> Digital Scorecard Solution for Golf Course Managers and Owners</h3>
                
      
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if='ctrl.user' class="IndexScorecardsubmitAddBtn1" href="/scorecards">My Scorecards</a>
+                <!-- <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if='ctrl.user' class="IndexScorecardsubmitAddBtn1"
+                    href="/scorecards">My Scorecards</a> -->
 
 
                 <!-- if not logged in -->
                 <div class="divsignuplogin">
      
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Sign Up</a>
+                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Manager Sign Up</a>
 
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Login</a>
+                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Manager Login</a>
 
                 <!-- if logged in -->
+
                 <a data-aos="fade-zoom-in" data-aos-duration="3000" class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name}} !</a>
                 </div>
+
+                <div ng-if='ctrl.user' > 
+                    <h5 class="textshadow">Included - QR Code - Course Managers can show Golfers this QR code (scan on camera phone) to access the Digital Scorecards </h5>
+                    <h5 class="textshadow" >Included - Unlimited Scorecards</h5>
+                    <div class="QRcode"></div>
+                    
+                    <h5 class="textshadow">Profile for - {{ ctrl.user.name}} - Golf Course</h5>
+                    <h5 class="textshadow">- Subscription renewal on _____ date</h5>
+                    <h5 class="textshadow">- To Cancel Subscription please email: golf.scorecards.app@gmail.com with a subject line "Cancel Subscription" </h5>
+                   
+
+                </div>
+                
             </div>
         </div>
 
         <div class="title1">
             <h3>How can the Golf Scorecards App help you?</h3>
-            <h5> The Golf Scorecards App allows you to conviently score your golf game while playing. You can add all your friends scores in one place. With easy one touch scoring. </h5>
+            <h5> The Golf Scorecards App allows you to digitally score your golf game while playing. You can add all your friends scores in one place. With easy one touch scoring. </h5>
         
         </div>
 
         <div class="rowMainIndex">
             <div data-aos="fade-zoom-in" data-aos-duration="3000" class="box1"></div>
             <div class="box2">
-                <h5 class="boxText" > Track your scores easily at your finger tips. No paper or pencil. </h5>
+                <h5 class="boxText" > Skip paper and pencil. Track your scores easily at your finger tips. </h5>
             </div>
         </div>
         <div class="rowMainIndex">
-            <div class="box3"><h5 class="boxText"> Update your friends scores at the touch of a button. </h5></div>
+            <div class="box3"><h5 class="boxText"> Includes:  <p>+Unlimited Digital Scorecards</p> <p> +Active QR code for golfer scorecards </p> </h5></div>
             <div data-aos="fade-zoom-in" data-aos-duration="3000" class="box4"></div>
         </div>
+        
         <!-- <div class="rowMainIndex">
             <div class="box5"></div>
             <div class="box6"></div>

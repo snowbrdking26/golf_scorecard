@@ -1061,6 +1061,15 @@ padding: 90px 50px 20px
   height: 200px;
 }
 
+.QRcode {
+  /* background-color: green; */
+  background-image: url(QR-code-to-Golfer-Scorecards.png);
+   background-size: cover;
+    background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+}
+
 .boxText {
   margin:70px 20%;
   text-align: center;
