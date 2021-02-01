@@ -1,46 +1,61 @@
-const doc = window.document;
-const MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+let callback = () => {};
 
-let listeners = [];
-let observer;
+function containsAOSNode(nodes) {
+  let i, currentNode, result;
 
-function ready (selector, fn) {
-  // Store the selector and callback to be monitored
-  listeners.push({
-    selector,
-    fn
-  });
+  for (i = 0; i < nodes.length; i += 1) {
+    currentNode = nodes[i];
 
-  if (!observer && MutationObserver) {
-    // Watch for changes in the document
-    observer = new MutationObserver(check);
-    observer.observe(doc.documentElement, {
-      childList: true,
-      subtree: true,
-      removedNodes: true
-    });
-  }
-  // Check if the element is currently in the DOM
-  check();
-}
+    if (currentNode.dataset && currentNode.dataset.aos) {
+      return true;
+    }
 
-function check() {
-  // Check the DOM for elements matching a stored selector
-  for (let i = 0, len = listeners.length, listener, elements; i < len; i++) {
-    listener = listeners[i];
-    // Query for elements matching the specified selector
-    elements = doc.querySelectorAll(listener.selector);
-    for (let j = 0, jLen = elements.length, element; j < jLen; j++) {
-      element = elements[j];
-      // Make sure the callback isn't invoked with the
-      // same element more than once
-      if (!element.ready) {
-        element.ready = true;
-        // Invoke the callback with the element
-        listener.fn.call(element, element);
-      }
+    result = currentNode.children && containsAOSNode(currentNode.children);
+
+    if (result) {
+      return true;
     }
   }
+
+  return false;
 }
 
-export default ready;
+function getMutationObserver() {
+  return window.MutationObserver ||
+    window.WebKitMutationObserver ||
+    window.MozMutationObserver;
+}
+
+function isSupported() {
+  return !!getMutationObserver();
+}
+
+function ready(selector, fn) {
+  const doc = window.document;
+  const MutationObserver = getMutationObserver();
+
+  const observer = new MutationObserver(check);
+  callback = fn;
+
+  observer.observe(doc.documentElement, {
+    childList: true,
+    subtree: true,
+    removedNodes: true
+  });
+}
+
+function check(mutations) {
+  if (!mutations) return;
+
+  mutations.forEach(mutation => {
+    const addedNodes = Array.prototype.slice.call(mutation.addedNodes);
+    const removedNodes = Array.prototype.slice.call(mutation.removedNodes);
+    const allNodes = addedNodes.concat(removedNodes);
+
+    if (containsAOSNode(allNodes)) {
+      return callback();
+    }
+  });
+}
+
+export default { isSupported, ready };

@@ -10,15 +10,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aos": "^2.2.0",
+    "aos": "^2.3.4",
     "dotenv": "^4.0.0",
-    "ejs": "^2.5.9",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "mongoose": "^5.0.16",
-    "morgan": "^1.9.0",
-    "nodemon": "^1.17.3",
-    "request": "^2.85.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "mongoose": "^5.11.14",
+    "morgan": "^1.10.0",
+    "nodemon": "^1.19.4",
+    "request": "^2.88.2",
     "updates": "^11.4.2"
   }
 }
