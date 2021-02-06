@@ -932,7 +932,7 @@ z-index: 0;
 }
 
 .textshadow {
-  text-shadow: 2px 2px 2px #000000;
+  /* text-shadow: 2px 2px 2px #000000; */
   margin-left: 5px;
 }
 
@@ -1061,13 +1061,57 @@ padding: 90px 50px 20px
   height: 200px;
 }
 
+.qrcodewrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
 .QRcode {
   /* background-color: green; */
   background-image: url(QR-code-to-Golfer-Scorecards.png);
    background-size: cover;
     background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.accountprofile{
+ background-color: grey;
+  width: 80%;
+}
+
+.scorecardlinkWrapper{
+  width: 220px;
+  height: 220px;
+}
+
+.scorecardlink {
+  background-color: #2274A5;
+  width: 220px;
+  height: 220px;
+  font-size: 10px;
+  margin: 5px;
+  padding: 5px;
+  box-shadow: 2px 2px 6px #000000;
+}
+
+.scorecardlink:hover {
+  background-color: grey;
+}
+
+.fontcolorwhite{
+  color: white;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  /* border: 3px solid green; */
+  padding: 10px;
 }
 
 .boxText {
@@ -1087,7 +1131,7 @@ background-color: rgb(249, 249, 249);
 }
 
 .footerLink {
-  color: blue;
+  color: lightblue;
   text-decoration: underline;
   float: none;
 }

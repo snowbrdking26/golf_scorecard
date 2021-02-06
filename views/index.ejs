@@ -24,6 +24,9 @@
                     href="/scorecards">My Scorecards</a> -->
 
 
+
+
+                <!-- //////////////////////////////////////////////// -->
                 <!-- if not logged in -->
                 <div class="divsignuplogin">
      
@@ -31,25 +34,60 @@
 
                 <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Manager Login</a>
 
+
+
+
+
+                <!-- //////////////////////////////////////////////// -->
                 <!-- if logged in -->
 
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name}} !</a>
+                <a data-aos="fade-zoom-in" data-aos-duration="3000" class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name}} </a>
+                    <div class="center">
+                        <a href="#">
+                            <button ng-if="ctrl.user" href="" ng-click='ctrl.logout()'>
+                                <h6 class="smallLogOut">Log Out</h6>
+                            </button>
+                        </a> 
+                        <br>
+                    </div>
                 </div>
+               
 
                 <div ng-if='ctrl.user' > 
-                    <h5 class="textshadow">Included - QR Code - Course Managers can show Golfers this QR code (scan on camera phone) to access the Digital Scorecards </h5>
-                    <h5 class="textshadow" >Included - Unlimited Scorecards</h5>
-                    <div class="QRcode"></div>
+
+                    <h5 class="textshadow">Included - Unlimited Scorecards</h5>
+                    <h5 class="textshadow">Included - Active QR Code  </h5>
                     
-                    <h5 class="textshadow">Profile for - {{ ctrl.user.name}} - Golf Course</h5>
-                    <h5 class="textshadow">- Subscription renewal on _____ date</h5>
-                    <h5 class="textshadow">- To Cancel Subscription please email: golf.scorecards.app@gmail.com with a subject line "Cancel Subscription" </h5>
+                    <div class="QRcode"></div>
+
+                        <div class="scorecardlinkWrapper">
+                            <a href="http://www.golfscorecardsapp.com/scorecards">
+                                <div class="scorecardlink">
+                                    <br><br><br>
+                                    <h2 class="fontcolorwhite">Link to Scorecards Here: </h2>
+                                    <h4 class="footerLink">www.golfscorecardsapp.com/scorecards</h4> 
+                                </div>
+                            </a>
+                        </div>
+            <br>
+            <br>
+
+                 <div class="accountprofile">
+                        <br>
+                            <h5 class="textshadow">Account Profile for : {{ ctrl.user.name}}</h5>
+                            <h5 class="textshadow">- Subscription renewal on _____ date</h5>
+                            <h5 class="textshadow">- To Cancel Subscription email: _____  </h5>
+                            <h5>- Add subject line "Cancel Subscription"</h5>
+                        <br>
+                    </div>
                    
 
                 </div>
-                
+                <!-- end of logged in view ////////////////-->
             </div>
+            <!-- end of mainTopText -->
         </div>
+        <!-- end of mainPicture -->
 
         <div class="title1">
             <h3>How can the Golf Scorecards App help you?</h3>
