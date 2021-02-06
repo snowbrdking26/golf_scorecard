@@ -1131,6 +1131,12 @@ background-color: rgb(249, 249, 249);
 }
 
 .footerLink {
+  color: blue;
+  text-decoration: underline;
+  float: none;
+}
+
+.webLinkscorecard {
   color: lightblue;
   text-decoration: underline;
   float: none;
