@@ -324,6 +324,7 @@ a {
   /* padding: 14px 16px; */
   text-decoration: none;
   font-size: 16px;
+ 
 }
 
 a:hover {
@@ -1079,21 +1080,72 @@ padding: 90px 50px 20px
   padding: 5px;
 }
 
+.clickableSum {
+width:100%;
+}
+
+.horizontalScorecardWrapper {
+  width:100%;
+}
+
+#inputBox {
+padding: 5px 5px;
+margin: 5px 0px;
+}
+
+#total,#total2,#total3,#total4 {
+padding: 5px 5px;
+margin: 5px 0px;
+}
+
+/* .buttonForSum {
+  border-color: chartreuse;
+  color: #4CAF50;
+  background-color: #7CA982;
+
+} */
+
+
+.flexlinkdisplay{
+  display: flex;
+}
+
 .horizontalScorecard{
    background-color: grey;
-  width: 100%;
+   width: 100%;
    display:flex;
   flex-direction: row;
-  justify-content: left;
+}
+
+.horizontalScorecardWrapper{
+  width: 100%;
+  border-color: chartreuse;
 }
 
 .horizontalScorecardbox{
    width: 8%;
-   align-items: center;
+   align-items: left;
 }
+
+.horizontalScorecardboxDetails{
+  background-color: grey;
+  align-items: left;
+  width: 100%;
+  display: flex;
+  padding: 2px 0px;
+font-size: 11px;
+}
+
+
 
 .horizontalScorecardboxName {
     width: 20%;
+}
+
+
+.scorecardWrapperBox {
+ margin:5px;
+ height:400px;
 }
 
 .horizontalInput {

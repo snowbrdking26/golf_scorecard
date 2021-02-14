@@ -742,38 +742,37 @@ this.sumInputs4 = function () {
     result.value = sum;
 }
 
+//keyup and keydown events
+//https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_keydown_keyup_trigger
 
-// Sum function for score total:
-// referenced: http://jsfiddle.net/steven27030/eneb83pq/
+// Sum of rows
+// Referenced: jsfiddle page http://jsfiddle.net/2u3vjhq9/
+function sumAllRows() {
+    $("input").keyup(function () {
+        // $("input").css("background-color", "lightgray");
+        sumInputs();
+        sumInputs2();
+        sumInputs3();
+        sumInputs4();
+        console.log("keyup for SumAllRows function")
+    });
+}
 
-// $(document).ready(function () {
-//     //this calculates values automatically 
-//     calculateSum();
-
-//     $(".txt").on("keydown keyup scroll click", function () {
-//         calculateSum();
-//     });
-// });
-
-// function calculateSum() {
-//     var sum = 0;
-//     //iterate through each textboxes and add the values
-//     $(".txt").each(function () {
-//         //add only if the value is number
-//         if (!isNaN(this.value) && this.value.length != 0) {
-//             sum += parseFloat(this.value);
-//             $(this).css("background-color", "white");
-//         }
-//         else if (this.value.length != 0) {
-//             $(this).css("background-color", "white");
-//         }
-//     });
-
-//     $("input#sum1").val(sum.toFixed(2));
-// }
-
-
-
+function resetScorecard () {
+    if (confirm("Want to clear Scorecard?")) {
+        /*Clear all input type="text" box*/
+        $('input[type="text"]').val('');
+        
+        /*Clear textarea using id */
+        // $('#txtAddress').val('');
+    }
+    // document.getElementById("boxy")
+    // document.getElementById("boxy").get(0).reset();
+    // alert(JSON.stringify($('#configform')[0]));
+    // console.log(document.getElementById("boxy").reset)
+    console.log("Cleared scorecard values")
+    
+}
 
 
 

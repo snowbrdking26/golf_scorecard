@@ -72,38 +72,14 @@
             <br>
             <br>
 
+<!-- start of scorecard div -->
+<div class="scorecardWrapperBox">
+
+<div class="clickableSum">
+    
 
 
-
-<!-- <table>
-    <tr>
-        <td width="40px">1</td>
-        <td>Number</td>
-        <td><input class="txt" type="text" name="txt" /></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>Number</td>
-        <td><input class="txt" type="text" name="txt" /></td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>Number</td>
-        <td><input class="txt" type="text" name="txt" /></td>
-    </tr>
-    <tr id="summation">
-        <td colspan="2" align="right">
-            Sum :
-        </td>
-        <td>
-            <input type="text" id='sum1' name="input" />
-        </td>
-        </span>
-        </td>
-    </tr>
-</table> -->
-
-<div class="horizontalScorecard">
+<div class="horizontalScorecardboxDetails">
     <div class="horizontalScorecardboxName">Hole #</div>
     <div class="horizontalScorecardbox">#1</div>
     <div class="horizontalScorecardbox">#2</div>
@@ -116,7 +92,7 @@
     <div class="horizontalScorecardbox">#9</div>
 </div>
 
-<div class="horizontalScorecard">
+<div class="horizontalScorecardboxDetails">
     <div class="horizontalScorecardboxName">Yardage</div>
     <div class="horizontalScorecardbox">100</div>
     <div class="horizontalScorecardbox">200</div>
@@ -128,7 +104,7 @@
     <div class="horizontalScorecardbox">800</div>
     <div class="horizontalScorecardbox">900</div>
 </div>
-<div class="horizontalScorecard">
+<div class="horizontalScorecardboxDetails">
     <div class="horizontalScorecardboxName">Par</div>
     <div class="horizontalScorecardbox">3</div>
     <div class="horizontalScorecardbox">3</div>
@@ -140,38 +116,45 @@
     <div class="horizontalScorecardbox">5</div>
     <div class="horizontalScorecardbox">3</div>
 </div>
+
+<!-- end of Hole#, Yardage, Par  -->
+
+
+
 <!--////////////////// row 1 ////// -->
 
+        <a class="flexlinkdisplay" href="javascript:sumAllRows()">
+
             <div class="horizontalScorecard">
-            <div class="horizontalScorecardboxName">  <input class="horizontalInput" type="text" name="row1name" id="txt" /><br>
+            <div class="horizontalScorecardboxName">  <input class="horizontalInput" type="text" name="row1name" id="inputBox"  /><br>
             </div>
 
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
               
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
               
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
               
                     </div>
               
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
               
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
 
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
 
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
               
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
                 
-              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="txt" /><br>
+              <div class="horizontalScorecardbox">  <input class="horizontalInput" type="text" name="row1" id="inputBox" /><br>
                     </div>
       
                <div class="horizontalScorecardbox">
@@ -179,42 +162,47 @@
                 <input class="horizontalInput" type="text"  id="total" name="total"/>
                     </div>
                 
-                <a href="javascript:sumInputs()"> <button>Sum</button> </a>
+                <!-- <a class="buttonForSum" href="javascript:sumInputs()"> <button>Sum</button> </a> -->
 
             </div>
+</a>
+<!-- end of sumAllRows a-tag link  -->
+
+
+
 
             <!-- Row 2   ///////////////////// -->
-
+        <a class="flexlinkdisplay" href="javascript:sumAllRows()">
             <div class="horizontalScorecard">
-                <div class="horizontalScorecardboxName"> <input class="horizontalInput" type="text" name="row2name" id="txt" /><br>
+                <div class="horizontalScorecardboxName"> <input class="horizontalInput" type="text" name="row2name" id="inputBox" /><br>
                 </div>
 
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
             
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
-                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="txt" /><br>
+                <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row2" id="inputBox" /><br>
                 </div>
             
                 <div class="horizontalScorecardbox">
@@ -222,41 +210,47 @@
                     <input class="horizontalInput" type="text" id="total2" name="total2" />
                 </div>
             
-                <a href="javascript:sumInputs2()"> <button>Sum</button> </a>
+                <!-- <a href="javascript:sumInputs2()"> <button>Sum</button> </a> -->
             
             </div>
+
+        </a>
+        <!-- end of sumAllRows a-tag link  -->
+
+
+
                 <!-- Row 3   ///////////////////// -->
-                
+            <a class="flexlinkdisplay" href="javascript:sumAllRows()">
                 <div class="horizontalScorecard">
-                    <div class="horizontalScorecardboxName"> <input class="horizontalInput" type="text" name="row3name" id="txt" /><br>
+                    <div class="horizontalScorecardboxName"> <input class="horizontalInput" type="text" name="row3name" id="inputBox" /><br>
                     </div>
 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                 
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row3" id="inputBox" /><br>
                     </div>
                 
                     <div class="horizontalScorecardbox">
@@ -264,42 +258,50 @@
                         <input class="horizontalInput" type="text" id="total3" name="total3" />
                     </div>
                 
-                    <a href="javascript:sumInputs3()"> <button>Sum</button> </a>
+                    <!-- <a href="javascript:sumInputs3()"> <button>Sum</button> </a> -->
                 
                 </div>
+        </a>
+        <!-- end of sumAllRows a-tag link  -->
+
+
+
+
 
                 <!-- Row 4   ///////////////////// -->
-                
+
+         <a class="flexlinkdisplay" href="javascript:sumAllRows()">
+            
                 <div class="horizontalScorecard">
-                    <div class="horizontalScorecardboxName"> <input class="horizontalInput" type="text" name="row4name" id="txt" /><br>
+                    <div class="horizontalScorecardboxName"> <input class="horizontalInput" type="text" name="row4name" id="inputBox" /><br>
                     </div>
 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                 
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
-                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="txt" /><br>
+                    <div class="horizontalScorecardbox"> <input class="horizontalInput" type="text" name="row4" id="inputBox" /><br>
                     </div>
                 
                     <div class="horizontalScorecardbox">
@@ -307,13 +309,24 @@
                         <input class="horizontalInput" type="text" id="total4" name="total4" />
                     </div>
                 
-                    <a href="javascript:sumInputs4()"> <button>Sum</button> </a>
+                    <!-- <a href="javascript:sumInputs4()"> <button>Sum</button> </a> -->
                 
                 </div>
-
+                <!-- end of row 4 -->
+            </a>
+            <!-- end of sumAllRows a-tag link  -->
+ 
+        
             
-<!-- end of horizontal scorecard -->
-
+                <a href="javascript:resetScorecard()">
+                     <button >Clear Scorecard</button>
+                </a>
+                <!-- end of clear Scorecard -->
+                <br>
+                <br>
+            </div>
+            <!-- end of ScorecardWrapperBox -->
+          
 
 
 
