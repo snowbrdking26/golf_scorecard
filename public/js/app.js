@@ -680,7 +680,7 @@ function closeEditGolferCourseNav() {
 
 this.sumInputs = function () {
 
-    var inputs = document.getElementsByName('txt'),
+    var inputs = document.getElementsByName('row1'),
         result = document.getElementById('total'),
         sum = 0;
 
