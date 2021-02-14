@@ -612,7 +612,10 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         }).catch(err => console.log(err))
     }
 
+  
 }]);
+
+
 
 // ======================
 // sidenav functions
@@ -673,6 +676,114 @@ function closeEditGolferCourseNav() {
 
 
 
+// referenced: jsfiddle page http://jsfiddle.net/2u3vjhq9/
+
+this.sumInputs = function () {
+
+    var inputs = document.getElementsByName('txt'),
+        result = document.getElementById('total'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+this.sumInputs2 = function () {
+
+    var inputs = document.getElementsByName('row2'),
+        result = document.getElementById('total2'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total2") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+this.sumInputs3 = function () {
+
+    var inputs = document.getElementsByName('row3'),
+        result = document.getElementById('total3'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total3") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+this.sumInputs4 = function () {
+
+    var inputs = document.getElementsByName('row4'),
+        result = document.getElementById('total4'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total4") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+
+// Sum function for score total:
+// referenced: http://jsfiddle.net/steven27030/eneb83pq/
+
+// $(document).ready(function () {
+//     //this calculates values automatically 
+//     calculateSum();
+
+//     $(".txt").on("keydown keyup scroll click", function () {
+//         calculateSum();
+//     });
+// });
+
+// function calculateSum() {
+//     var sum = 0;
+//     //iterate through each textboxes and add the values
+//     $(".txt").each(function () {
+//         //add only if the value is number
+//         if (!isNaN(this.value) && this.value.length != 0) {
+//             sum += parseFloat(this.value);
+//             $(this).css("background-color", "white");
+//         }
+//         else if (this.value.length != 0) {
+//             $(this).css("background-color", "white");
+//         }
+//     });
+
+//     $("input#sum1").val(sum.toFixed(2));
+// }
+
+
+
+
+
+
+
+
+
+////////////////////////////////////
+
+
+///////////////////////////////////
 
 
 
