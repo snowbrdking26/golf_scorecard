@@ -17,7 +17,14 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         // console.log(error.message);
     }).catch(err => console.log(err))
 
-
+    $http({
+        url: '/newpage',
+        method: 'GET'
+    }).then(response => {
+        this.user = response.data;
+    }, error => {
+        // console.log(error.message);
+    }).catch(err => console.log(err))
 
 
     /////// Golfers CRUD ///////
