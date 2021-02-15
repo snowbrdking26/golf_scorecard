@@ -15,12 +15,8 @@ router.use(express.static('public'));
 // ==============
 
 router.get('/', (req, res) => {
-    res.render("newpage.ejs");
+    res.render("newpageB.ejs");
 });
-
-
-
-
 
 
 

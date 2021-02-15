@@ -21,6 +21,18 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
         url: '/newpage',
         method: 'GET'
     }).then(response => {
+        res.render("newpage.ejs");
+        this.user = response.data;
+    }, error => {
+        // console.log(error.message);
+    }).catch(err => console.log(err))
+
+
+    $http({
+        url: '/newpageB',
+        method: 'GET'
+    }).then(response => {
+        res.render("newpageB.ejs");
         this.user = response.data;
     }, error => {
         // console.log(error.message);

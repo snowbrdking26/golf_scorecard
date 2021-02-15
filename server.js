@@ -39,6 +39,7 @@ const golfersController = require('./controllers/golfers.js')
 const scorecardsController = require('./controllers/scorecards.js')
 const sessionsController = require('./controllers/sessions.js')
 const newpageController = require('./controllers/newpage.js')
+const newpageBController = require('./controllers/newpageB.js')
 
 // ==============
 // USE OF CONTROLLERS
@@ -48,7 +49,7 @@ app.use('/golfers', golfersController);
 app.use('/scorecards', scorecardsController);
 app.use('/session', sessionsController);
 app.use('/newpage', newpageController);
-
+app.use('/newpageB', newpageBController);
 
 // ------ new---------
 // app.use('/newpage', newpage)
