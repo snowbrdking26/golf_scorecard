@@ -1192,6 +1192,12 @@ font-size: 11px;
   text-align: center;
 }
 
+.DeleteAccountDiv {
+  margin: auto;
+  width: 80%;
+  text-align: left;
+}
+
 .worldRankBox {
 background-color: rgb(249, 249, 249);
 /* padding-top: 20px; */
