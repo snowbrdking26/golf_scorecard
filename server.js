@@ -4,18 +4,6 @@ const session = require('express-session');
 const PORT = process.env.PORT || 3001;
 
 
-// ------ new---------
-// var newpage = require('./controllers/newpage.js')
-
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'ejs');
-// ------ new---------
-
-// app.set('views', 'app/views');
-// app.set('view engine', 'jade');
-
-// ------ new---------
-
 
 // ==============
 // MIDDLEWARE
@@ -40,6 +28,12 @@ const scorecardsController = require('./controllers/scorecards.js')
 const sessionsController = require('./controllers/sessions.js')
 const newpageController = require('./controllers/newpage.js')
 const newpageBController = require('./controllers/newpageB.js')
+const DeleteAccountController = require('./controllers/DeleteAccount.js')
+
+
+
+
+
 
 // ==============
 // USE OF CONTROLLERS
@@ -50,10 +44,10 @@ app.use('/scorecards', scorecardsController);
 app.use('/session', sessionsController);
 app.use('/newpage', newpageController);
 app.use('/newpageB', newpageBController);
+app.use('/DeleteAccount', DeleteAccountController);
 
-// ------ new---------
-// app.use('/newpage', newpage)
-// ------ new---------
+
+
 
 
 // ==============

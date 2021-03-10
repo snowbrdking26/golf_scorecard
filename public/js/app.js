@@ -39,6 +39,17 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
     }).catch(err => console.log(err))
 
 
+    $http({
+        url: '/DeleteAccount',
+        method: 'GET'
+    }).then(response => {
+        res.render("DeleteAccount.ejs");
+        this.user = response.data;
+    }, error => {
+        // console.log(error.message);
+    }).catch(err => console.log(err))
+
+
     /////// Golfers CRUD ///////
 
     // ========================
