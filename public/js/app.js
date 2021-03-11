@@ -29,10 +29,10 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
 
 
     $http({
-        url: '/newpageB',
+        url: '/CookiePolicy',
         method: 'GET'
     }).then(response => {
-        res.render("newpageB.ejs");
+        res.render("CookiePolicy.ejs");
         this.user = response.data;
     }, error => {
         // console.log(error.message);
@@ -805,11 +805,25 @@ function resetScorecard () {
 }
 
 
-
-
-
-
 ////////////////////////////////////
+
+// cookie policy
+
+function openNavCookies() {
+    document.getElementById("mySidenavCookies").style.width = "250px";
+}
+function closeNavCookies() {
+    document.getElementById("mySidenavCookies").style.width = "0";
+}
+
+
+// function openNavCookiesPage() {
+//     document.getElementById("mySidenavCookiesPage").style.width = "95%";
+// }
+// function closeNavCookiesPage() {
+//     document.getElementById("mySidenavCookiesPage").style.width = "0";
+// }
+
 
 
 ///////////////////////////////////

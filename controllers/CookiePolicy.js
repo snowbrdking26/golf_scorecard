@@ -15,7 +15,7 @@ router.use(express.static('public'));
 // ==============
 
 router.get('/', (req, res) => {
-    res.render("newpageB.ejs");
+    res.render("CookiePolicy.ejs");
 });
 
 

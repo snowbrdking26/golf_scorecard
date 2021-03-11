@@ -894,6 +894,27 @@ padding: 0 0;
 
 }
 
+
+/* cookies nav */
+#mySidenavCookies {
+  z-index: 3;
+
+}
+.sidenavCookies {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  right: 0;
+  background-color:#DFDFDF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+
+
 footer {
   display: block;
   /* height:220px; */
@@ -1221,6 +1242,15 @@ background-color: rgb(249, 249, 249);
   float: none;
 }
 
+
+
+
+
+
+
+
+
+
 @media only screen and (device-width: 768px),
        only screen and (min-width: 768px) {
 
@@ -1263,3 +1293,6 @@ background-color: rgb(249, 249, 249);
 }
 /* end of @media mobile width */
 }
+
+
+

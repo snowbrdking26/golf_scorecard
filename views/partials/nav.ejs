@@ -90,7 +90,8 @@
 <div id="mySidenavMenu" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeMenuNav()">&times;</a>
     <div class="sideNavPadding">
-        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome, {{ ctrl.user.name }} 
+        <a class="aTagTopNav" ng-if='ctrl.user'> Welcome, {{ ctrl.user.name }} </a>
+
             
 
        
@@ -103,13 +104,20 @@
         
 
 <!-- if logged in -->
-            <a class="aTagTopNav"  ng-if='ctrl.user' ng-if='ctrl.user' href="#" ng-click="ctrl.logout();" onclick="closeMenuNav();" style="display:inline-flex"><img src="css/icons8-exit-50.png" style="width: 20px; height:25px; padding-right:5px;" alt="">LogOut</a>
+
+            <a class="aTagTopNav" ng-if='ctrl.user' >----------</a>
+            
+            <a class="aTagTopNav"  ng-if='ctrl.user' href="#" ng-click="ctrl.logout();" onclick="closeMenuNav();" style="display:inline-flex"><img src="css/icons8-exit-50.png" style="width: 20px; height:25px; padding-right:5px;" alt="">LogOut</a>
        
-            <a class="aTagTopNav">_______</a>
+            <a class="aTagTopNav"  >----------</a>
 
             <!-- <a class="aTagTopNav" ng-if='ctrl.user' href="/scorecards" style="display:inline-flex" ><img style="width: 25px; height:25px; padding-right:5px;" src="css/icons8-scorecard-50.png" alt="">Scorecards</a> -->
 
             <a class="aTagTopNav" href="#" onclick="openWeatherNav();closeMenuNav();" style="display:inline-flex"> <img style="width: 30px; height:30px; padding-right:5px;" src="css/icons8-stormy-weather-80.png" alt="">Weather</a>
+            <a class="aTagTopNav">----------</a>
+
+            <a class="aTagTopNav" href="https://golf-scorecard-app.herokuapp.com/DeleteAccount">Account Settings</a>
+            <a class="aTagTopNav">----------</a>
 
     </div>
 </div>
@@ -176,3 +184,39 @@
 </div>
 
 
+<!-- start of privacy and data compliance -->
+<!-- SideNavCookies  -->
+<div id="mySidenavCookies" class="sidenavCookies">
+
+    <div class="centerweather">
+
+                <div class="footerLink">
+                    <a class="footerLink" href="http://www.golfscorecardsapp.com/CookiePolicy" target="_blank"
+                        rel="noopener noreferrer">View Cookie Policy</a> <br><br>
+                </div>
+
+        <div>We use cookies to provide login and logout functionality. Our
+        Cookie Policy provides more information and explains how to change your cookie settings.<br><br> 
+        </div>
+
+        <a href="http://www.google.com/">
+             <button> <h4>Reject All Cookies</h4> </button> 
+        </a> 
+       <br><br><br><br>
+        
+        <button href="javascript:void(0)" class="closebtn" onclick="closeNavCookies()">  <h4>Accept All Cookies</h4></button><br><br>
+
+     
+        <div class="cookiepolicy">
+
+            <!-- <% include privacypolicy.ejs %> -->
+        
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+</div>
