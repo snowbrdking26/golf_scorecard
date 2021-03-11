@@ -789,7 +789,7 @@ function sumAllRows() {
 }
 
 function resetScorecard () {
-    if (confirm("Want to clear Scorecard?")) {
+    if (confirm("Do you want to clear Scorecard?")) {
         /*Clear all input type="text" box*/
         $('input[type="text"]').val('');
         
