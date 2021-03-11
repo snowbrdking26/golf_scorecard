@@ -116,8 +116,8 @@
             <a class="aTagTopNav" href="#" onclick="openWeatherNav();closeMenuNav();" style="display:inline-flex"> <img style="width: 30px; height:30px; padding-right:5px;" src="css/icons8-stormy-weather-80.png" alt="">Weather</a>
             <a class="aTagTopNav">----------</a>
 
-            <a class="aTagTopNav" href="https://golf-scorecard-app.herokuapp.com/DeleteAccount">Account Settings</a>
-            <a class="aTagTopNav">----------</a>
+            <a class="aTagTopNav" href="/DeleteAccount" ng-if='ctrl.user'>Account Settings</a>
+            <a class="aTagTopNav" ng-if='ctrl.user' >----------</a>
 
     </div>
 </div>

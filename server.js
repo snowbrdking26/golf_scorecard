@@ -26,7 +26,7 @@ app.use(express.static('public'));
 const golfersController = require('./controllers/golfers.js')
 const scorecardsController = require('./controllers/scorecards.js')
 const sessionsController = require('./controllers/sessions.js')
-const newpageController = require('./controllers/newpage.js')
+const DigitalScorecardController = require('./controllers/DigitalScorecard.js')
 const CookiePolicyController = require('./controllers/CookiePolicy.js')
 const DeleteAccountController = require('./controllers/DeleteAccount.js')
 
@@ -42,7 +42,7 @@ const DeleteAccountController = require('./controllers/DeleteAccount.js')
 app.use('/golfers', golfersController);
 app.use('/scorecards', scorecardsController);
 app.use('/session', sessionsController);
-app.use('/newpage', newpageController);
+app.use('/DigitalScorecard', DigitalScorecardController);
 app.use('/CookiePolicy', CookiePolicyController);
 app.use('/DeleteAccount', DeleteAccountController);
 

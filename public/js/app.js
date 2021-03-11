@@ -18,10 +18,10 @@ app.controller('MainController', ['$scope', '$timeout', '$http', function ($scop
     }).catch(err => console.log(err))
 
     $http({
-        url: '/newpage',
+        url: '/DigitalScorecard',
         method: 'GET'
     }).then(response => {
-        res.render("newpage.ejs");
+        res.render("DigitalScorecard.ejs");
         this.user = response.data;
     }, error => {
         // console.log(error.message);
