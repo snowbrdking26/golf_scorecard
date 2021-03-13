@@ -772,6 +772,70 @@ this.sumInputs4 = function () {
     result.value = sum;
 }
 
+this.sumInputs5 = function () {
+
+    var inputs = document.getElementsByName('row5'),
+        result = document.getElementById('total5'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total5") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+this.sumInputs6 = function () {
+
+    var inputs = document.getElementsByName('row6'),
+        result = document.getElementById('total6'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total6") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+this.sumInputs7 = function () {
+
+    var inputs = document.getElementsByName('row7'),
+        result = document.getElementById('total7'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total7") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
+this.sumInputs8 = function () {
+
+    var inputs = document.getElementsByName('row8'),
+        result = document.getElementById('total8'),
+        sum = 0;
+
+    for (var i = 0; i < inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total8") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+    }
+    result.value = sum;
+}
+
 //keyup and keydown events
 //https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_keydown_keyup_trigger
 
@@ -784,6 +848,10 @@ function sumAllRows() {
         sumInputs2();
         sumInputs3();
         sumInputs4();
+        sumInputs5();
+        sumInputs6();
+        sumInputs7();
+        sumInputs8();
         console.log("keyup for SumAllRows function")
     });
 }

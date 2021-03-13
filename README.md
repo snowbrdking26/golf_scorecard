@@ -1,10 +1,10 @@
-# Golf Scorecard App
+# Golf Scorecards App
 
-Golf Scorecard App 
+Golf Scorecards App 
 
 * Live Site: (https://golf-scorecard-app.herokuapp.com/)
 
-The Golf Scorecard App is the easiest way to track your golf score. It allows you to conviently keep score while playing golf. You can add all your friends scores in one place. With easy one touch scoring.
+The Golf Scorecards App is the easiest way to track your golf score. It allows you to conviently keep score while playing golf. You can add all your friends scores in one place. With easy one touch scoring.
 
 
 ## Addtional Features to be add later
