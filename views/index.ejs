@@ -19,7 +19,7 @@
                 <h1 data-aos="fade-zoom-in" data-aos-duration="3000" class="textshadow">
                     <em class="textshadow">Golf Scorecards App </em>
                 </h1>
-                <h3 data-aos="fade-zoom-in" data-aos-duration="3000" class="textshadow"> Digital Scorecard Solution for Golf Course Managers and Owners</h3>
+                <h3 data-aos="fade-zoom-in" data-aos-duration="3000" class="textshadow"> Digital Scorecard Solution</h3>
                
      
                 <!-- <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if='ctrl.user' class="IndexScorecardsubmitAddBtn1"
@@ -43,7 +43,7 @@
                 <!-- //////////////////////////////////////////////// -->
                 <!-- if logged in -->
 
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" class="IndexScorecardsubmitAddBtnWelcome" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name}} </a>
+                <a data-aos="fade-zoom-in" data-aos-duration="3000" class="IndexScorecardsubmitAddBtnWelcome" style="background-color: gray; box-shadow: none;" ng-if='ctrl.user' onclick="openMenuNav()"> Welcome, {{ ctrl.user.name}} </a>
                     <div class="center">
                         <a href="#">
                             <button ng-if="ctrl.user" href="" ng-click='ctrl.logout()'>
@@ -57,8 +57,8 @@
 
                 <div ng-if='ctrl.user' > 
 
-                    <h5 class="textshadow">Included - Unlimited Scorecards + Active QR Code  </h5>
-                    <h5 class="textshadow">Share QR code - Scan with phone camera </h5>
+                    
+                    <!-- <h2 class="textshadow">Share QR code </h2> -->
                     
                     <div class="QRcode"></div>
 
@@ -66,7 +66,7 @@
                             <a href="/DigitalScorecard">
                                 <div class="scorecardlink">
                                     <br><br><br>
-                                    <h2 class="fontcolorwhite">Share QR code - Link to Scorecards Here: </h2>
+                                    <h2 class="fontcolorwhite"> SCORECARDS <br> CLICK HERE </h2>
                                     <h4 class="webLinkscorecard">www.golfscorecardsapp.com/DigitalScorecard</h4> 
                                 </div>
                             </a>
@@ -122,6 +122,7 @@
 
 
 <% include partials/footer.ejs %>
+
 
 
 </body>

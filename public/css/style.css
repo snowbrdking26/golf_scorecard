@@ -902,7 +902,7 @@ padding: 0 0;
 }
 .sidenavCookies {
   height: 100%;
-  width: 50%;
+  width: 250px;
   position: fixed;
   z-index: 4;
   top: 0;
@@ -1166,7 +1166,7 @@ font-size: 11px;
 
 .scorecardWrapperBox {
  margin:5px;
- height:400px;
+ height:250px;
 }
 
 .horizontalInput {
