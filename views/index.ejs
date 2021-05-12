@@ -32,9 +32,9 @@
                 <!-- if not logged in -->
                 <div class="divsignuplogin">
      
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Manager Sign Up</a>
+                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavSignup()">Scorecards Sign Up</a>
 
-                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Manager Login</a>
+                <a data-aos="fade-zoom-in" data-aos-duration="3000" ng-if="!ctrl.user" class="IndexScorecardsubmitAddBtn" onclick="openNavLogin()">Scorecards Login</a>
 
 
 
@@ -63,13 +63,15 @@
 
                         <div class="scorecardlinkWrapper">
                             <a href="/DigitalScorecard">
-                                <div class="scorecardlink">
+                                <div class="scorecardlink"  >
                                     <br><br><br>
                                     <h2 class="fontcolorwhite"> SCORECARDS <br> CLICK HERE </h2>
                                     <h4 class="webLinkscorecard">www.golfscorecardsapp.com/DigitalScorecard</h4> 
+                                <img class="imageOfScorecardsScreenSave" src="/css/scorecard_screensave.png" alt="scorecards" style="width: 120px;">
                                 </div>
                             </a>
                         </div>
+
             <br>
             <br>
 
@@ -80,6 +82,7 @@
         <!-- end of mainTopText -->
         </div>
         <!-- end of mainPicture -->
+<div class="displaySquares"  ng-if="!ctrl.user">
 
         <div class="title1">
             <h3>How can the Golf Scorecards App help you?</h3>
@@ -110,7 +113,7 @@
             <div data-aos="fade-zoom-in" data-aos-duration="3000" class="box9"></div>
             <div class="box10"><h5 class="boxText"> Know which of your friends are in the lead with the instant score caclulator on scorecard. </h5></div>
         </div>
-
+</div>
 
         <!-- <div class="worldRankBox">
         <script src="https://www.tourbrassie.com/widget/index?type=index&showlogo=1&showfacebook=0&bgcolor=&width=350&height=&widthsetting=optimized&unit=px&layout=table&country=&displayplayersby=country&playerlist=&showcountry=1&showaveragepoints=0&showtotalpoints=1&showsponsor=1&tour=pga-tour&limit=10"></script>

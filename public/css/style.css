@@ -809,6 +809,10 @@ label:before {
 
 
 
+.displaySquares {
+  display: fixed;
+}
+
 
 
 .updateGolferToHide2 {
@@ -896,21 +900,34 @@ padding: 0 0;
 
 
 /* cookies nav */
-#mySidenavCookies {
-  z-index: 3;
-
+.bottomCookiePolicyPopup{
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
 }
+
+#mySidenavCookies {
+ 
+  height: auto;
+  display:flex;
+  width: 100%;
+  position: fixed;
+  
+}
+
 .sidenavCookies {
-  height: 100%;
-  width: 250px;
+  height: auto;
+  width: 100%;
   position: fixed;
   z-index: 4;
-  top: 0;
+  bottom: 0;
   right: 0;
   background-color:#DFDFDF;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  align-items: center;
+  margin: auto;
 }
 
 
@@ -1000,6 +1017,7 @@ text-align: center;
   background-repeat: no-repeat;
   background-image: url(pexels-photo-54123.jpeg);
 } */
+
 
 
 .rowMainIndex {
@@ -1099,6 +1117,7 @@ padding: 90px 50px 20px
   height: 220px;
   margin: 5px;
   padding: 5px;
+   border-radius: 8px;
 }
 
 .clickableSum {
@@ -1180,21 +1199,36 @@ font-size: 11px;
 
 .scorecardlinkWrapper{
   width: 220px;
-  height: 220px;
+  height: 250px;
 }
 
 .scorecardlink {
   background-color: #2274A5;
+  /* background-image: url(Scorecard_screensave.png); */
+  /* background-size:contain; */
+  /* background-repeat:no-repeat; */
   width: 220px;
-  height: 220px;
+  height: 250px;
   font-size: 10px;
   margin: 5px;
   padding: 5px;
   box-shadow: 2px 2px 6px #000000;
+
+  /* border: 1px solid #ddd; */
+  border-radius: 4px;
+  padding: 5px;
+  /* width: 150px; */
 }
 
 .scorecardlink:hover {
   background-color: grey;
+}
+
+.imageOfScorecardsScreenSave {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
 
 .fontcolorwhite{
@@ -1234,6 +1268,8 @@ background-color: rgb(249, 249, 249);
   color: blue;
   text-decoration: underline;
   float: none;
+  margin: 10px;
+  align-items: center;
 }
 
 .webLinkscorecard {

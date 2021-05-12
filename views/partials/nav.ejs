@@ -185,16 +185,17 @@
 
 <!-- start of privacy and data compliance -->
 <!-- SideNavCookies  -->
+<div class="displaySquares" ng-if="!ctrl.user"> 
 <div id="mySidenavCookies" class="sidenavCookies">
 
-    <div class="centerweather">
+    <div class="bottomCookiePolicyPopup">
 
         <div class="footerLink">
             <a class="footerLink" href="/CookiePolicy" target="_blank" rel="noopener noreferrer">View Cookie Policy</a>
             <br><br>
         </div>
 
-        <div style="color:black">Golf Scorecards App uses cookies to improve your experience. Our
+        <div class="footerlink" style="color:black">Golf Scorecards App uses cookies to improve your experience. Our
             Cookie Policy provides more information and explains how to change your account settings.<br><br>
         </div>
 
@@ -214,3 +215,5 @@
 
     </div>
 </div>
+</div> 
+<!-- end of cookie policiy and end of "display:none;" if logged in, this prevents pop up when logged in -->

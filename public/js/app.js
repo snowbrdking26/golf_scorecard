@@ -878,10 +878,10 @@ function resetScorecard () {
 // cookie policy
 
 function openNavCookies() {
-    document.getElementById("mySidenavCookies").style.width = "250px";
+    document.getElementById("mySidenavCookies").style.display = "flex";
 }
 function closeNavCookies() {
-    document.getElementById("mySidenavCookies").style.width = "0";
+    document.getElementById("mySidenavCookies").style.display = "none";
 }
 
 
