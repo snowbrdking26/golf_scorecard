@@ -78,7 +78,7 @@ main {
 }
 .IndexScorecardsubmitAddBtn {
    width: 50%;
-    height: auto;
+    height: 40px;
     padding: 10px 20px;
     margin:8px 5px 5px 5px;
     background:#2274A5;
@@ -900,11 +900,21 @@ padding: 0 0;
 
 
 /* cookies nav */
+
+.topOfPopUp {
+display: inline;
+}
+
+.bottomOfPopUp {
+display: flex;
+}
+
 .bottomCookiePolicyPopup{
-  display: flex;
+  /* display: flex; */
   align-items: center;
   margin: 10px;
   padding: 10px;
+  margin-right: 10px;
 }
 
 #mySidenavCookies {
